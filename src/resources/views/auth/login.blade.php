@@ -11,7 +11,7 @@
     <form class="login-form" action="/login" method="post">
         @csrf
         <div class="login-group">
-            <p class="login-group-title">メールアドレス</p>
+            <span class="login-group-title">メールアドレス</span>
             <input class="input-email" name="email" type="email" value="{{ old('email') }}">
             @if ($errors->any())
             <div class="login-error">
@@ -22,7 +22,7 @@
             @endif
         </div>
         <div class="login-group">
-            <p class="login-group-title">パスワード</p>
+            <span class="login-group-title">パスワード</span>
             <input class="input-password" name="password" type="password" value="{{ old('password') }}">
             @if ($errors->any())
             <div class="login-error">
@@ -33,8 +33,8 @@
             @endif
         </div>
         <button class="login-button" type="submit">ログイン</button>
-        <div class="registration">
-            <p class="registration-text"><a class="registration-link" href="/register">会員登録はこちらから</a></p>
+        <div class="register">
+            <a class="register-link" href="/register">会員登録はこちらから</a>
         </div>
     </form>
 </div>

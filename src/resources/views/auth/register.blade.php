@@ -5,30 +5,38 @@
 @endsection
 
 @section('content')
-<div class="register">
+
+<div class="register-content">
+    <h1 class="register-title">会員登録</h1>
     <form class="register-form" action="/register" method="post">
         @csrf
-        <p class="register-logo">会員登録</p>
-        <input class="input-email" name="email" type="email" value="{{ old('email') }}" placeholder="メールアドレス">
-        @if ($errors->any())
-        <div class="register-error">
-            @error('email')
-            {{ $message }}
-            @enderror
+        <div class="register-group">
+            <span class="register-group-title">メールアドレス</span>
+            <input class="input-email" name="email" type="email" value="{{ old('email') }}">
+            @if ($errors->any())
+            <div class="register-error">
+                @error('email')
+                {{ $message }}
+                @enderror
+            </div>
+            @endif
         </div>
-        @endif
-        <input class="input-password" name="password" type="password" placeholder="パスワード">
-        @if ($errors->any())
-        <div class="register-error">
-            @error('password')
-            {{ $message }}
-            @enderror
+        <div class="register-group">
+            <span class="register-group-title">パスワード</span>
+            <input class="input-password" name="password" type="password" value="{{ old('password') }}">
+            @if ($errors->any())
+            <div class="register-error">
+                @error('password')
+                {{ $message }}
+                @enderror
+            </div>
+            @endif
         </div>
-        @endif
         <button class="register-button" type="submit">会員登録</button>
         <div class="login">
-            <p class="login-text"><a class="login-link">ログインはこちらから</a></p>
+            <a class="login-link" href="/login">ログインはこちらから</a>
         </div>
     </form>
 </div>
+
 @endsection
