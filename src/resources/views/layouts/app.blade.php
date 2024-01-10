@@ -13,21 +13,29 @@
 
 <body>
     <header class="header">
-        <p class="header-logo"></p>
+        @if(!Route::is('user.sell'))
+        <div class="header-logo">
+            <img class="header-logo-img" src="logo_img.svg" alt="">
+            <img class="header-logo-coachtech-img" src="coachtech_img.png" alt="">
+        </div>
+        @endif
         <nav class="header-nav">
-            <ul class="header-nav-list">
+            <ul class="header-nav-ul">
+                @if(Route::is(''))
+
+                @endif
                 @if(Auth::check())
-                <form class="header-nav-item" action="/logout" method="post">
+                <form class="header-nav-form" action="/logout" method="post">
                     @csrf
-                    <li class="header-nav-item">
+                    <li class="header-nav-list">
                         <button class="logout-button" type="submit">ログアウト</button>
                     </li>
                 </form>
-                <li class="header-nav-item"><a class="list-link" href="/mypage">マイページ</a></li>
+                <li class="header-nav-list"><a class="list-link" href="/mypage">マイページ</a></li>
                 @else
-                <li class="header-nav-item"><a class="list-link" href="/login">ログイン</a></li>
-                <li class="header-nav-item"><a class="list-link" href="/register">会員登録</a></li>
-                <li class="header-nav-item"><a class="list-link" href="/listing">出品</li>
+                <li class="header-nav-list"><a class="list-link" href="/login">ログイン</a></li>
+                <li class="header-nav-list"><a class="list-link" href="/register">会員登録</a></li>
+                <li class="header-nav-list"><a class="list-link" href="/listing">出品</li>
                 @endif
             </ul>
         </nav>

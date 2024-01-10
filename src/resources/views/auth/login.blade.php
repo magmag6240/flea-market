@@ -7,7 +7,7 @@
 @section('content')
 
 <div class="login-content">
-    <p class="login-title">ログイン</p>
+    <h1 class="login-title">ログイン</h1>
     <form class="login-form" action="/login" method="post">
         @csrf
         <div class="login-group">
@@ -38,4 +38,5 @@
         </div>
     </form>
 </div>
+
 @endsection
