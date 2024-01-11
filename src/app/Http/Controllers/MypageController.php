@@ -8,7 +8,7 @@ class MypageController extends Controller
 {
     public function index()
     {
-        return view('index');
+        return view('mypage');
     }
 
     public function profile_edit()

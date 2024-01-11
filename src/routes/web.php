@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\LikeController;
 use App\Http\Controllers\MarketController;
 use App\Http\Controllers\MypageController;
 use Illuminate\Support\Facades\Route;
@@ -15,7 +16,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [MarketController::class, 'index'])->name('user.index');
+Route::get('/', [MarketController::class, 'top'])->name('user.top');
+Route::get('/like/{product_id}', [LikeController::class, 'like'])->name('like');
+Route::get('/unlike/{product_id}', [LikeController::class, 'unlike'])->name('unlike');
 
 Route::middleware('auth')->group(function(){
 
