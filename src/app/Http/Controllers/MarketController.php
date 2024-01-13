@@ -6,9 +6,10 @@ use Illuminate\Http\Request;
 
 class MarketController extends Controller
 {
-    public function top()
+    public function top_recommend()
     {
-        return view('top');
+        
+        return view('top_recommend');
     }
 
     public function sell()

@@ -18,4 +18,23 @@ class Product extends Model
     {
         return $this->hasMany(Like::class);
     }
+
+    public function condition()
+    {
+        return $this->belongsTo(Condition::class);
+    }
+
+    public function categories()
+    {
+        return $this->belongsToMany(Category::class);
+    }
+
+    public function accesses()
+    {
+        return $this->hasMany(ProductAccess::class);
+    }
+
+    public function recommendations() {
+        return $this->hasMany(ProductRecommendation::class);
+    }
 }

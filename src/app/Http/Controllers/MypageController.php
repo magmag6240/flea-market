@@ -11,6 +11,11 @@ class MypageController extends Controller
         return view('mypage');
     }
 
+    public function top_mylist()
+    {
+        return view('top_mylist');
+    }
+
     public function profile_edit()
     {
         return view('profile_edit');

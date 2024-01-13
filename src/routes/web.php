@@ -16,18 +16,19 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [MarketController::class, 'top'])->name('user.top');
-Route::get('/like/{product_id}', [LikeController::class, 'like'])->name('like');
-Route::get('/unlike/{product_id}', [LikeController::class, 'unlike'])->name('unlike');
+Route::get('/', [MarketController::class, 'top_recommend'])->name('user.recommend');
 
 Route::middleware('auth')->group(function(){
 
+    Route::get('/like/{product_id}', [LikeController::class, 'like'])->name('like');
+    Route::get('/unlike/{product_id}', [LikeController::class, 'unlike'])->name('unlike');
     Route::get('/sell', [MarketController::class, 'sell'])->name('user.sell');
     Route::get('/purchase/{item_id}', [MarketController::class, 'purchase'])->name('user.purchase');
     Route::get('/purchase/address/{item_id}', [MarketController::class, 'address_edit'])->name('user.address_edit');
     Route::patch('/purchase/address/{item_id}', [MypageController::class, 'address_update'])->name('user.address_update');
     Route::get('/item/{item_id}', [MarketController::class, 'item_detail'])->name('user.item_detail');
     Route::get('/mypage', [MypageController::class, 'index'])->name('user.mypage');
+    Route::get('/mylist', [MypageController::class, 'top_mylist'])->name('user.mylist');
     Route::get('/mypage/profile', [MypageController::class, 'profile_edit'])->name('user.profile_edit');
     Route::patch('/mypage/profile', [MypageController::class, 'profile_update'])->name('user.profile_update');
 
