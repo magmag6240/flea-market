@@ -2,14 +2,16 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Product;
 use Illuminate\Http\Request;
 
 class MarketController extends Controller
 {
-    public function top_recommend()
+    public function top()
     {
-        
-        return view('top_recommend');
+        $recommend_item = Product::all();
+        $mylist_item = Product::all();
+        return view('top', compact('recommend_item', 'mylist_item'));
     }
 
     public function sell()

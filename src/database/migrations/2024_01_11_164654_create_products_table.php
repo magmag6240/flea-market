@@ -22,7 +22,7 @@ class CreateProductsTable extends Migration
             $table->integer('price');
             $table->text('product_detail');
             $table->string('image_url');
-            $table->text('comments');
+            $table->text('comments')->nullable();
             $table->dateTime('recommendation_updated_at')->nullable();
             $table->timestamps();
 
