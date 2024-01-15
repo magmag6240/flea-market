@@ -4,14 +4,19 @@ namespace App\Http\Controllers;
 
 use App\Models\Product;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class MarketController extends Controller
 {
     public function top()
     {
-        $recommend_item = Product::all();
-        $mylist_item = Product::all();
-        return view('top', compact('recommend_item', 'mylist_item'));
+        if(Auth::check()) {
+            $recommend_products = Product::all();
+            return view('recommend', compact('recommend_products'));
+        } else {
+            $recommend_products = Product::all();
+            return view('recommend', compact('recommend_products'));
+        }
     }
 
     public function sell()
