@@ -12,8 +12,8 @@
         <p class="top-title-mylist"><a class="mylist-link" href="/mylist">マイリスト</a></p>
     </div>
     <div class="recommend-list">
-        @foreach($recommend_products as $product)
-        <img class="recommend-product" src="{{$product->image_url}}">
+        @foreach($recommend_items as $item)
+        <img class="recommend-item" src="{{$item->image_url}}">
         @endforeach
     </div>
 </div>

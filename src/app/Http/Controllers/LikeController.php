@@ -8,19 +8,19 @@ use App\Models\Like;
 
 class LikeController extends Controller
 {
-    public function like($product_id)
+    public function like($item_id)
     {
         Like::create([
-            'product_id' => $product_id,
+            'item_id' => $item_id,
             'user_id' => Auth::id()
         ]);
         return back();
     }
 
-    public function unlike($product_id)
+    public function unlike($item_id)
     {
         $user_id = Auth::id();
-        $like = Like::where('product_id', $product_id)->where('user_id', $user_id)->first();
+        $like = Like::where('product_id', $item_id)->where('user_id', $user_id)->first();
         $like->delete();
         return back();
     }

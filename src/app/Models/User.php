@@ -41,9 +41,9 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    public function products()
+    public function items()
     {
-        return $this->hasMany(Product::class);
+        return $this->hasMany(Item::class);
     }
 
     public function likes()

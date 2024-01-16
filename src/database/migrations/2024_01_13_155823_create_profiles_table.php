@@ -16,6 +16,7 @@ class CreateProfilesTable extends Migration
         Schema::create('profiles', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('user_id');
+            $table->unsignedBigInteger('payment_id')->default(1);
             $table->string('image_url');
             $table->string('user_name');
             $table->string('postcode');
@@ -24,6 +25,7 @@ class CreateProfilesTable extends Migration
             $table->timestamps();
 
             $table->foreign('user_id')->references('id')->on('users');
+            $table->foreign('payment_id')->references('id')->on('payments');
         });
     }
 

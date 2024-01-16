@@ -9,8 +9,8 @@ class Condition extends Model
 {
     use HasFactory;
 
-    public function products()
+    public function items()
     {
-        return $this->hasMany(Product::class);
+        return $this->hasMany(Item::class);
     }
 }
