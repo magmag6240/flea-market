@@ -26,6 +26,7 @@ Route::middleware('auth')->group(function(){
     Route::get('/sell', [MarketController::class, 'sell'])->name('user.sell');
     Route::post('/sell', [MarketController::class, 'sell_store'])->name('user.sell_store');
     Route::get('/purchase/{item_id}', [MarketController::class, 'purchase'])->name('user.purchase');
+    Route::get('/purchase/{item_id}', [MarketController::class, 'purchase_store'])->name('user.purchase_store');
     Route::get('/purchase/address/{item_id}', [MarketController::class, 'address_edit'])->name('user.address_edit');
     Route::patch('/purchase/address/{item_id}', [MypageController::class, 'address_update'])->name('user.address_update');
     Route::get('/mypage', [MypageController::class, 'index'])->name('user.mypage');

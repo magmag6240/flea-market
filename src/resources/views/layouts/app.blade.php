@@ -36,7 +36,7 @@
                 <li class="header-nav-list"><a class="list-link" href="/login">ログイン</a></li>
                 <li class="header-nav-list"><a class="list-link" href="/register">会員登録</a></li>
                 @endif
-                <li class="header-nav-list"><a class="list-link" href="/listing">出品</a></li>
+                <li class="header-nav-list"><a class="list-link" href="/sell">出品</a></li>
             </ul>
         </nav>
     </header>

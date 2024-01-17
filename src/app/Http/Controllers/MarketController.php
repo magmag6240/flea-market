@@ -29,7 +29,7 @@ class MarketController extends Controller
     {
         Item::create([
             'name' => $request->input('item_name'),
-            'user_id' => Auth::id(),
+            'seller_id' => Auth::id(),
             'condition_id' => $request->input('condition'),
             'bland_name' => $request->input('bland_name'),
             'price' => $request->input('price'),
@@ -45,6 +45,15 @@ class MarketController extends Controller
         $item = Item::where('item_id', $item_id)->first();
         $profile = Profile::where('user_id', $user_id)->first();
         return view('purchase', compact('item', 'profile'));
+    }
+
+    public function purchase_store(Request $request, $item_id, $buyer_id)
+    {
+        Item::find('id', $item_id)->update([
+            'payment_id' => $request->input('payment_id'),
+            'buyer_id' => $buyer_id
+        ]);
+        return redirect()->route('user.mypage');
     }
 
     public function address_edit(Request $request, $item_id)

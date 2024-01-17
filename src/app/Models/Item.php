@@ -10,7 +10,7 @@ class Item extends Model
 {
     use HasFactory;
 
-    public function user()
+    public function seller()
     {
         return $this->belongsTo(User::class);
     }
@@ -35,7 +35,13 @@ class Item extends Model
         return $this->hasMany(ItemAccess::class);
     }
 
-    public function recommendations() {
+    public function payment()
+    {
+        return $this->belongsTo(Payment::class);
+    }
+
+    public function recommendations()
+    {
         return $this->hasMany(ItemRecommendation::class);
     }
 
