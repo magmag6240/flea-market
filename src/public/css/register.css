@@ -9,6 +9,20 @@
     color: #000;
 }
 
+@media (min-width:375px) {
+    .register-title {
+        font-size: 4.5vw;
+        margin: 20vw 0 5vw 0;
+    }
+}
+
+@media (min-width:425px) {
+    .register-title {
+        font-size: 4.3vw;
+        margin: 18vw 0 5vw 0;
+    }
+}
+
 @media (min-width:768px) {
     .register-title {
         font-size: 3.2vw;
@@ -41,6 +55,20 @@
     flex-direction: column;
 }
 
+@media (min-width:375px) {
+    .register-group {
+        margin: 2vw 0 4vw 0;
+        width: 65vw;
+    }
+}
+
+@media (min-width:425px) {
+    .register-group {
+        margin: 2vw 0 3.7vw 0;
+        width: 62vw;
+    }
+}
+
 @media (min-width:768px) {
     .register-group {
         margin: 2vw 0 3.5vw 0;
@@ -68,6 +96,18 @@
     align-self: flex-start;
 }
 
+@media (min-width:375px) {
+    .register-group-title {
+        font-size: 3.2vw;
+    }
+}
+
+@media (min-width:425px) {
+    .register-group-title {
+        font-size: 3vw;
+    }
+}
+
 @media (min-width:768px) {
     .register-group-title {
         font-size: 1.9vw;
@@ -89,32 +129,26 @@
 .input-email, .input-password {
     border: 0.1vw solid #696969;
     border-radius: 3px;
-}
-
-@media (min-width:768px) {
-    .input-email,
-    .input-password {
-        padding: 1vw;
-    }
-}
-
-@media (min-width:1024px) {
-    .input-email,
-    .input-password {
-        padding: 1vw;
-    }
-}
-
-@media (min-width:1440px) {
-    .input-email,
-    .input-password {
-        padding: 1vw;
-    }
+    padding: 1vw;
 }
 
 .register-error {
     width: fit-content;
     color: #f00;
+}
+
+@media (min-width:375px) {
+    .register-error {
+        font-size: 1.6vw;
+        margin-left: 8vw;
+    }
+}
+
+@media (min-width:425px) {
+    .register-error {
+        font-size: 1.6vw;
+        margin-left: 8vw;
+    }
 }
 
 @media (min-width:768px) {
@@ -146,6 +180,22 @@
     cursor: pointer;
 }
 
+@media (min-width:375px) {
+    .register-button {
+        font-size: 3.2vw;
+        padding: 2vw 0;
+        margin: 5.5vw 0 3vw 0;
+    }
+}
+
+@media (min-width:425px) {
+    .register-button {
+        font-size: 3vw;
+        padding: 1.7vw 0;
+        margin: 5vw 0 2.5vw 0;
+    }
+}
+
 @media (min-width:768px) {
     .register-button {
         font-size: 1.8vw;
@@ -173,6 +223,18 @@
 .login-link {
     text-decoration: none;
     color: #4169E1;
+}
+
+@media (min-width:375px) {
+    .login-link {
+        font-size: 3.2vw;
+    }
+}
+
+@media (min-width:425px) {
+    .login-link {
+        font-size: 3vw;
+    }
 }
 
 @media (min-width:768px) {

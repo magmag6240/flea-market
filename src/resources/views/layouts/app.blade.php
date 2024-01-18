@@ -13,17 +13,15 @@
 
 <body>
     <header class="header">
-        @if(!Route::is('user.sell'))
+        @if(!Route::is('user.sell') && !Route::is('user.address_edit'))
         <div class="header-logo">
             <img class="header-logo-img" src="logo_img.svg" alt="">
             <img class="header-logo-coachtech-img" src="coachtech_img.png" alt="">
         </div>
         @endif
+        @if(!Route::is('login') && !Route::is('register'))
         <nav class="header-nav">
             <ul class="header-nav-ul">
-                @if(Route::is(''))
-
-                @endif
                 @if(Auth::check())
                 <form class="header-nav-form" action="/logout" method="post">
                     @csrf
@@ -36,9 +34,10 @@
                 <li class="header-nav-list"><a class="list-link" href="/login">ログイン</a></li>
                 <li class="header-nav-list"><a class="list-link" href="/register">会員登録</a></li>
                 @endif
-                <li class="header-nav-list"><a class="list-link" href="/sell">出品</a></li>
+                <li class="header-nav-list"><a class="list-link-sell" href="/sell">出品</a></li>
             </ul>
         </nav>
+        @endif
     </header>
 
     <main>
