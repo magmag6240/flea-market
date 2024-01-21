@@ -34,7 +34,9 @@
                 <li class="header-nav-list"><a class="list-link" href="/login">ログイン</a></li>
                 <li class="header-nav-list"><a class="list-link" href="/register">会員登録</a></li>
                 @endif
+                @if(!Route::is('user.sell') && !Route::is('user.address_edit'))
                 <li class="header-nav-list"><a class="list-link-sell" href="/sell">出品</a></li>
+                @endif
             </ul>
         </nav>
         @endif

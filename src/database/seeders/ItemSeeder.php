@@ -3,7 +3,8 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
-use Illuminate\Support\Facades\DB;
+use App\Models\Item;
+use App\Models\User;
 
 class ItemSeeder extends Seeder
 {
@@ -14,9 +15,7 @@ class ItemSeeder extends Seeder
      */
     public function run()
     {
-        $params = [
-
-        ];
-        DB::table('items')->insert($params);
+        User::factory(30)->create();
+        Item::factory(4)->create();
     }
 }
