@@ -15,8 +15,10 @@
     <header class="header">
         @if(!Route::is('user.sell') && !Route::is('user.address_edit'))
         <div class="header-logo">
-            <img class="header-logo-img" src="logo_img.svg" alt="">
-            <img class="header-logo-coachtech-img" src="coachtech_img.png" alt="">
+            <a class="top-link" href="{{ route('user.top') }}">
+                <img class="header-logo-img" src="logo_img.svg" alt="">
+                <img class="header-logo-coachtech-img" src="coachtech_img.png" alt="">
+            </a>
         </div>
         @endif
         @if(!Route::is('login') && !Route::is('register'))

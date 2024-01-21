@@ -10,7 +10,7 @@
     padding: 0 3vw;
 }
 
-.header-logo {
+.header-logo, .top-link {
     display: flex;
 }
 

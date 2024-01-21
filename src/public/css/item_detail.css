@@ -1,0 +1,268 @@
+
+.item-detail-content {
+    display: flex;
+    justify-content: space-between;
+}
+
+@media (min-width:375px) {
+    .item-detail-content {
+        padding: 10vw 8vw;
+        flex-direction: column;
+    }
+}
+
+@media (min-width:425px) {
+    .item-detail-content {
+        padding: 12vw 9vw;
+        flex-direction: column;
+    }
+}
+
+@media (min-width:768px) {
+    .item-detail-content {
+        padding: 14vw 8vw;
+        flex-direction: row;
+    }
+}
+
+@media (min-width:1024px) {
+    .item-detail-content {
+        padding: 9vw 6vw;
+        flex-direction: row;
+    }
+}
+
+@media (min-width:1440px) {
+    .item-detail-content {
+        padding: 8vw 7vw;
+        flex-direction: row;
+    }
+}
+
+.item-detail-img {
+    width: 100%;
+}
+
+.item-detail-text {
+    text-align: start;
+}
+
+@media (min-width:375px) {
+    .item-detail-image, .item-detail-text {
+        width: 83vw;
+    }
+}
+
+@media (min-width:425px) {
+    .item-detail-image, .item-detail-text {
+        width: 81vw;
+    }
+}
+
+@media (min-width:768px) {
+    .item-detail-image {
+        width: 39vw;
+    }
+    .item-detail-text {
+        width: 41vw;
+    }
+}
+
+@media (min-width:1024px) {
+    .item-detail-image {
+        width: 38vw;
+    }
+    .item-detail-text {
+        width: 42vw;
+    }
+}
+
+@media (min-width:1440px) {
+    .item-detail-image {
+        width: 35vw;
+    }
+    .item-detail-text {
+        width: 45vw;
+    }
+}
+
+.item-name, .info-title, .explanation-title, .category-title, .condition-title {
+    font-weight: bold;
+}
+
+@media (min-width:375px) {
+    .item-name {
+        font-size: 6vw;
+    }
+}
+
+@media (min-width:425px) {
+    .item-name {
+        font-size: 5.5vw;
+    }
+}
+
+@media (min-width:768px) {
+    .item-name {
+        font-size: 3.6vw;
+    }
+}
+
+@media (min-width:1024px) {
+    .item-name {
+        font-size: 3vw;
+    }
+}
+
+@media (min-width:1440px) {
+    .item-name {
+        font-size: 2.3vw;
+    }
+}
+
+@media (min-width:375px) {
+    .item-bland-name {}
+}
+
+@media (min-width:425px) {
+    .item-bland-name {}
+}
+
+@media (min-width:768px) {
+    .item-bland-name {}
+}
+
+@media (min-width:1024px) {
+    .item-bland-name {}
+}
+
+@media (min-width:1440px) {
+    .item-bland-name {}
+}
+
+@media (min-width:375px) {
+    .item-price {}
+}
+
+@media (min-width:425px) {
+    .item-price {}
+}
+
+@media (min-width:768px) {
+    .item-price {}
+}
+
+@media (min-width:1024px) {
+    .item-price {}
+}
+
+@media (min-width:1440px) {
+    .item-price {}
+}
+
+.item-purchase-button {
+    background-color: #CD5C5C;
+    border: none;
+    cursor: pointer;
+    border-radius: 3px;
+    width: 85%;
+}
+
+.item-purchase-link {
+    color: #fff;
+    text-decoration: none;
+}
+
+@media (min-width:375px) {
+    .item-purchase-link {
+        font-size: 4vw;
+    }
+}
+
+@media (min-width:425px) {
+    .item-purchase-link {
+        font-size: 3.7vw;
+    }
+}
+
+@media (min-width:768px) {
+    .item-purchase-link {
+        font-size: 2.5vw;
+    }
+}
+
+@media (min-width:1024px) {
+    .item-purchase-link {
+        font-size: 1.8vw;
+    }
+}
+
+@media (min-width:1440px) {
+    .item-purchase-link {
+        font-size: 1.3vw;
+    }
+}
+
+@media (min-width:375px) {
+    .info-title, .explanation-title {
+        font-size: 5.2vw;
+    }
+}
+
+@media (min-width:425px) {
+    .info-title, .explanation-title {
+        font-size: 4.3vw;
+    }
+}
+
+@media (min-width:768px) {
+    .info-title, .explanation-title {
+        font-size: 3.2vw;
+    }
+}
+
+@media (min-width:1024px) {
+    .info-title, .explanation-title {
+        font-size: 2.5vw;
+    }
+}
+
+@media (min-width:1440px) {
+    .info-title, .explanation-title {
+        font-size: 1.7vw;
+    }
+}
+
+.item-detail-category, .item-detail-condition {
+    display: flex;
+}
+
+@media (min-width:375px) {
+    .category-title, .condition-title {
+        font-size: 4.3vw;
+    }
+}
+
+@media (min-width:425px) {
+    .category-title, .condition-title {
+        font-size: 4vw;
+    }
+}
+
+@media (min-width:768px) {
+    .category-title, .condition-title {
+        font-size: 2.3vw;
+    }
+}
+
+@media (min-width:1024px) {
+    .category-title, .condition-title {
+        font-size: 1.8vw
+    }
+}
+
+@media (min-width:1440px) {
+    .category-title, .condition-title {
+        font-size: 1.3vw;
+    }
+}

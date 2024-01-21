@@ -5,5 +5,38 @@
 @endsection
 
 @section('content')
-index
+
+<div class="item-detail-content">
+    <div class="item-detail-image">
+        <img class="item-detail-img" src="{{ $item_detail->image_url }}" alt="">
+    </div>
+    <div class="item-detail-text">
+        <p class="item-name">{{ $item_detail->name }}</p>
+        <span class="item-bland-name">{{ $item_detail->bland_name }}</span>
+        <p class="item-price">￥{{ $item_detail->price }}</p>
+        <div class="item-reaction">
+            <div></div>
+            <div></div>
+        </div>
+        <button class="item-purchase-button">
+            <a class="item-purchase-link" href="{{ route('user.purchase', ['item_id' => $item_detail->id]) }}">購入する</a>
+        </button>
+        <div class="item-detail-explanation">
+            <p class="explanation-title">商品説明</p>
+            <p class="explanation-text">{{ $item_detail->item_detail }}</p>
+        </div>
+        <div class="item-detail-info">
+            <p class="info-title">商品の情報</p>
+            <div class="item-detail-category">
+                <p class="category-title">カテゴリー</p>
+                <p class="category-detail">{{ $item_detail->condition->condition }}</p>
+            </div>
+            <div class="item-detail-condition">
+                <p class="condition-title">商品の状態</p>
+                <p class="condition-detail">{{ $item_detail->condition->condition }}</p>
+            </div>
+        </div>
+    </div>
+</div>
+
 @endsection

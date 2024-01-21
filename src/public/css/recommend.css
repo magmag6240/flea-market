@@ -10,6 +10,20 @@
     border-bottom: 0.15vw solid #696969;
 }
 
+@media (min-width:375px) {
+    .top-title {
+        padding: 2vw 0 0.1vw 10vw;
+        font-size: 3.2vw;
+    }
+}
+
+@media (min-width:425px) {
+    .top-title {
+        padding: 2vw 0 0.1vw 10vw;
+        font-size: 2.8vw;
+    }
+}
+
 @media (min-width:768px) {
     .top-title {
         padding: 2vw 0 0.1vw 10vw;
@@ -36,6 +50,18 @@
     color: #FF0000;
 }
 
+@media (min-width:375px) {
+    .top-title-recommend {
+        margin-right: 7.5vw;
+    }
+}
+
+@media (min-width:425px) {
+    .top-title-recommend {
+        margin-right: 7.2vw;
+    }
+}
+
 @media (min-width:768px) {
     .top-title-recommend {
         margin-right: 7vw;
@@ -58,4 +84,99 @@
     cursor: pointer;
     text-decoration: none;
     color: #696969;
+}
+
+.recommend-list {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+@media (min-width:375px) {
+    .recommend-list {
+        padding: 4vw 5vw;
+    }
+}
+
+@media (min-width:425px) {
+    .recommend-list {
+        padding: 3vw 6vw;
+    }
+}
+
+@media (min-width:768px) {
+    .recommend-list {
+        padding: 2.7vw 5vw;
+    }
+}
+
+@media (min-width:1024px) {
+    .recommend-list {
+        padding: 2.5vw 4vw;
+    }
+}
+
+@media (min-width:1440px) {
+    .recommend-list {
+        padding: 2vw 3vw;
+    }
+}
+
+@media (min-width:375px) {
+    .recommend-item-detail-link {
+        margin: 2vw;
+    }
+}
+
+@media (min-width:425px) {
+    .recommend-item-detail-link {
+        margin: 2vw;
+    }
+}
+
+@media (min-width:768px) {
+    .recommend-item-detail-link {
+        margin: 2vw;
+    }
+}
+
+@media (min-width:1024px) {
+    .recommend-item-detail-link {
+        margin: 2vw;
+    }
+}
+
+@media (min-width:1440px) {
+    .recommend-item-detail-link {
+        margin: 2vw;
+    }
+}
+
+@media (min-width:375px) {
+    .recommend-item-img {
+        width: 26vw;
+    }
+}
+
+@media (min-width:425px) {
+    .recommend-item-img {
+        width: 25vw;
+    }
+}
+
+@media (min-width:768px) {
+    .recommend-item-img {
+        width: 18.5vw;
+    }
+}
+
+@media (min-width:1024px) {
+    .recommend-item-img {
+        width: 14.4vw;
+    }
+}
+
+@media (min-width:1440px) {
+    .recommend-item-img {
+        width: 14.8vw;
+    }
 }

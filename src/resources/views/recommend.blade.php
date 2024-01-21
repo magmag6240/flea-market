@@ -13,7 +13,9 @@
     </div>
     <div class="recommend-list">
         @foreach($recommend_items as $item)
-        <img class="recommend-item" src="{{$item->image_url}}">
+        <a class="recommend-item-detail-link" href="{{ route('user.item_detail', ['item_id' => $item->id]) }}">
+            <img class="recommend-item-img" src="{{$item->image_url}}">
+        </a>
         @endforeach
     </div>
 </div>
