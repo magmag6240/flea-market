@@ -24,7 +24,6 @@ class CreateItemsTable extends Migration
             $table->integer('price');
             $table->text('item_detail');
             $table->string('image_url');
-            $table->text('comments')->nullable();
             $table->dateTime('recommendation_updated_at')->nullable();
             $table->timestamps();
 

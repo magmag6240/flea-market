@@ -5,6 +5,7 @@ namespace App\Models;
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Auth;
 
 class Item extends Model
 {
@@ -33,6 +34,11 @@ class Item extends Model
         return $this->hasMany(Like::class);
     }
 
+    public function comments()
+    {
+        return $this->hasMany(Comment::class);
+    }
+
     public function condition()
     {
         return $this->belongsTo(Condition::class);
@@ -56,6 +62,22 @@ class Item extends Model
     public function recommendations()
     {
         return $this->hasMany(ItemRecommendation::class);
+    }
+
+    public function is_liked()
+    {
+        $id = Auth::id();
+
+        $likers = array();
+        foreach ($this as $like) {
+            array_push($likers, $like);
+        }
+
+        if (in_array($id, $likers)) {
+            return true;
+        } else {
+            return false;
+        }
     }
 
     public function updateRecommendation() {
