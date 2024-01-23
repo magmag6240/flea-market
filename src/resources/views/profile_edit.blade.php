@@ -12,10 +12,10 @@
         @csrf
         @method('patch')
         <div class="edit-group">
-            <p class="edit-group-title">ユーザー名</p>
-            <input class="input-name" name="name" type="name" value="{{ old('name') }}">
+            <img src="" alt="">
+            <button><a href="">画像を選択する</a></button>
             @if ($errors->any())
-            <div class="login-error">
+            <div class="profile-edit-error">
                 @error('name')
                 {{ $message }}
                 @enderror
@@ -23,10 +23,21 @@
             @endif
         </div>
         <div class="edit-group">
-            <p class="edit-group-title">郵便番号</p>
+            <span class="edit-group-title">ユーザー名</span>
+            <input class="input-name" name="name" type="name" value="{{ old('name') }}">
+            @if ($errors->any())
+            <div class="profile-edit-error">
+                @error('name')
+                {{ $message }}
+                @enderror
+            </div>
+            @endif
+        </div>
+        <div class="edit-group">
+            <span class="edit-group-title">郵便番号</span>
             <input class="input-postcode" name="postcode" type="postcode" value="{{ old('postcode') }}">
             @if ($errors->any())
-            <div class="login-error">
+            <div class="profile-edit-error">
                 @error('postcode')
                 {{ $message }}
                 @enderror
@@ -34,10 +45,10 @@
             @endif
         </div>
         <div class="edit-group">
-            <p class="edit-group-title">住所</p>
+            <span class="edit-group-title">住所</span>
             <input class="input-address" name="address" type="address" value="{{ old('address') }}">
             @if ($errors->any())
-            <div class="login-error">
+            <div class="profile-edit-error">
                 @error('address')
                 {{ $message }}
                 @enderror
@@ -45,10 +56,10 @@
             @endif
         </div>
         <div class="edit-group">
-            <p class="edit-group-title">建物名</p>
+            <span class="edit-group-title">建物名</span>
             <input class="input-building" name="building" type="building" value="{{ old('building') }}">
             @if ($errors->any())
-            <div class="login-error">
+            <div class="profile-edit-error">
                 @error('building')
                 {{ $message }}
                 @enderror

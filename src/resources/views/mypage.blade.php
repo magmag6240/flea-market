@@ -1,124 +1,60 @@
 @extends('layouts.app')
 
 @section('css')
-<link rel="stylesheet" href="{{ asset('css/index.css') }}">
+<link rel="stylesheet" href="{{ asset('css/mypage.css') }}">
 @endsection
 
 @section('content')
 
-<div class="js-tab-panel">
-    <div class="js-tab-panel-group">
-        <p class="js-tab active_tab">おすすめ</p>
-        <p class="js-tab inactive_tab">マイリスト</p>
+<div class="mypage-content">
+    <div class="user-detail">
+        <div class="user-detail-content">
+            <div class="user-image"></div>
+            <p class="user-name"></p>
+        </div>
+        <button class="user-profile-button">
+            <a class="user-profile-link" href="{{ route('user.profile_edit') }}">プロフィールを編集</a>
+        </button>
     </div>
-    <div class="js-panel active_content">
-        @if(!$reserve_shops_from_now_on->isEmpty())
-        <div class="reserve-detail">
-            @foreach($reserve_shops_from_now_on as $item)
-            <form class="reserve-delete" action="{{route('reserve.destroy', ['reserve_id' => $item->id ])}}" method="post">
-                @method('DELETE')
-                @csrf
-                <div class="reserve-detail-title">
-                    <p class="reserve-number">予約{{$item->id}}</p>
-                    @if(is_null($item->menu_id))
-                    <button class="reserve-delete-button" type="submit" onclick='return confirm("予約を削除しますか？")'></button>
-                    @endif
-                </div>
-            </form>
-            <table class="reserve-table">
-                <tr class="reserve-table-tr">
-                    <td class="reserve-table-td">Shop</td>
-                    <td class="reserve-table-td">{{$item->shop->shop_name}}</td>
-                </tr>
-                <tr class="reserve-table-tr">
-                    <td class="reserve-table-td">Date</td>
-                    <td class="reserve-table-td">{{$item->reserve_date}}</td>
-                </tr>
-                <tr class="reserve-table-tr">
-                    <td class="reserve-table-td">Time</td>
-                    <td class="reserve-table-td">{{$item->start_time}}</td>
-                </tr>
-                <tr class="reserve-table-tr">
-                    <td class="reserve-table-td">Number</td>
-                    <td class="reserve-table-td">{{$item->number}}人</td>
-                </tr>
-                <tr class="reserve-table-tr">
-                    <td class="reserve-table-td">Menu</td>
-                    @if(is_null($item->menu_id))
-                    <td class="reserve-table-td">座席のみのご予約</td>
-                    @else
-                    <td class="reserve-table-td">コースプランあり</td>
-                    @endif
-                </tr>
-                <tr class="reserve-table-tr">
-                    <td class="reserve-table-td">QR code</td>
-                    <td class="reserve-table-td">{{QrCode::generate($item->id)}}</td>
-                </tr>
-            </table>
-            @if(is_null($item->menu_id))
-            <button class="reserve-edit-button"><a class="reserve-edit-link" href="{{route('reserve.edit', ['reserve_id' => $item->id ])}}">予約内容変更</a></button>
-            @endif
-            @endforeach
-        </div>
-        <div class="reserve-paginate">
-            {{ $reserve_shops_from_now_on->links() }}
-            全{{ $reserve_shops_from_now_on->total() }}件中{{ $reserve_shops_from_now_on->currentPage() }}件目
-        </div>
-        @else
-        <div class="reserve-null">
-            <p class="reserve-null-text">予約予定はありません</p>
-        </div>
-        @endif
-    </div>
-    <div class="js-panel inactive_content">
-        @if(!$reserve_shops_history->isEmpty())
-        <div class="reserve-detail">
-            @foreach($reserve_shops_history as $item)
-            <div class="reserve-detail-title">
-                <p class="reserve-number">予約{{$item->id}}</p>
+    <div class="user-item-list">
+        <div class="js-tab-panel">
+            <div class="js-tab-panel-group">
+                <p class="js-tab active_tab">出品した商品</p>
+                <p class="js-tab inactive_tab">購入した商品</p>
             </div>
-            <table class="reserve-table">
-                <tr class="reserve-table-tr">
-                    <td class="reserve-table-td">Shop</td>
-                    <td class="reserve-table-td">{{$item->shop->shop_name}}</td>
-                </tr>
-                <tr class="reserve-table-tr">
-                    <td class="reserve-table-td">Date</td>
-                    <td class="reserve-table-td">{{$item->reserve_date}}</td>
-                </tr>
-                <tr class="reserve-table-tr">
-                    <td class="reserve-table-td">Time</td>
-                    <td class="reserve-table-td">{{$item->start_time}}</td>
-                </tr>
-                <tr class="reserve-table-tr">
-                    <td class="reserve-table-td">Number</td>
-                    <td class="reserve-table-td">{{$item->number}}人</td>
-                </tr>
-                <tr class="reserve-table-tr">
-                    <td class="reserve-table-td">Menu</td>
-                    @if(is_null($item->menu_id))
-                    <td class="reserve-table-td">座席のみのご予約</td>
-                    @else
-                    <td class="reserve-table-td">コースプランあり</td>
-                    @endif
-                </tr>
-                <tr class="reserve-table-tr">
-                    <td class="reserve-table-td">QR code</td>
-                    <td class="reserve-table-td">{{QrCode::generate($item->id)}}</td>
-                </tr>
-            </table>
-        </div>
-        @endforeach
-        <div class="reserve-history-paginate">
-            {{ $reserve_shops_history->links() }}
-            全{{ $reserve_shops_history->total() }}件中{{ $reserve_shops_history->currentPage() }}件目
+            <div class="js-panel active_content">
+                @if(!$sell_item->isEmpty())
+                @foreach($sell_item as $item)
+                <div class="sell-item-detail">
+                    <a class="sell-item-detail-link" href="{{ route('user.item_detail', ['item_id' => $item->id]) }}">
+                        <img class="sell-item-img" src="{{$item->image_url}}">
+                    </a>
+                </div>
+                @endforeach
+                @else
+                <div class="sell-item-null">
+                    <p class="sell-item-null-text">出品履歴はありません</p>
+                </div>
+                @endif
+            </div>
+            <div class="js-panel inactive_content">
+                @if(!$purchase_item->isEmpty())
+                @foreach($purchase_item as $item)
+                <div class="purchase-item-detail">
+                    <a class="purchase-item-detail-link" href="{{ route('user.item_detail', ['item_id' => $item->id]) }}">
+                        <img class="purchase-item-img" src="{{$item->image_url}}">
+                    </a>
+                </div>
+                @endforeach
+                @else
+                <div class="purchase-item-null">
+                    <p class="purchase-item-null-text">購入履歴はありません</p>
+                </div>
+                @endif
+            </div>
         </div>
     </div>
-    @else
-    <div class="reserve-history-null">
-        <p class="reserve-history-null-text">予約履歴はありません</p>
-    </div>
-    @endif
 </div>
+<script src="{{ mix('js/tab.js') }}"></script>
 
 @endsection

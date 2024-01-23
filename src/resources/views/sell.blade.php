@@ -8,14 +8,14 @@
 
 <div class="sell-content">
     <h1 class="sell-title">商品の出品</h1>
-    <form class="sell-form" action="" method="post">
+    <form class="sell-form" action="{{ route('user.sell_store') }}" method="post">
         @csrf
         @method('patch')
         <div class="sell-group">
             <span class="sell-group-title">商品画像</span>
             <div class="sell-group-content">
                 <div class="sell-image" name="image" value="">
-                    <p></p>
+                    <button class="sell-image-button"><a class="sell-image-link" href="">画像を選択する</a></button>
                 </div>
                 <div class="sell-error">
                     @error('name')

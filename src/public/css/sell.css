@@ -62,6 +62,56 @@
     font-weight: bold;
 }
 
+.sell-group-title {
+    color: #000;
+    font-weight: bold;
+}
+
+@media (min-width:375px) {
+    .sell-group-title {
+        font-size: 3.2vw;
+    }
+    .sell-lot-title {
+        font-size: 3.5vw;
+    }
+}
+
+@media (min-width:425px) {
+    .sell-group-title {
+        font-size: 3vw;
+    }
+    .sell-lot-title {
+        font-size: 3.2vw;
+    }
+}
+
+@media (min-width:768px) {
+    .sell-group-title {
+        font-size: 2vw;
+    }
+    .sell-lot-title {
+        font-size: 2.5vw;
+    }
+}
+
+@media (min-width:1024px) {
+    .sell-group-title {
+        font-size: 1.5vw;
+    }
+    .sell-lot-title {
+        font-size: 2vw;
+    }
+}
+
+@media (min-width:1440px) {
+    .sell-group-title {
+        font-size: 1.2vw;
+    }
+    .sell-lot-title {
+        font-size: 1.5vw;
+    }
+}
+
 .sell-group {
     display: inline-flex;
     flex-direction: column;
@@ -108,41 +158,6 @@
 
 .sell-group-content, .sell-input, .sell-textarea {
     width: 100%;
-}
-
-.sell-group-title {
-    color: #000;
-    font-weight: bold;
-}
-
-@media (min-width:375px) {
-    .sell-group-title {
-        font-size: 3.2vw;
-    }
-}
-
-@media (min-width:425px) {
-    .sell-group-title {
-        font-size: 3vw;
-    }
-}
-
-@media (min-width:768px) {
-    .sell-group-title {
-        font-size: 2vw;
-    }
-}
-
-@media (min-width:1024px) {
-    .sell-group-title {
-        font-size: 1.5vw;
-    }
-}
-
-@media (min-width:1440px) {
-    .sell-group-title {
-        font-size: 1.2vw;
-    }
 }
 
 .sell-input {
@@ -208,7 +223,7 @@
     .sell-form-button {
         font-size: 3.2vw;
         padding: 2vw 0;
-        margin: 10vw 0 3vw 0;
+        margin: 10vw 0 5vw 0;
     }
 }
 
@@ -216,7 +231,7 @@
     .sell-form-button {
         font-size: 3vw;
         padding: 1.7vw 0;
-        margin: 9vw 0 2.5vw 0;
+        margin: 9vw 0 7vw 0;
     }
 }
 
@@ -224,7 +239,7 @@
     .sell-form-button {
         font-size: 1.8vw;
         padding: 1.2vw 0;
-        margin: 6vw 0 1.5vw 0;
+        margin: 6vw 0 5vw 0;
     }
 }
 
@@ -232,7 +247,7 @@
     .sell-form-button {
         font-size: 1.4vw;
         padding: 0.8vw 0;
-        margin: 5.5vw 0 1.3vw 0;
+        margin: 5.5vw 0 4vw 0;
     }
 }
 
@@ -240,6 +255,6 @@
     .sell-form-button {
         font-size: 1.2vw;
         padding: 0.6vw 0;
-        margin: 3.2vw 0 1vw 0;
+        margin: 3.2vw 0 3vw 0;
     }
 }

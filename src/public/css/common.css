@@ -133,6 +133,7 @@
 .list-link-sell {
     color: #000;
     background-color: #fff;
+    border-radius: 3px;
 }
 
 .list-link {
@@ -140,32 +141,74 @@
 }
 
 @media (min-width: 375px) {
-    .list-link, .list-link-sell {
+    .list-link, .list-link-sell, .logout-button {
         font-size: 3.5vw;
     }
 }
 
 @media (min-width: 425px) {
-    .list-link, .list-link-sell {
+    .list-link, .list-link-sell, .logout-button {
         font-size: 3.3vw;
     }
 }
 
 @media (min-width:768px) {
-    .list-link, .list-link-sell {
+    .list-link, .list-link-sell, .logout-button {
         font-size: 2.2vw;
     }
 }
 
 @media (min-width:1024px) {
-    .list-link, .list-link-sell {
+    .list-link, .list-link-sell, .logout-button {
         font-size: 1.7vw;
     }
 }
 
 @media (min-width:1440px) {
-    .list-link, .list-link-sell {
+    .list-link, .list-link-sell, .logout-button {
         font-size: 1.3vw;
+    }
+}
+
+.logout-button {
+    border: none;
+    background-color: #000;
+    color: #fff;
+    cursor: pointer;
+}
+
+@media (min-width: 375px) {
+    .list-link-sell {
+        padding: 1.5vw 1vw;
+        margin-left: 2vw;
+    }
+}
+
+@media (min-width: 425px) {
+    .list-link-sell {
+        padding: 2vw 1.5vw;
+        margin-left: 2vw;
+    }
+}
+
+@media (min-width:768px) {
+    .list-link-sell {
+        padding: 0.7vw 2vw;
+        margin-left: 1.5vw;
+    }
+}
+
+@media (min-width:1024px) {
+    .list-link-sell {
+        padding: 0.6vw 1.8vw;
+        margin-left: 1vw;
+    }
+}
+
+@media (min-width:1440px) {
+    .list-link-sell {
+        padding: 0.4vw 1.4vw;
+        margin-left: 0.7vw;
     }
 }
 
