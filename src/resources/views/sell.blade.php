@@ -12,9 +12,11 @@
         @csrf
         @method('patch')
         <div class="sell-group">
-            <p class="sell-group-title">商品画像</p>
+            <span class="sell-group-title">商品画像</span>
             <div class="sell-group-content">
-                <input class="sell-input" type="text" name="name" value="">
+                <div class="sell-image" name="image" value="">
+                    <p></p>
+                </div>
                 <div class="sell-error">
                     @error('name')
                     {{ $message }}
@@ -25,7 +27,7 @@
         <div class="sell-lot">
             <p class="sell-lot-title">商品の詳細</p>
             <div class="sell-group">
-                <p class="sell-group-title">カテゴリー</p>
+                <span class="sell-group-title">カテゴリー</span>
                 <div class="sell-group-content">
                     <input class="sell-input" type="text" name="" value="">
                     <div class="sell-error">
@@ -36,7 +38,7 @@
                 </div>
             </div>
             <div class="sell-group">
-                <p class="sell-group-title">商品の状態</p>
+                <span class="sell-group-title">商品の状態</span>
                 <div class="sell-group-content">
                     <input class="sell-input" type="text" name="" value="">
                     <div class="sell-error">
@@ -50,7 +52,7 @@
         <div class="sell-lot">
             <p class="sell-lot-title">商品名と説明</p>
             <div class="sell-group">
-                <p class="sell-group-title">商品名</p>
+                <span class="sell-group-title">商品名</span>
                 <div class="sell-group-content">
                     <input class="sell-input" type="text" name="" value="">
                     <div class="sell-error">
@@ -61,9 +63,9 @@
                 </div>
             </div>
             <div class="sell-group">
-                <p class="sell-group-title">商品の説明</p>
+                <span class="sell-group-title">商品の説明</span>
                 <div class="sell-group-content">
-                    <input class="sell-input" type="text" name="" value="">
+                    <textarea class="sell-textarea" type="text" name="" value=""></textarea>
                     <div class="sell-error">
                         @error('name')
                         {{ $message }}
@@ -75,7 +77,7 @@
         <div class="sell-lot">
             <p class="sell-lot-title">販売価格</p>
             <div class="sell-group">
-                <p class="sell-group-title">販売価格</p>
+                <span class="sell-group-title">販売価格</span>
                 <div class="sell-group-content">
                     <input class="sell-input" type="text" name="" value="">
                     <div class="sell-error">

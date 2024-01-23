@@ -171,6 +171,15 @@
     .item-price {}
 }
 
+.item-reaction {
+    display: flex;
+}
+
+.like, .comment {
+    display: flex;
+    flex-direction: row;
+}
+
 .comment-link::before {
     font-family: 'Font Awesome 5 Free';
     font-weight: 900;
@@ -244,4 +253,38 @@
 
 .like-link::before {
     color: #696969;
+}
+
+.comment-history {
+    overflow-y: scroll;
+}
+
+@media (min-width:375px) {
+    .comment-history {
+        height: 10vw;
+    }
+}
+
+@media (min-width:425px) {
+    .comment-history {
+        height: 10vw;
+    }
+}
+
+@media (min-width:768px) {
+    .comment-history {
+        height: 10vw;
+    }
+}
+
+@media (min-width:1024px) {
+    .comment-history {
+        height: 10vw;
+    }
+}
+
+@media (min-width:1440px) {
+    .comment-history {
+        height: 10vw;
+    }
 }

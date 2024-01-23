@@ -18,15 +18,15 @@
             <div class="like">
                 @if($item_detail->is_liked())
                 <a class="unlike-link" href="{{ route('unlike', ['item_id' => $item_detail->id]) }}"></a>
-                <p>{{$item_detail->likes->count()}}</p>
+                <span class="like-count">{{$item_detail->likes->count()}}</span>
                 @else
                 <a class="like-link" href="{{ route('like', ['item_id' => $item_detail->id]) }}"></a>
-                <p>{{$item_detail->likes->count()}}</p>
+                <span class="like-count">{{$item_detail->likes->count()}}</span>
                 @endif
             </div>
-            <div class="comments">
+            <div class="comment">
                 <a class="comment-link" href="{{ route('user.comment', ['item_id' => $item_detail->id]) }}"></a>
-                <p>{{$item_detail->comments->count()}}</p>
+                <span class="comment-count">{{$item_detail->comments->count()}}</span>
             </div>
         </div>
         <button class="item-purchase-button">

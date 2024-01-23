@@ -24,11 +24,18 @@
                 <p>{{$item_detail->likes->count()}}</p>
                 @endif
             </div>
-            <div class="comments">
+            <div class="comment">
                 <a class="comment-link" href="{{ route('user.comment', ['item_id' => $item_detail->id]) }}"></a>
                 <p>{{$item_detail->comments->count()}}</p>
             </div>
         </div>
+        <div class="comment-history">
+        </div>
+        <form class="comment-form" action="{{ route('user.comment_store', ['item_id' => $item_detail->id]) }}" method="post">
+            <p class="comment-form-title">商品へのコメント</p>
+            <input class="comment-input" type="text">
+            <button class="comment-form-button">コメントを送信する</button>
+        </form>
     </div>
 </div>
 

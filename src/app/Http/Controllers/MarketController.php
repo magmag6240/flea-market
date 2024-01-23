@@ -42,7 +42,7 @@ class MarketController extends Controller
     public function purchase($item_id)
     {
         $user_id = Auth::id();
-        $item = Item::where('item_id', $item_id)->first();
+        $item = Item::where('id', $item_id)->first();
         $profile = Profile::where('user_id', $user_id)->first();
         return view('purchase', compact('item', 'profile'));
     }
@@ -59,8 +59,9 @@ class MarketController extends Controller
     public function address_edit(Request $request, $item_id)
     {
         $user_id = Auth::id();
+        $item = Item::where('id', $item_id)->first();
         $user_profile = Profile::where('user_id', $user_id)->first();
-        return view('address_edit', compact('user_profile', 'item_id'));
+        return view('address_edit', compact('user_profile', 'item'));
     }
 
     public function address_update(Request $request, $item_id)
