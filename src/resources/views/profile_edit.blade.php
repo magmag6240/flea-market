@@ -8,12 +8,17 @@
 
 <div class="profile-edit-content">
     <h1 class="profile-edit-title">プロフィール設定</h1>
-    <form class="profile-edit-form" action="{{ route('user.profile_update') }}" method="post">
+    <form class="profile-edit-form" action="{{ route('user.profile_update') }}" enctype="multipart/form-data" method="post">
         @csrf
         @method('patch')
         <div class="edit-group">
-            <img src="" alt="">
-            <button><a href="">画像を選択する</a></button>
+            <div class="image-edit">
+                <label class="input-image-label" for="user-image">画像を選択する</label>
+                <input class="user-image" type="file" name="image_url" id="user-image" accept=".jpg, .jpeg, .png">
+            </div>
+            <div class="image-preview">
+                <p>アップロードするファイルが選択されていません</p>
+            </div>
             @if ($errors->any())
             <div class="profile-edit-error">
                 @error('name')
@@ -68,7 +73,7 @@
         </div>
         <button class="update-button" type="submit">更新する</button>
     </form>
-
 </div>
+<script src="{{ mix('js/user_image.js') }}"></script>
 
 @endsection

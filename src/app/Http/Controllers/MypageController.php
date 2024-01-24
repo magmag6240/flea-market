@@ -35,6 +35,9 @@ class MypageController extends Controller
     public function profile_update(Request $request)
     {
         $user_id = Auth::id();
+        $dir = 'user_image';
+        $file_name = $request->file('image')->getClientOriginalName();
+        $request->file('image')->store('public/' . $dir, $file_name);
         $user_detail = $request->input('image_url', 'user_name', 'post_code', 'address', 'building');
         Profile::where('user_id', $user_id)->update($user_detail);
         return redirect()->route('user.mypage');
