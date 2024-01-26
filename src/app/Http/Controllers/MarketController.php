@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
+use App\Models\Condition;
 use App\Models\Item;
 use App\Models\Profile;
 use Illuminate\Http\Request;
@@ -22,20 +24,34 @@ class MarketController extends Controller
 
     public function sell()
     {
-        return view('sell');
+        $category = Category::all();
+        $condition = Condition::all();
+        return view('sell', compact('category', 'condition'));
     }
 
     public function sell_store(Request $request)
     {
+        $image = $request->file('item_image');
+        $path = '';
+        if (isset($image)) {
+            $path = $image->store('item', 'public');
+        }
+
         Item::create([
-            'name' => $request->input('item_name'),
+            'name' => $request->input('name'),
             'seller_id' => Auth::id(),
-            'condition_id' => $request->input('condition'),
-            'bland_name' => $request->input('bland_name'),
+            'condition_id' => $request->input('condition_id'),
+            'brand_name' => $request->input('brand_name'),
             'price' => $request->input('price'),
             'item_detail' => $request->input('item_detail'),
-            'image_url' => $request->input('image_url')
+            'image_url' => $path
         ]);
+
+        foreach(array($request->input('category_id')) as $categories) {
+            $categories_item = Item::where('seller_id', Auth::id())->latest()->first();
+            $categories_item->categories()->attach($categories);
+        }
+
         return redirect()->route('user.mypage');
     }
 
@@ -54,22 +70,6 @@ class MarketController extends Controller
             'buyer_id' => $buyer_id
         ]);
         return redirect()->route('user.mypage');
-    }
-
-    public function address_edit(Request $request, $item_id)
-    {
-        $user_id = Auth::id();
-        $item = Item::where('id', $item_id)->first();
-        $user_profile = Profile::where('user_id', $user_id)->first();
-        return view('address_edit', compact('user_profile', 'item'));
-    }
-
-    public function address_update(Request $request, $item_id)
-    {
-        $user_id = Auth::id();
-        $new_address = $request->input('postcode', 'address', 'building');
-        Profile::find('user_id', $user_id)->update($new_address);
-        return redirect()->route('user.purchase', ['item_id' => $item_id]);
     }
 
     public function item_detail($item_id)

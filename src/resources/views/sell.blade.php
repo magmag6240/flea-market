@@ -8,17 +8,16 @@
 
 <div class="sell-content">
     <h1 class="sell-title">商品の出品</h1>
-    <form class="sell-form" action="{{ route('user.sell_store') }}" method="post">
+    <form class="sell-form" action="{{ route('user.sell_store') }}" method="post" enctype="multipart/form-data">
         @csrf
-        @method('patch')
         <div class="sell-group">
             <span class="sell-group-title">商品画像</span>
             <div class="sell-group-content">
-                <div class="sell-image" name="image" value="">
-                    <button class="sell-image-button"><a class="sell-image-link" href="">画像を選択する</a></button>
+                <div class="sell-image">
+                    <input type="file" name="item_image" id="item_image">
                 </div>
                 <div class="sell-error">
-                    @error('name')
+                    @error('image_url')
                     {{ $message }}
                     @enderror
                 </div>
@@ -27,9 +26,14 @@
         <div class="sell-lot">
             <p class="sell-lot-title">商品の詳細</p>
             <div class="sell-group">
-                <span class="sell-group-title">カテゴリー</span>
+                <span class="sell-group-title">カテゴリー（複数選択可）</span>
                 <div class="sell-group-content">
-                    <input class="sell-input" type="text" name="" value="">
+                    @foreach($category as $category)
+                    <label class="category-group">
+                        <input class="sell-checkbox" type="checkbox" name="category_id[]" value="{{ $category->id }}">
+                        <span class="">{{ $category->category }}</span>
+                    </label>
+                    @endforeach
                     <div class="sell-error">
                         @error('category_id')
                         {{ $message }}
@@ -40,9 +44,14 @@
             <div class="sell-group">
                 <span class="sell-group-title">商品の状態</span>
                 <div class="sell-group-content">
-                    <input class="sell-input" type="text" name="" value="">
+                    @foreach($condition as $condition)
+                    <label class="condition-group">
+                        <input class="sell-radio" type="radio" name="condition_id" value="{{ $condition->id }}">
+                        <span>{{ $condition->condition }}</span>
+                    </label>
+                    @endforeach
                     <div class="sell-error">
-                        @error('name')
+                        @error('condition_id')
                         {{ $message }}
                         @enderror
                     </div>
@@ -54,7 +63,7 @@
             <div class="sell-group">
                 <span class="sell-group-title">商品名</span>
                 <div class="sell-group-content">
-                    <input class="sell-input" type="text" name="" value="">
+                    <input class="sell-input" type="text" name="name" value="">
                     <div class="sell-error">
                         @error('name')
                         {{ $message }}
@@ -63,11 +72,22 @@
                 </div>
             </div>
             <div class="sell-group">
+                <span class="sell-group-title">ブランド名</span>
+                <div class="sell-group-content">
+                    <input class="sell-input" type="text" name="brand_name" value="">
+                    <div class="sell-error">
+                        @error('bland_name')
+                        {{ $message }}
+                        @enderror
+                    </div>
+                </div>
+            </div>
+            <div class="sell-group">
                 <span class="sell-group-title">商品の説明</span>
                 <div class="sell-group-content">
-                    <textarea class="sell-textarea" type="text" name="" value=""></textarea>
+                    <textarea class="sell-textarea" type="text" name="item_detail" value=""></textarea>
                     <div class="sell-error">
-                        @error('name')
+                        @error('item_detail')
                         {{ $message }}
                         @enderror
                     </div>
@@ -79,9 +99,9 @@
             <div class="sell-group">
                 <span class="sell-group-title">販売価格</span>
                 <div class="sell-group-content">
-                    <input class="sell-input" type="text" name="" value="">
+                    <input class="sell-input" type="text" name="price" value="">
                     <div class="sell-error">
-                        @error('name')
+                        @error('price')
                         {{ $message }}
                         @enderror
                     </div>

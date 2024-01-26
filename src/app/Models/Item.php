@@ -17,10 +17,10 @@ class Item extends Model
         'buyer_id',
         'condition_id',
         'payment_id',
-        'bland_name',
+        'brand_name',
         'price',
         'item_detail',
-        'comments',
+        'image_url',
         'recommendation_updated_at'
     ];
 
@@ -46,7 +46,7 @@ class Item extends Model
 
     public function categories()
     {
-        return $this->belongsToMany(Category::class);
+        return $this->belongsToMany(Category::class, 'category_item');
     }
 
     public function accesses()
@@ -69,8 +69,8 @@ class Item extends Model
         $id = Auth::id();
 
         $likers = array();
-        foreach ($this as $like) {
-            array_push($likers, $like);
+        foreach ($this->likes as $like) {
+            array_push($likers, $like->user_id);
         }
 
         if (in_array($id, $likers)) {

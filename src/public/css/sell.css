@@ -258,3 +258,7 @@
         margin: 3.2vw 0 3vw 0;
     }
 }
+
+.category-group {
+    display: inline-flex;
+}

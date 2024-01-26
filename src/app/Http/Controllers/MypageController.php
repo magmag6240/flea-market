@@ -25,21 +25,81 @@ class MypageController extends Controller
         return view('mylist', compact('like_items'));
     }
 
+    public function profile_create()
+    {
+        return view('profile_create');
+    }
+
     public function profile_edit(Request $request)
     {
         $user_id = Auth::id();
         $user_profile = Profile::where('user_id', $user_id)->first();
-        return view('profile_edit', compact('user_profile'));
+        if (empty($user_profile)) {
+            return view('profile_create');
+        } else {
+            return view('profile_edit', compact('user_profile'));
+        }
+    }
+
+    public function profile_store(Request $request)
+    {
+        $user_id = Auth::id();
+        $image = $request->file('user_image');
+        $path = '';
+        if (isset($image)) {
+            $path = $image->store('user', 'public');
+        }
+        Profile::create([
+            'user_id' => $user_id,
+            'image_url' => $path,
+            'user_name' => $request->input('name'),
+            'postcode' => $request->input('postcode'),
+            'address' => $request->input('address'),
+            'building' => $request->input('building')
+        ]);
+        return redirect()->route('user.mypage');
     }
 
     public function profile_update(Request $request)
     {
         $user_id = Auth::id();
-        $dir = 'user_image';
-        $file_name = $request->file('image')->getClientOriginalName();
-        $request->file('image')->store('public/' . $dir, $file_name);
-        $user_detail = $request->input('image_url', 'user_name', 'post_code', 'address', 'building');
-        Profile::where('user_id', $user_id)->update($user_detail);
+        $image = $request->file('user_image');
+        $path = '';
+        if (isset($image)) {
+            $path = $image->store('user', 'public');
+        }
+        $update_profile = Profile::where('user_id', $user_id)->first();
+        $update_profile->update([
+            'image_url' => $path,
+            'user_name' => $request->input('name'),
+            'postcode' => $request->input('postcode'),
+            'address' => $request->input('address'),
+            'building' => $request->input('building')
+        ]);
         return redirect()->route('user.mypage');
+    }
+
+    public function address_edit(Request $request, $item_id)
+    {
+        $user_id = Auth::id();
+        $item = Item::where('id', $item_id)->first();
+        $user_profile = Profile::where('user_id', $user_id)->first();
+        if(empty($user_profile)) {
+            return view('profile_create');
+        } else {
+            return view('address_edit', compact('item'));
+        }
+    }
+
+    public function address_update(Request $request, $item_id)
+    {
+        $user_id = Auth::id();
+        $user_profile = Profile::where('user_id', $user_id)->first();
+        $user_profile->update([
+            'postcode' => $request->input('postcode'),
+            'address' => $request->input('address'),
+            'building' => $request->input('building')
+        ]);
+        return redirect()->route('user.purchase', ['item_id' => $item_id]);
     }
 }

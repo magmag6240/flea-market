@@ -14,7 +14,7 @@
         <div class="edit-group">
             <div class="image-edit">
                 <label class="input-image-label" for="user-image">画像を選択する</label>
-                <input class="user-image" type="file" name="image_url" id="user-image" accept=".jpg, .jpeg, .png">
+                <input class="user-image" type="file" name="user_image" id="user-image" accept=".jpg, .jpeg, .png">
             </div>
             <div class="image-preview">
                 <p>アップロードするファイルが選択されていません</p>

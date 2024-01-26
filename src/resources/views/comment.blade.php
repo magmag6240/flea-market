@@ -25,11 +25,26 @@
                 @endif
             </div>
             <div class="comment">
-                <a class="comment-link" href="{{ route('user.comment', ['item_id' => $item_detail->id]) }}"></a>
+                <span class="comment-link"></span>
                 <p>{{$item_detail->comments->count()}}</p>
             </div>
         </div>
         <div class="comment-history">
+            @if($comment_history->isEmpty())
+            <p class="comment-null-text">コメントはありません</p>
+            @else
+            <div class="comment-list">
+                @foreach($comment_history as $comment)
+                <div class="comment-list-group">
+                    <div class="comment-user-detail">
+                        <img class="comment-user-img" src="{{ $user_profile->image_url }}" alt="">
+                        <p class="comment-user-name">{{ $user_profile->user_name }}</p>
+                    </div>
+                    <p class="comment-content">{{ $comment->comment }}</p>
+                </div>
+                @endforeach
+            </div>
+            @endif
         </div>
         <form class="comment-form" action="{{ route('user.comment_store', ['item_id' => $item_detail->id]) }}" method="post">
             <p class="comment-form-title">商品へのコメント</p>

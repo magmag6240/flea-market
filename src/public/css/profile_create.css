@@ -1,0 +1,266 @@
+
+.profile-create-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.profile-create-title {
+    color: #000;
+}
+
+@media (min-width:375px) {
+    .profile-create-title {
+        font-size: 4.5vw;
+        margin: 18vw 0 5vw 0;
+    }
+}
+
+@media (min-width:425px) {
+    .profile-create-title {
+        font-size: 4.3vw;
+        margin: 17vw 0 5vw 0;
+    }
+}
+
+@media (min-width:768px) {
+    .profile-create-title {
+        font-size: 3.2vw;
+        margin: 10vw 0 3vw 0;
+    }
+}
+
+@media (min-width:1024px) {
+    .profile-create-title {
+        font-size: 2.5vw;
+        margin: 7vw 0 2vw 0;
+    }
+}
+
+@media (min-width:1440px) {
+    .profile-create-title {
+        font-size: 2vw;
+        margin: 4vw 0 2vw 0;
+    }
+}
+
+.profile-create-form {
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+}
+
+.create-group {
+    display: inline-flex;
+    flex-direction: column;
+}
+
+@media (min-width:375px) {
+    .create-group {
+        margin: 2vw 0 4vw 0;
+        width: 65vw;
+    }
+}
+
+@media (min-width:425px) {
+    .create-group {
+        margin: 2vw 0 3.7vw 0;
+        width: 62vw;
+    }
+}
+
+@media (min-width:768px) {
+    .create-group {
+        margin: 2vw 0 2.7vw 0;
+        width: 55vw;
+    }
+}
+
+@media (min-width:1024px) {
+    .create-group {
+        margin: 2vw 0 1.8vw 0;
+        width: 50vw;
+    }
+}
+
+@media (min-width:1440px) {
+    .create-group {
+        margin: 1vw 0 1.5vw 0;
+        width: 45vw;
+    }
+}
+
+.create-group-title {
+    color: #000;
+    font-weight: bold;
+    align-self: flex-start;
+}
+
+@media (min-width:375px) {
+    .create-group-title {
+        font-size: 3.2vw;
+    }
+}
+
+@media (min-width:425px) {
+    .create-group-title {
+        font-size: 3vw;
+    }
+}
+
+@media (min-width:768px) {
+    .create-group-title {
+        font-size: 2vw;
+    }
+}
+
+@media (min-width:1024px) {
+    .create-group-title {
+        font-size: 1.5vw;
+    }
+}
+
+@media (min-width:1440px) {
+    .create-group-title {
+        font-size: 1.2vw;
+    }
+}
+
+.input-name,
+.input-postcode,
+.input-address,
+.input-building {
+    border: 0.1vw solid #696969;
+    border-radius: 3px;
+    padding: 1vw;
+}
+
+.input-image-label {
+    color: #CD5C5C;
+    font-weight: bold;
+    border: 2px solid #CD5C5C;
+    border-radius: 5px;
+}
+
+@media (min-width:375px) {
+    .input-image-label {
+        padding: 1vw 3vw;
+        font-size: 3.8vw;
+    }
+}
+
+@media (min-width:425px) {
+    .input-image-label {
+        padding: 0.8vw 2.8vw;
+        font-size: 3.5vw;
+    }
+}
+
+@media (min-width:768px) {
+    .input-image-label {
+        padding: 0.5vw 2.3vw;
+        font-size: 2vw;
+    }
+}
+
+@media (min-width:1024px) {
+    .input-image-label {
+        padding: 0.3vw 1.9vw;
+        font-size: 1.5vw;
+    }
+}
+
+@media (min-width:1440px) {
+    .input-image-label {
+        padding: 0.25vw 1.3vw;
+        font-size: 1.2vw;
+    }
+}
+
+.profile-create-error {
+    width: fit-content;
+    color: #f00;
+}
+
+@media (min-width:375px) {
+    .profile-create-error {
+        font-size: 1.6vw;
+        margin-left: 8vw;
+    }
+}
+
+@media (min-width:425px) {
+    .profile-create-error {
+        font-size: 1.6vw;
+        margin-left: 8vw;
+    }
+}
+
+@media (min-width:768px) {
+    .profile-create-error {
+        font-size: 1.6vw;
+        margin-left: 8vw;
+    }
+}
+
+@media (min-width:1024px) {
+    .profile-create-error {
+        font-size: 1.3vw;
+        margin-left: 6vw;
+    }
+}
+
+@media (min-width:1440px) {
+    .profile-create-error {
+        font-size: 1vw;
+        margin-left: 4vw;
+    }
+}
+
+.submit-button {
+    background-color: #CD5C5C;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+@media (min-width:375px) {
+    .submit-button {
+        font-size: 3.2vw;
+        padding: 2vw 0;
+        margin: 10vw 0 3vw 0;
+    }
+}
+
+@media (min-width:425px) {
+    .submit-button {
+        font-size: 3vw;
+        padding: 1.7vw 0;
+        margin: 9vw 0 2.5vw 0;
+    }
+}
+
+@media (min-width:768px) {
+    .submit-button {
+        font-size: 1.8vw;
+        padding: 1.2vw 0;
+        margin: 6vw 0 1.5vw 0;
+    }
+}
+
+@media (min-width:1024px) {
+    .submit-button {
+        font-size: 1.4vw;
+        padding: 0.8vw 0;
+        margin: 5.5vw 0 1.3vw 0;
+    }
+}
+
+@media (min-width:1440px) {
+    .submit-button {
+        font-size: 1.2vw;
+        padding: 0.6vw 0;
+        margin: 3.2vw 0 1vw 0;
+    }
+}
