@@ -29,9 +29,11 @@
                 <span class="comment-count">{{$item_detail->comments->count()}}</span>
             </div>
         </div>
+        @if(Auth::id() !== $item_seller_id)
         <button class="item-purchase-button">
             <a class="item-purchase-link" href="{{ route('user.purchase', ['item_id' => $item_detail->id]) }}">購入する</a>
         </button>
+        @endif
         <div class="item-detail-explanation">
             <p class="explanation-title">商品説明</p>
             <p class="explanation-text">{{ $item_detail->item_detail }}</p>

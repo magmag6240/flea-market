@@ -13,7 +13,9 @@
     </div>
     <div class="like-item-list">
         @foreach($like_items as $item)
-        <img class="like-item" src="{{$item->image_url}}">
+        <a class="like-item-detail-link" href="{{ route('user.item_detail', ['item_id' => $item->id]) }}">
+            <img class="like-item-img" src="{{$item->image_url}}">
+        </a>
         @endforeach
     </div>
 </div>

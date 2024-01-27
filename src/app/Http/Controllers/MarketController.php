@@ -6,6 +6,7 @@ use App\Models\Category;
 use App\Models\Condition;
 use App\Models\Item;
 use App\Models\Profile;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -75,6 +76,7 @@ class MarketController extends Controller
     public function item_detail($item_id)
     {
         $item_detail = Item::where('id', $item_id)->first();
-        return view('item_detail', compact('item_detail'));
+        $item_seller_id = $item_detail->seller_id;
+        return view('item_detail', compact('item_detail', 'item_seller_id'));
     }
 }

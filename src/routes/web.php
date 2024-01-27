@@ -26,6 +26,7 @@ Route::middleware('auth')->group(function(){
     Route::get('/unlike/{item_id}', [LikeController::class, 'unlike'])->name('unlike');
     Route::get('/comments/{item_id}', [CommentController::class, 'index'])->name('user.comment');
     Route::post('/comments/{item_id}', [CommentController::class, 'comment_store'])->name('user.comment_store');
+    Route::delete('/comments/{comment_id}', [CommentController::class, 'comment_destroy'])->name('user.comment_delete');
     Route::get('/sell', [MarketController::class, 'sell'])->name('user.sell');
     Route::post('/sell', [MarketController::class, 'sell_store'])->name('user.sell_store');
     Route::get('/purchase/{item_id}', [MarketController::class, 'purchase'])->name('user.purchase');

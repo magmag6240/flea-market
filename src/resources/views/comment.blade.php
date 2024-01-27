@@ -40,16 +40,24 @@
                         <img class="comment-user-img" src="{{ $user_profile->image_url }}" alt="">
                         <p class="comment-user-name">{{ $user_profile->user_name }}</p>
                     </div>
-                    <p class="comment-content">{{ $comment->comment }}</p>
+                    <form class="comment-delete-form" action="{{ route('user.comment_delete', ['comment_id' => $comment->id]) }}" method="post">
+                        @csrf
+                        @method('delete')
+                        <p class="comment-text-detail">{{ $comment->comments }}</p>
+                        @if($comment->user_id == $user_id)
+                        <button type="submit">削除</button>
+                        @endif
+                    </form>
                 </div>
                 @endforeach
             </div>
             @endif
         </div>
         <form class="comment-form" action="{{ route('user.comment_store', ['item_id' => $item_detail->id]) }}" method="post">
+            @csrf
             <p class="comment-form-title">商品へのコメント</p>
-            <input class="comment-input" type="text">
-            <button class="comment-form-button">コメントを送信する</button>
+            <input type="text" name="comments">
+            <button class="comment-form-button" type="submit">コメントを送信する</button>
         </form>
     </div>
 </div>
