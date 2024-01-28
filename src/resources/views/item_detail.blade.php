@@ -29,10 +29,16 @@
                 <span class="comment-count">{{$item_detail->comments->count()}}</span>
             </div>
         </div>
+        @if(empty($item_buyer_id))
         @if(Auth::id() !== $item_seller_id)
         <button class="item-purchase-button">
             <a class="item-purchase-link" href="{{ route('user.purchase', ['item_id' => $item_detail->id]) }}">購入する</a>
         </button>
+        @endif
+        @else
+        <div>
+            <p>売約済み</p>
+        </div>
         @endif
         <div class="item-detail-explanation">
             <p class="explanation-title">商品説明</p>
@@ -40,14 +46,14 @@
         </div>
         <div class="item-detail-info">
             <p class="info-title">商品の情報</p>
-            <div class="item-detail-category">
-                <p class="category-title">カテゴリー</p>
-                <p class="category-detail">{{ $item_detail->condition->condition }}</p>
-            </div>
-            <div class="item-detail-condition">
-                <p class="condition-title">商品の状態</p>
-                <p class="condition-detail">{{ $item_detail->condition->condition }}</p>
-            </div>
+        </div>
+        <div class="item-detail-category">
+            <p class="category-title">カテゴリー</p>
+            <p class="category-detail">{{ $item_detail->condition->condition }}</p>
+        </div>
+        <div class="item-detail-condition">
+            <p class="condition-title">商品の状態</p>
+            <p class="condition-detail">{{ $item_detail->condition->condition }}</p>
         </div>
     </div>
 </div>

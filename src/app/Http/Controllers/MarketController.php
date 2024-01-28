@@ -64,11 +64,15 @@ class MarketController extends Controller
         return view('purchase', compact('item', 'profile'));
     }
 
-    public function purchase_store(Request $request, $item_id, $buyer_id)
+    public function purchase_store($item_id)
     {
-        Item::find('id', $item_id)->update([
-            'payment_id' => $request->input('payment_id'),
-            'buyer_id' => $buyer_id
+        $user_id = Auth::id();
+        $user_profile = Profile::where('user_id', $user_id)->first();
+        $user_payment_id = $user_profile->payment_id;
+        $buy_item = Item::where('id', $item_id)->first();
+        $buy_item->update([
+            'payment_id' => $user_payment_id,
+            'buyer_id' => Auth::id()
         ]);
         return redirect()->route('user.mypage');
     }
@@ -77,6 +81,7 @@ class MarketController extends Controller
     {
         $item_detail = Item::where('id', $item_id)->first();
         $item_seller_id = $item_detail->seller_id;
-        return view('item_detail', compact('item_detail', 'item_seller_id'));
+        $item_buyer_id = $item_detail->buyer_id;
+        return view('item_detail', compact('item_detail', 'item_seller_id', 'item_buyer_id'));
     }
 }

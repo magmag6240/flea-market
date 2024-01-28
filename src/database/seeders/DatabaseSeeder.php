@@ -6,6 +6,16 @@ use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
 {
+    private const SEEDERS = [
+        CategorySeeder::class,
+        ConditionSeeder::class,
+        PaymentSeeder::class,
+        ItemSeeder::class,
+        UserSeeder::class,
+        AdminSeeder::class,
+        ShopManagerSeeder::class,
+    ];
+
     /**
      * Seed the application's database.
      *
@@ -13,11 +23,8 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        $this->call([
-            ConditionSeeder::class,
-            PaymentSeeder::class,
-            CategorySeeder::class,
-            ItemSeeder::class
-        ]);
+        foreach (self::SEEDERS as $seeder) {
+            $this->call($seeder);
+        }
     }
 }

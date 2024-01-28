@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Like;
 use App\Models\Item;
+use App\Models\Payment;
 use App\Models\Profile;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -77,6 +78,29 @@ class MypageController extends Controller
             'building' => $request->input('building')
         ]);
         return redirect()->route('user.mypage');
+    }
+
+    public function payment_edit(Request $request, $item_id)
+    {
+        $user_id = Auth::id();
+        $item = Item::where('id', $item_id)->first();
+        $payments = Payment::all();
+        $user_profile = Profile::where('user_id', $user_id)->first();
+        if (empty($user_profile)) {
+            return view('profile_create');
+        } else {
+            return view('payment_edit', compact('item', 'payments'));
+        }
+    }
+
+    public function payment_update(Request $request, $item_id)
+    {
+        $user_id = Auth::id();
+        $user_profile = Profile::where('user_id', $user_id)->first();
+        $user_profile->update([
+            'payment_id' => $request->input('payment_id')
+        ]);
+        return redirect()->route('user.purchase', ['item_id' => $item_id]);
     }
 
     public function address_edit(Request $request, $item_id)

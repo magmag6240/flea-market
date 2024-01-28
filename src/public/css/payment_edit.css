@@ -1,0 +1,181 @@
+
+.payment-edit-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.payment-edit-title {
+    color: #000;
+}
+
+@media (min-width:375px) {
+    .payment-edit-title {
+        font-size: 4.5vw;
+        margin: 18vw 0 5vw 0;
+    }
+}
+
+@media (min-width:425px) {
+    .payment-edit-title {
+        font-size: 4.3vw;
+        margin: 17vw 0 5vw 0;
+    }
+}
+
+@media (min-width:768px) {
+    .payment-edit-title {
+        font-size: 3.2vw;
+        margin: 10vw 0 3vw 0;
+    }
+}
+
+@media (min-width:1024px) {
+    .payment-edit-title {
+        font-size: 2.5vw;
+        margin: 7vw 0 2vw 0;
+    }
+}
+
+@media (min-width:1440px) {
+    .payment-edit-title {
+        font-size: 2vw;
+        margin: 4vw 0 2vw 0;
+    }
+}
+
+.payment-edit-form {
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+}
+
+.edit-group {
+    display: inline-flex;
+    flex-direction: column;
+}
+
+@media (min-width:375px) {
+    .edit-group {
+        margin: 2vw 0 4vw 0;
+        width: 65vw;
+    }
+}
+
+@media (min-width:425px) {
+    .edit-group {
+        margin: 2vw 0 3.7vw 0;
+        width: 62vw;
+    }
+}
+
+@media (min-width:768px) {
+    .edit-group {
+        margin: 2vw 0 2.7vw 0;
+        width: 55vw;
+    }
+}
+
+@media (min-width:1024px) {
+    .edit-group {
+        margin: 2vw 0 1.8vw 0;
+        width: 50vw;
+    }
+}
+
+@media (min-width:1440px) {
+    .edit-group {
+        margin: 1vw 0 1.5vw 0;
+        width: 45vw;
+    }
+}
+
+.edit-group-title {
+    color: #000;
+    font-weight: bold;
+    align-self: flex-start;
+}
+
+@media (min-width:375px) {
+    .edit-group-title {
+        font-size: 3.2vw;
+    }
+}
+
+@media (min-width:425px) {
+    .edit-group-title {
+        font-size: 3vw;
+    }
+}
+
+@media (min-width:768px) {
+    .edit-group-title {
+        font-size: 2vw;
+    }
+}
+
+@media (min-width:1024px) {
+    .edit-group-title {
+        font-size: 1.5vw;
+    }
+}
+
+@media (min-width:1440px) {
+    .edit-group-title {
+        font-size: 1.2vw;
+    }
+}
+
+.input-payment {
+    border: 0.1vw solid #696969;
+    border-radius: 3px;
+    padding: 1vw;
+}
+
+.update-button {
+    background-color: #CD5C5C;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+@media (min-width:375px) {
+    .update-button {
+        font-size: 3.2vw;
+        padding: 2vw 0;
+        margin: 10vw 0 3vw 0;
+    }
+}
+
+@media (min-width:425px) {
+    .update-button {
+        font-size: 3vw;
+        padding: 1.7vw 0;
+        margin: 9vw 0 2.5vw 0;
+    }
+}
+
+@media (min-width:768px) {
+    .update-button {
+        font-size: 1.8vw;
+        padding: 1.2vw 0;
+        margin: 6vw 0 1.5vw 0;
+    }
+}
+
+@media (min-width:1024px) {
+    .update-button {
+        font-size: 1.4vw;
+        padding: 0.8vw 0;
+        margin: 5.5vw 0 1.3vw 0;
+    }
+}
+
+@media (min-width:1440px) {
+    .update-button {
+        font-size: 1.2vw;
+        padding: 0.6vw 0;
+        margin: 3.2vw 0 1vw 0;
+    }
+}

@@ -8,6 +8,8 @@
 
 <div class="purchase-content">
     <form class="purchase-form" action="{{ route('user.purchase_store', ['item_id' => $item->id]) }}" method="post">
+        @csrf
+        @method('patch')
         <div class="purchase-form-edit">
             <div class="item-detail">
                 <img class="item-img" src="{{ $item->image_url }}" alt="">
@@ -18,7 +20,7 @@
             </div>
             <div class="payment-method">
                 <p class="payment-method-title">支払い方法</p>
-                <a class="payment-edit-link" href="">変更する</a>
+                <a class="payment-edit-link" href="{{ route('user.payment_edit', ['item_id' => $item->id]) }}">変更する</a>
             </div>
             <div class="user-address">
                 <p class="user-address-title">配送先</p>
