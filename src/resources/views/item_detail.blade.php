@@ -49,7 +49,9 @@
         </div>
         <div class="item-detail-category">
             <p class="category-title">カテゴリー</p>
-            <p class="category-detail">{{ $item_detail->condition->condition }}</p>
+            @foreach($item_detail->categories as $category)
+                <p class="category-detail">{{ $category->category }}</p>
+            @endforeach
         </div>
         <div class="item-detail-condition">
             <p class="condition-title">商品の状態</p>

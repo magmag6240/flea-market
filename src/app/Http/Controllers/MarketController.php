@@ -6,7 +6,6 @@ use App\Models\Category;
 use App\Models\Condition;
 use App\Models\Item;
 use App\Models\Profile;
-use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -15,11 +14,22 @@ class MarketController extends Controller
     public function top()
     {
         if(Auth::check()) {
-            $recommend_items = Item::all();
-            return view('recommend', compact('recommend_items'));
+            $user_id = Auth::id();
+            $purchase_item_history = Item::where('buyer_id', $user_id)->with('categories')->get();
+            if($purchase_item_history->isEmpty()) {
+                $items = Item::get();
+                $recommend_items = Category::withCount('items')->orderBy('items_count', 'desc')->get();
+                return view('recommend', compact('items', 'recommend_items'));
+            } else {
+                foreach ($purchase_item_history->categories as $category) {
+                    $recommend_items = Category::where('id', $category->id)->with('items')->get();
+                    return view('recommend', compact('recommend_items'));
+                }
+            }
         } else {
-            $recommend_items = Item::all();
-            return view('recommend', compact('recommend_items'));
+            $items = Item::get();
+            $recommend_items = Category::withCount('items')->orderBy('items_count', 'desc')->get();
+            return view('recommend', compact('items', 'recommend_items'));
         }
     }
 
@@ -79,7 +89,7 @@ class MarketController extends Controller
 
     public function item_detail($item_id)
     {
-        $item_detail = Item::where('id', $item_id)->first();
+        $item_detail = Item::where('id', $item_id)->with('categories')->first();
         $item_seller_id = $item_detail->seller_id;
         $item_buyer_id = $item_detail->buyer_id;
         return view('item_detail', compact('item_detail', 'item_seller_id', 'item_buyer_id'));

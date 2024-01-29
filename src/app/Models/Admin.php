@@ -37,6 +37,4 @@ class Admin extends Authenticatable
      *
      * @var array
      */
-
-
 }

@@ -69,7 +69,7 @@ Route::prefix('shop_manager')->group(function () {
     });
 });
 
-Route::middleware('auth:user')->group(function () {
+Route::middleware('auth:web')->group(function () {
     Route::get('/like/{item_id}', [LikeController::class, 'like'])->name('like');
     Route::get('/unlike/{item_id}', [LikeController::class, 'unlike'])->name('unlike');
     Route::get('/comments/{item_id}', [CommentController::class, 'index'])->name('user.comment');
