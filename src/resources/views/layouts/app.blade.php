@@ -26,7 +26,7 @@
             @if(!Route::is('login') && !Route::is('register'))
             <nav class="header-nav nav" id="js-nav">
                 <ul class="header-nav-ul nav-items">
-                    <form class="header-search-form" action="{{ route('user.top') }}" method="get">
+                    <form class="header-nav-form" action="{{ route('user.top') }}" method="get">
                         <input class="search-input" type="search" name="keyword" placeholder="なにをお探しですか？">
                     </form>
                     @if(Auth::check())
@@ -36,10 +36,10 @@
                             <button class="logout-button" type="submit">ログアウト</button>
                         </li>
                     </form>
-                    <li class="header-nav-list"><a class="list-link" href="/mypage">マイページ</a></li>
+                    <li class="header-nav-list"><a class="list-link-mypage" href="/mypage">マイページ</a></li>
                     @else
-                    <li class="header-nav-list"><a class="list-link" href="/login">ログイン</a></li>
-                    <li class="header-nav-list"><a class="list-link" href="/register">会員登録</a></li>
+                    <li class="header-nav-list"><a class="list-link-login" href="/login">ログイン</a></li>
+                    <li class="header-nav-list"><a class="list-link-register" href="/register">会員登録</a></li>
                     @endif
                     @if(!Route::is('user.sell') && !Route::is('user.address_edit'))
                     <li class="header-nav-list"><a class="list-link-sell" href="/sell">出品</a></li>

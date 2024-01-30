@@ -9,6 +9,13 @@
     color: #000;
 }
 
+@media (min-width:320px) {
+    .register-title {
+        font-size: 5vw;
+        margin: 22vw 0 8vw 0;
+    }
+}
+
 @media (min-width:375px) {
     .register-title {
         font-size: 4.5vw;
@@ -55,6 +62,13 @@
     flex-direction: column;
 }
 
+@media (min-width:320px) {
+    .register-group {
+        margin: 2vw 0 4.5vw 0;
+        width: 70vw;
+    }
+}
+
 @media (min-width:375px) {
     .register-group {
         margin: 2vw 0 4vw 0;
@@ -96,9 +110,15 @@
     align-self: flex-start;
 }
 
+@media (min-width:320px) {
+    .register-group-title {
+        font-size: 3.9vw;
+    }
+}
+
 @media (min-width:375px) {
     .register-group-title {
-        font-size: 3.2vw;
+        font-size: 3.3vw;
     }
 }
 
@@ -180,6 +200,14 @@
     cursor: pointer;
 }
 
+@media (min-width:320px) {
+    .register-button {
+        font-size: 3.8vw;
+        padding: 2.3vw 0;
+        margin: 6vw 0 3.6vw 0;
+    }
+}
+
 @media (min-width:375px) {
     .register-button {
         font-size: 3.2vw;
@@ -223,6 +251,12 @@
 .login-link {
     text-decoration: none;
     color: #4169E1;
+}
+
+@media (min-width:320px) {
+    .login-link {
+        font-size: 3.8vw;
+    }
 }
 
 @media (min-width:375px) {

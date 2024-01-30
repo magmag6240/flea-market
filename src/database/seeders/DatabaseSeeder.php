@@ -11,9 +11,7 @@ class DatabaseSeeder extends Seeder
         ConditionSeeder::class,
         PaymentSeeder::class,
         ItemSeeder::class,
-        UserSeeder::class,
-        AdminSeeder::class,
-        ShopManagerSeeder::class,
+        UserSeeder::class
     ];
 
     /**
