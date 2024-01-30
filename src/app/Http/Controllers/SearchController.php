@@ -2,35 +2,26 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Item;
 use Illuminate\Http\Request;
 
 class SearchController extends Controller
 {
     public function search(Request $request)
     {
-        $condition = Condition::all();
-        $s = ::all();
-
-        $select_area = $request->input('area');
-        $select_genre = $request->input('genre');
         $keyword = $request->input('keyword');
-
-        $query = Shop::query();
-
-        if (!empty($select_area)) {
-            $query->where('prefecture_id', 'LIKE', $select_area);
-        }
-
-        if (!empty($select_genre)) {
-            $query->where('genre_id', 'LIKE', $select_genre);
-        }
-
         if (!empty($keyword)) {
-            $query->where('shop_name', 'LIKE', "%{$keyword}%");
+            $items = Item::where('name', 'LIKE', "%{$keyword}%")
+                ->orWhere('brand_name', 'LIKE', "%{$keyword}%")
+                ->orWhere('item_detail', 'LIKE', "%{$keyword}%")
+                ->orWhereHas('categories', function ($query) use ($keyword) {
+                    $query->where('category', 'LIKE', "%{$keyword}%");
+                })
+                ->get();
+        } else {
+            return redirect('/');
         }
 
-        $items = $query->with('prefecture', 'genre', 'evaluations')->get();
-
-        return view('general/shop_list', compact('prefectures', 'genres', 'items', 'select_area', 'select_genre', 'keyword'));
+        return view('item_search', compact('keyword', 'items'));
     }
 }

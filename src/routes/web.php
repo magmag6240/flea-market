@@ -15,6 +15,7 @@ use App\Http\Controllers\CommentController;
 use App\Http\Controllers\LikeController;
 use App\Http\Controllers\MarketController;
 use App\Http\Controllers\MypageController;
+use App\Http\Controllers\SearchController;
 
 /*
 |--------------------------------------------------------------------------
@@ -29,6 +30,7 @@ use App\Http\Controllers\MypageController;
 
 Route::get('/', [MarketController::class, 'top'])->name('user.top');
 Route::get('/item/{item_id}', [MarketController::class, 'item_detail'])->name('user.item_detail');
+Route::get('/item/search', [SearchController::class, 'search'])->name('user.search');
 
 Route::prefix('admin')->group(function () {
     Route::get('login', [AdminLoginController::class, 'create'])->name('admin.login');
