@@ -32,8 +32,11 @@ Route::middleware('auth')->group(function () {
 
     Route::prefix('admin')->group(function () {
         Route::get('/', [AdminController::class, 'index']);
-        Route::get('/user_list', [AdminController::class, 'show'])->name('admin.show');
-        Route::get('/mail', [AdminController::class, 'index'])->name('admin.mail.index');
+        Route::get('/user_list', [AdminController::class, 'user_list'])->name('admin.user_list');
+        Route::delete('/user/{user_id}', [AdminController::class, 'user_destroy'])->name('admin.user_delete');
+        Route::get('/user/comment_list', [AdminController::class, 'user_comment_list'])->name('admin.user_comment_list');
+        Route::delete('/user/comment/{comment_id}', [AdminController::class, 'comment_destroy'])->name('admin.user_comment_delete');
+        Route::get('/mail', [AdminController::class, 'mail'])->name('admin.mail.index');
         Route::post('/mail/send', [AdminController::class, 'mail_all_users'])->name('admin.mail.send');
     });
 
