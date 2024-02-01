@@ -31,13 +31,12 @@ Route::get('/item/search', [SearchController::class, 'search'])->name('user.sear
 Route::middleware('auth')->group(function () {
 
     Route::prefix('admin')->group(function () {
-        Route::get('/', [AdminController::class, 'index']);
-        Route::get('/user_list', [AdminController::class, 'user_list'])->name('admin.user_list');
+        Route::get('/', [AdminController::class, 'user_list'])->name('admin.user_list');
         Route::delete('/user/{user_id}', [AdminController::class, 'user_destroy'])->name('admin.user_delete');
-        Route::get('/user/comment_list', [AdminController::class, 'user_comment_list'])->name('admin.user_comment_list');
+        Route::get('/user/comment_list/{user_id}', [AdminController::class, 'user_comment_list'])->name('admin.user_comment_list');
         Route::delete('/user/comment/{comment_id}', [AdminController::class, 'comment_destroy'])->name('admin.user_comment_delete');
-        Route::get('/mail', [AdminController::class, 'mail'])->name('admin.mail.index');
-        Route::post('/mail/send', [AdminController::class, 'mail_all_users'])->name('admin.mail.send');
+        Route::get('/mail/{user_id}', [AdminController::class, 'mail'])->name('admin.mail');
+        Route::post('/mail/send/{user_id}', [AdminController::class, 'mail_send'])->name('admin.mail.send');
     });
 
     Route::get('/like/{item_id}', [LikeController::class, 'like'])->name('like');

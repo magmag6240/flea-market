@@ -17,7 +17,7 @@ class PaymentSeeder extends Seeder
         $params = [
             ['id' => 1, 'method_name' => 'コンビニ払い'],
             ['id' => 2, 'method_name' => 'クレジットカード払い'],
-            ['id' => 3, 'method_name' => '口座振込'],
+            ['id' => 3, 'method_name' => '銀行振込'],
         ];
         DB::table('payments')->insert($params);
     }

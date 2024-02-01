@@ -24,10 +24,9 @@ class CreateItemsTable extends Migration
             $table->integer('price');
             $table->text('item_detail');
             $table->string('image_url');
-            $table->dateTime('recommendation_updated_at')->nullable();
             $table->timestamps();
 
-            $table->foreign('seller_id')->references('id')->on('users');
+            $table->foreign('seller_id')->references('id')->on('users')->cascadeOnDelete();
             $table->foreign('condition_id')->references('id')->on('conditions');
             $table->foreign('payment_id')->references('id')->on('payments');
         });

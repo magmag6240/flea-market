@@ -24,7 +24,7 @@ class CreateProfilesTable extends Migration
             $table->string('building');
             $table->timestamps();
 
-            $table->foreign('user_id')->references('id')->on('users');
+            $table->foreign('user_id')->references('id')->on('users')->cascadeOnDelete();
             $table->foreign('payment_id')->references('id')->on('payments');
         });
     }

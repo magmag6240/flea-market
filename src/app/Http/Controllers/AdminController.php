@@ -2,62 +2,52 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\AdminEmail;
+use App\Models\Comment;
+use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 
 class AdminController extends Controller
 {
-    public function index()
+    public function user_list()
     {
-        return view('admin_top');
+        $users = User::with('comments')->paginate(20);
+        return view('admin_user_list', compact('users'));
     }
 
-    public function user_list(Request $request, $item_id)
+    public function user_destroy($user_id)
     {
-        Comment::create([
-            'user_id' => Auth::id(),
-            'item_id' => $item_id,
-            'comments' => $request->input('comments')
-        ]);
-        return redirect()->route('user.comment', ['item_id' => $item_id]);
-    }
-
-    public function user_destroy($comment_id)
-    {
-        $user_id = Auth::id();
-        $comment = Comment::where('user_id', $user_id)->where('id', $comment_id)->first();
-        $comment->delete();
+        $user = User::find($user_id);
+        $user->delete();
         return redirect()->back();
     }
 
-    public function user_comment_list($comment_id)
+    public function user_comment_list(Request $request, $user_id)
     {
-        $user_id = Auth::id();
-        $comment = Comment::where('user_id', $user_id)->where('id', $comment_id)->first();
-        $comment->delete();
-        return redirect()->back();
+        $comments = Comment::where('user_id', $user_id)->with('item')->get();
+        return view('admin_user_comment_list', compact('comments'));
     }
 
     public function comment_destroy($comment_id)
     {
-        $user_id = Auth::id();
-        $comment = Comment::where('user_id', $user_id)->where('id', $comment_id)->first();
+        $comment =Comment::where('id', $comment_id)->first();
         $comment->delete();
         return redirect()->back();
     }
 
-    public function mail($comment_id)
+    public function mail($user_id)
     {
-        $user_id = Auth::id();
-        $comment = Comment::where('user_id', $user_id)->where('id', $comment_id)->first();
-        $comment->delete();
-        return redirect()->back();
+        $user = User::find($user_id);
+        return view('admin_mail', compact('user'));
     }
 
-    public function mail_send($comment_id)
+    public function mail_send(Request $request, $user_id)
     {
-        $user_id = Auth::id();
-        $comment = Comment::where('user_id', $user_id)->where('id', $comment_id)->first();
-        $comment->delete();
-        return redirect()->back();
+        $user = User::where('id', $user_id)->first();
+        $contents = $request['contents'];
+        Mail::to($user->email)
+            ->send(new AdminEmail($contents));
+        return view('admin_mail_done');
     }
 }
