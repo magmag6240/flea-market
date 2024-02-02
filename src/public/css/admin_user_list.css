@@ -1,0 +1,262 @@
+
+.user-list-content {
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+}
+
+.user-list-title {
+    font-weight: bold;
+}
+
+@media (min-width:320px) {
+    .user-list-title {
+        font-size: 5vw;
+        margin: 22vw 0 8vw 0;
+    }
+}
+
+@media (min-width:375px) {
+    .user-list-title {
+        font-size: 4.5vw;
+        margin: 20vw 0 5vw 0;
+    }
+}
+
+@media (min-width:425px) {
+    .user-list-title {
+        font-size: 4.3vw;
+        margin: 18vw 0 5vw 0;
+    }
+}
+
+@media (min-width:768px) {
+    .user-list-title {
+        font-size: 3.2vw;
+        margin: 15vw 0 3vw 0;
+    }
+}
+
+@media (min-width:1024px) {
+    .user-list-title {
+        font-size: 2.5vw;
+        margin: 10vw 0 2vw 0;
+    }
+}
+
+@media (min-width:1440px) {
+    .user-list-title {
+        font-size: 2vw;
+        margin: 8vw 0 2vw 0;
+    }
+}
+.user-list-table {
+    align-self: center;
+    border-bottom-style: hidden;
+    background-color: #fff;
+}
+
+@media (min-width:320px) {
+    .user-list-table {
+        margin-bottom: 2vw;
+    }
+}
+
+@media (min-width:1024px) {
+    .user-list-table {
+        margin-bottom: 1.5vw;
+    }
+}
+
+@media (min-width:1440px) {
+    .user-list-table {
+        margin-bottom: 1vw;
+    }
+}
+
+.user-list-th {
+    border-right-style: hidden;
+    border-left-style: hidden;
+}
+
+@media (min-width:320px) {
+    .user-list-th {
+        padding: 2vw 0;
+        font-size: 4.3vw;
+    }
+}
+
+@media (min-width:375px) {
+    .user-list-th {
+        font-size: 3.9vw;
+    }
+}
+
+@media (min-width:425px) {
+    .user-list-th {
+        font-size: 3.5vw;
+    }
+}
+
+@media (min-width:768px) {
+    .user-list-th {
+        font-size: 2vw;
+    }
+}
+
+@media (min-width:1024px) {
+    .user-list-th {
+        padding: 1.5vw 0;
+        font-size: 1.5vw;
+    }
+}
+
+@media (min-width:1440px) {
+    .user-list-th {
+        padding: 1vw 0;
+        font-size: 1.2vw;
+    }
+}
+
+.user-list-tr {
+    border-right-style: hidden;
+    border-left-style: hidden;
+}
+
+@media (min-width:320px) {
+    .user-list-tr {
+        border: 0.25vw solid #c0c0c0;
+    }
+}
+
+@media (min-width:1024px) {
+    .user-list-tr {
+        border: 0.2vw solid #c0c0c0;
+    }
+}
+
+.user-list-td {
+    border-right-style: hidden;
+    border-left-style: hidden;
+}
+
+@media (min-width:320px) {
+    .user-list-td {
+        padding: 3vw 1vw;
+    }
+}
+
+.user-list-link {
+    text-decoration: none;
+    color: #000;
+}
+
+.user-delete-button {
+    border: none;
+    background-color: #CD5C5C;
+    border-radius: 3px;
+    color: #fff;
+}
+
+@media (min-width:320px) {
+    .user-list-td, .user-list-link, .user-delete-button {
+        font-size: 3vw;
+    }
+}
+
+@media (min-width:768px) {
+    .user-list-td, .user-list-link, .user-delete-button {
+        font-size: 1.9vw;
+    }
+}
+
+@media (min-width:1024px) {
+    .user-list-td {
+        padding: 1.5vw 3.7vw;
+        font-size: 1.4vw;
+    }
+}
+
+@media (min-width:1440px) {
+    .user-list-td {
+        padding: 1vw 3vw;
+        font-size: 1vw;
+    }
+}
+
+.pagination {
+    background-color: #fff;
+}
+
+@media (min-width:768px) {
+    .pagination {
+        padding: 2vw;
+    }
+}
+
+@media (min-width:1024px) {
+    .pagination {
+        padding: 1.5vw;
+    }
+}
+
+@media (min-width:1440px) {
+    .pagination {
+        padding: 1vw;
+    }
+}
+
+.current-paginate-page,
+.another-paginate-page,
+.another-paginate,
+.page-link-prev,
+.page-link-next {
+    text-decoration: none;
+    cursor: pointer;
+    color: #fff;
+    border: 0.5px solid #00BFFF;
+    background-color: #00BFFF;
+}
+
+@media (min-width:768px) {
+    .current-paginate-page,
+    .another-paginate-page,
+    .another-paginate,
+    .page-link-prev,
+    .page-link-next {
+        font-size: 1.9vw;
+        padding: 0.5vw 1vw;
+    }
+}
+
+@media (min-width:1024px) {
+    .current-paginate-page,
+    .another-paginate-page,
+    .another-paginate,
+    .page-link-prev,
+    .page-link-next {
+        font-size: 1.3vw;
+        padding: 0.45vw 0.9vw;
+    }
+}
+
+@media (min-width:1440px) {
+    .current-paginate-page,
+    .another-paginate-page,
+    .another-paginate,
+    .page-link-prev,
+    .page-link-next {
+        font-size: 1vw;
+        padding: 0.4vw 0.8vw;
+    }
+}
+
+.another-paginate-page {
+    color: #fff;
+}
+
+.current-paginate-page {
+    color: #fff;
+    background-color: #00008B;
+    border: 0.5px solid #00008B;
+}

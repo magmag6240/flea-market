@@ -10,8 +10,8 @@ class DatabaseSeeder extends Seeder
         CategorySeeder::class,
         ConditionSeeder::class,
         PaymentSeeder::class,
-        ItemSeeder::class,
-        UserSeeder::class
+        UserSeeder::class,
+        ItemSeeder::class
     ];
 
     /**

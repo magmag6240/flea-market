@@ -47,8 +47,7 @@
     text-align: start;
 }
 
-@media (min-width:375px) {
-
+@media (min-width:320px) {
     .item-detail-image,
     .item-detail-text {
         width: 83vw;
@@ -56,7 +55,6 @@
 }
 
 @media (min-width:425px) {
-
     .item-detail-image,
     .item-detail-text {
         width: 81vw;
@@ -101,7 +99,7 @@
     font-weight: bold;
 }
 
-@media (min-width:375px) {
+@media (min-width:320px) {
     .item-name {
         font-size: 6vw;
     }
@@ -131,7 +129,7 @@
     }
 }
 
-@media (min-width:375px) {
+@media (min-width:320px) {
     .item-bland-name {}
 }
 
@@ -151,7 +149,7 @@
     .item-bland-name {}
 }
 
-@media (min-width:375px) {
+@media (min-width:320px) {
     .item-price {}
 }
 

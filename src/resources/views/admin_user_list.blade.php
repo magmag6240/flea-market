@@ -23,28 +23,28 @@
             </td>
             @if(!($data->comments)->isEmpty())
             <td class="user-list-td">
-                <a href="{{ route('admin.user_comment_list', ['user_id' => $data->id]) }}">コメント一覧</a>
+                <a class="user-list-link" href="{{ route('admin.user_comment_list', ['user_id' => $data->id]) }}">コメント一覧</a>
             </td>
             @else
             <td class="user-list-td">
-                <a>コメント一覧</a>
+                <a class="user-list-link">コメント一覧</a>
             </td>
             @endif
             <td class="user-list-td">
-                <a href="{{ route('admin.mail', ['user_id' => $data->id]) }}">メールフォーム</a>
+                <a class="user-list-link" href="{{ route('admin.mail', ['user_id' => $data->id]) }}">メールフォーム</a>
             </td>
-            <form action="{{ route('admin.user_delete', ['user_id' => $data->id]) }}" method="post">
-                @csrf
-                @method('delete')
-                <td class="user-list-td">
+            <td class="user-list-td">
+                <form class="user-list-form" action="{{ route('admin.user_delete', ['user_id' => $data->id]) }}" method="post">
+                    @csrf
+                    @method('delete')
                     <button class="user-delete-button" type="submit">ユーザー削除</button>
-                </td>
-            </form>
+                </form>
+            </td>
         </tr>
         @endforeach
     </table>
     <div class="user-paginate">
-        {{$users->links()}}
+        {{$users->links('vendor/pagination/admin_paginate')}}
     </div>
 </div>
 

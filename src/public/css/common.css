@@ -208,7 +208,7 @@
     }
 }
 
-.list-link-login, .list-link-register, .list-link-mypage, .list-link-sell {
+.list-link-login, .list-link-register, .list-link-admin, .list-link-mypage, .list-link-sell {
     color: #fff;
     display: inline-block;
     text-align: center;
@@ -216,19 +216,25 @@
     text-decoration: none;
 }
 
-.list-link-sell {
+.list-link-sell, .logout-button {
     border-radius: 5px;
 }
 
+.logout-button {
+    color: #fff;
+    background-color: #000;
+    border: none;
+}
+
 @media (min-width: 320px) {
-    .list-link-login, .list-link-register, .list-link-mypage {
+    .list-link-login, .list-link-register, .list-link-admin, .list-link-mypage, .logout-button {
         font-size: 20px;
         margin-bottom: 24px;
     }
 }
 
 @media (min-width: 1024px) {
-    .list-link-login, .list-link-register, .list-link-mypage {
+    .list-link-login, .list-link-register, .list-link-admin, .list-link-mypage, .logout-button {
         background-color: #000;
         font-size: 17px;
         margin-bottom: 0;
@@ -236,7 +242,7 @@
 }
 
 @media (min-width: 1440px) {
-    .list-link-login, .list-link-register, .list-link-mypage {
+    .list-link-login, .list-link-register, .list-link-admin, .list-link-mypage, .logout-button {
         background-color: #000;
         font-size: 20px;
     }
