@@ -88,7 +88,7 @@ class MypageController extends Controller
         $item = Item::where('id', $item_id)->first();
         $payments = Payment::all();
         $user_profile = Profile::where('user_id', $user_id)->first();
-        if (empty($user_profile)) {
+        if(empty($user_profile)) {
             return view('profile_create');
         } else {
             return view('payment_edit', compact('item', 'payments'));

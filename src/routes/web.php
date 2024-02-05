@@ -1,16 +1,14 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use Illuminate\Foundation\Auth\EmailVerificationRequest;
-use Illuminate\Http\Request;
 
 use App\Http\Controllers\AdminController;
-use App\Http\Controllers\AdminMailController;
 use App\Http\Controllers\CommentController;
 use App\Http\Controllers\LikeController;
 use App\Http\Controllers\MarketController;
 use App\Http\Controllers\MypageController;
 use App\Http\Controllers\SearchController;
+use App\Http\Controllers\StripePaymentsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -57,5 +55,6 @@ Route::middleware('auth')->group(function () {
     Route::get('/mypage/profile', [MypageController::class, 'profile_edit'])->name('user.profile_edit');
     Route::post('/mypage/profile', [MypageController::class, 'profile_store'])->name('user.profile_store');
     Route::patch('/mypage/profile', [MypageController::class, 'profile_update'])->name('user.profile_update');
+    Route::post('/stripe/store/{item_id}', [StripePaymentsController::class, 'store'])->name('stripe.store');
 
 });

@@ -15,7 +15,7 @@
                 <img class="item-img" src="{{ $item->image_url }}" alt="">
                 <div class="item-detail-text">
                     <p class="item-name">{{ $item->name }}</p>
-                    <p class="item-price">￥{{ $item->price }}</p>
+                    <p class="item-price">{{ $item->price }}</p>
                 </div>
             </div>
             <div class="payment-method">
@@ -31,18 +31,31 @@
             <div class="confirm-content">
                 <div class="confirm-item-price">
                     <p class="confirm-item-price-title">商品代金</p>
-                    <p class="confirm-item-price-preview">￥{{ $item->price }}</p>
+                    <p class="confirm-item-price-preview">{{ $item->price }}</p>
                 </div>
                 <div class="confirm-payment-amount">
                     <p class="confirm-payment-amount-title">支払い金額</p>
-                    <p class="confirm-payment-amount-preview">￥{{ $item->price }}</p>
+                    <p class="confirm-payment-amount-preview">{{ $item->price }}</p>
                 </div>
                 <div class="confirm-payment-method">
                     <p class="confirm-payment-method-title">支払い方法</p>
                     <p class="confirm-payment-method-preview"></p>
                 </div>
             </div>
-            <button class="purchase-form-button" type="submit">購入する</button>
+            <button type="submit">購入する</button>
+            <form class="stripe-form" action="{{route('stripe.store', ['item_id' => $item->id] )}}" method="post">
+                @csrf
+                <script src="https://checkout.stripe.com/checkout.js"
+                    class="stripe-button" data-key="{{ env('STRIPE_KEY') }}"
+                    data-amount="{{$item->price}}"
+                    data-name="お支払い画面"
+                    data-label="決済"
+                    data-description="現在はデモ画面です"
+                    data-image="https://stripe.com/img/documentation/checkout/marketplace.png"
+                    data-locale="auto"
+                    data-currency="JPY">
+                </script>
+            </form>
         </div>
     </form>
 </div>
