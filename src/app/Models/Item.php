@@ -68,4 +68,9 @@ class Item extends Model
             return false;
         }
     }
+
+    public function getPriceAttribute($value)
+    {
+        return '￥'. number_format($value);
+    }
 }

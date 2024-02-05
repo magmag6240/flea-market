@@ -2,35 +2,19 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\ItemRequest;
 use App\Models\Category;
 use App\Models\Condition;
 use App\Models\Item;
 use App\Models\Profile;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
 class MarketController extends Controller
 {
     public function top()
     {
-        if(Auth::check()) {
-            $user_id = Auth::id();
-            $purchase_item_history = Item::where('buyer_id', $user_id)->with('categories')->get();
-            if($purchase_item_history->isEmpty()) {
-                $items = Item::get();
-                $recommend_items = Category::withCount('items')->orderBy('items_count', 'desc')->get();
-                return view('recommend', compact('items', 'recommend_items'));
-            } else {
-                foreach ($purchase_item_history->categories as $category) {
-                    $recommend_items = Category::where('id', $category->id)->with('items')->get();
-                    return view('recommend', compact('recommend_items'));
-                }
-            }
-        } else {
-            $items = Item::get();
-            $recommend_items = Category::withCount('items')->orderBy('items_count', 'desc')->get();
-            return view('recommend', compact('items', 'recommend_items'));
-        }
+        $items = Item::whereNull('buyer_id')->with('categories')->get();
+        return view('recommend', compact('items'));
     }
 
     public function sell()
@@ -40,7 +24,7 @@ class MarketController extends Controller
         return view('sell', compact('category', 'condition'));
     }
 
-    public function sell_store(Request $request)
+    public function sell_store(ItemRequest $request)
     {
         $image = $request->file('item_image');
         $path = '';

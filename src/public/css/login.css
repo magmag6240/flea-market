@@ -158,38 +158,45 @@
     color: #f00;
 }
 
+@media (min-width:320px) {
+    .login-error {
+        font-size: 4vw;
+        margin-left: 8vw;
+    }
+}
+
 @media (min-width:375px) {
     .login-error {
-        font-size: 1.6vw;
-        margin-left: 8vw;
+        font-size: 3.5vw;
+        margin-left: 7vw;
     }
 }
 
 @media (min-width:425px) {
     .login-error {
-        font-size: 1.6vw;
+        font-size: 3vw;
         margin-left: 8vw;
     }
 }
 
 @media (min-width:768px) {
     .login-error {
-        font-size: 1.6vw;
+        font-size: 2vw;
         margin-left: 8vw;
     }
 }
 
 @media (min-width:1024px) {
     .login-error {
-        font-size: 1.3vw;
-        margin-left: 6vw;
+        font-size: 1.5vw;
+        margin-left: 10vw;
     }
 }
 
 @media (min-width:1440px) {
     .login-error {
-        font-size: 1vw;
-        margin-left: 4vw;
+        font-size: 1.1vw;
+        margin-left: 7vw;
     }
 }
 

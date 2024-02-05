@@ -12,8 +12,8 @@
     </div>
     <div class="item-detail-text">
         <p class="item-name">{{ $item_detail->name }}</p>
-        <span class="item-bland-name">{{ $item_detail->bland_name }}</span>
-        <p class="item-price">￥{{ $item_detail->price }}</p>
+        <p class="item-brand-name">{{ $item_detail->brand_name }}</p>
+        <p class="item-price">{{ $item_detail->price }}</p>
         <div class="item-reaction">
             <div class="like">
                 @if($item_detail->is_liked())
@@ -46,16 +46,28 @@
         </div>
         <div class="item-detail-info">
             <p class="info-title">商品の情報</p>
-        </div>
-        <div class="item-detail-category">
-            <p class="category-title">カテゴリー</p>
-            @foreach($item_detail->categories as $category)
-                <p class="category-detail">{{ $category->category }}</p>
-            @endforeach
-        </div>
-        <div class="item-detail-condition">
-            <p class="condition-title">商品の状態</p>
-            <p class="condition-detail">{{ $item_detail->condition->condition }}</p>
+            <table class="item-detail-table">
+                <tr class="item-detail-tr">
+                    <td class="item-detail-td">
+                        <p class="category-title">カテゴリー</p>
+                    </td>
+                    <td class="item-detail-td">
+                        <div class="category-detail">
+                            @foreach($item_detail->categories as $category)
+                            <p class="category-detail-text">{{ $category->category }}</p>
+                            @endforeach
+                        </div>
+                    </td>
+                </tr>
+                <tr class="item-detail-tr">
+                    <td class="item-detail-td">
+                        <p class="condition-title">商品の状態</p>
+                    </td>
+                    <td class="item-detail-td">
+                        <p class="condition-detail">{{ $item_detail->condition->condition }}</p>
+                    </td>
+                </tr>
+            </table>
         </div>
     </div>
 </div>

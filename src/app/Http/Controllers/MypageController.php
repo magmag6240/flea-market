@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\AddressRequest;
+use App\Http\Requests\ProfileRequest;
 use App\Models\Like;
 use App\Models\Item;
 use App\Models\Payment;
@@ -22,7 +24,7 @@ class MypageController extends Controller
     public function mylist()
     {
         $user_id = Auth::id();
-        $like_items = Like::where('user_id', $user_id)->get();
+        $like_items = Like::where('user_id', $user_id)->with('item')->get();
         return view('mylist', compact('like_items'));
     }
 
@@ -42,7 +44,7 @@ class MypageController extends Controller
         }
     }
 
-    public function profile_store(Request $request)
+    public function profile_store(ProfileRequest $request)
     {
         $user_id = Auth::id();
         $image = $request->file('user_image');
@@ -61,7 +63,7 @@ class MypageController extends Controller
         return redirect()->route('user.mypage');
     }
 
-    public function profile_update(Request $request)
+    public function profile_update(ProfileRequest $request)
     {
         $user_id = Auth::id();
         $image = $request->file('user_image');
@@ -115,7 +117,7 @@ class MypageController extends Controller
         }
     }
 
-    public function address_update(Request $request, $item_id)
+    public function address_update(AddressRequest $request, $item_id)
     {
         $user_id = Auth::id();
         $user_profile = Profile::where('user_id', $user_id)->first();

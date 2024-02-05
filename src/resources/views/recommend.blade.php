@@ -12,7 +12,7 @@
         <p class="top-title-mylist"><a class="mylist-link" href="/mylist">マイリスト</a></p>
     </div>
     <div class="recommend-list">
-        @foreach($recommend_items as $item)
+        @foreach($items as $item)
         <a class="recommend-item-detail-link" href="{{ route('user.item_detail', ['item_id' => $item->id]) }}">
             <img class="recommend-item-img" src="{{$item->image_url}}">
         </a>
