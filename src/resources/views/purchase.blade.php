@@ -39,7 +39,7 @@
                 </div>
                 <div class="confirm-payment-method">
                     <p class="confirm-title">支払い方法</p>
-                    <p class="confirm-preview"></p>
+                    <p class="confirm-preview">{{ $profile->payment->method_name }}</p>
                 </div>
             </div>
             <button class="purchase-button" type="submit">購入する</button>

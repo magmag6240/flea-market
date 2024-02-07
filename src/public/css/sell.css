@@ -9,6 +9,13 @@
     color: #000;
 }
 
+@media (min-width:320px) {
+    .sell-title {
+        font-size: 5vw;
+        margin: 22vw 0 8vw 0;
+    }
+}
+
 @media (min-width:375px) {
     .sell-title {
         font-size: 4.5vw;
@@ -67,6 +74,15 @@
     font-weight: bold;
 }
 
+@media (min-width:320px) {
+    .sell-group-title {
+        font-size: 3.9vw;
+    }
+    .sell-lot-title {
+        font-size: 4.2vw;
+    }
+}
+
 @media (min-width:375px) {
     .sell-group-title {
         font-size: 3.2vw;
@@ -117,10 +133,16 @@
     flex-direction: column;
 }
 
-@media (min-width:375px) {
+@media (min-width:320px) {
     .sell-group {
         margin: 2vw 0 4vw 0;
-        width: 65vw;
+        width: 80vw;
+    }
+}
+
+@media (min-width:375px) {
+    .sell-group {
+        width: 70vw;
     }
 }
 
@@ -168,12 +190,83 @@
 
 .sell-image {
     width: 100%;
-    border: 0.1vw solid #696969;
+    border: 0.1vw dashed #696969;
+}
+
+@media (min-width:320px) {
+    .sell-image {
+        padding: 10vw 0;
+    }
+}
+
+@media (min-width:375px) {
+    .sell-image {
+        padding: 9vw 0;
+    }
+}
+
+@media (min-width:425px) {
+    .sell-image {
+        padding: 8vw 0;
+    }
+}
+
+@media (min-width:1024px) {
+    .sell-image {
+        padding: 5vw 0;
+    }
+}
+
+.category-label, .condition-label {
+    display: inline-block;
+}
+
+@media (min-width:320px) {
+    .category-label, .condition-label {
+        margin-right: 1.7vw;
+    }
+}
+
+@media (min-width:1024px) {
+    .category-label, .condition-label {
+        margin-right: 1.5vw;
+    }
 }
 
 .sell-error {
     width: fit-content;
     color: #f00;
+}
+
+@media (min-width:320px) {
+    .sell-checkbox-text, .sell-radio-detail {
+        font-size: 3.4vw;
+    }
+}
+
+@media (min-width:768px) {
+    .sell-checkbox-text, .sell-radio-detail {
+        font-size: 2vw;
+    }
+}
+
+@media (min-width:1024px) {
+    .sell-checkbox-text, .sell-radio-detail {
+        font-size: 1.3vw;
+    }
+}
+
+@media (min-width:1440px) {
+    .sell-checkbox-text, .sell-radio-detail {
+        font-size: 1.1vw;
+    }
+}
+
+@media (min-width:320px) {
+    .sell-error {
+        font-size: 1.6vw;
+        margin-left: 8vw;
+    }
 }
 
 @media (min-width:375px) {
@@ -219,6 +312,14 @@
     cursor: pointer;
 }
 
+@media (min-width:320px) {
+    .sell-form-button {
+        font-size: 3.8vw;
+        padding: 2.3vw 0;
+        margin: 10vw 0 5vw 0;
+    }
+}
+
 @media (min-width:375px) {
     .sell-form-button {
         font-size: 3.2vw;
@@ -257,8 +358,4 @@
         padding: 0.6vw 0;
         margin: 3.2vw 0 3vw 0;
     }
-}
-
-.category-group {
-    display: inline-flex;
 }

@@ -8,13 +8,18 @@
 
 <div class="mypage-content">
     <div class="user-detail">
+        @if(!empty($user_profile))
         <div class="user-detail-content">
-            <div class="user-image"></div>
-            <p class="user-name"></p>
+            <div class="user-image">{{ $user_profile->image_url }}</div>
+            <p class="user-name">{{ $user_profile->user_name }}</p>
         </div>
         <button class="user-profile-button">
             <a class="user-profile-link" href="{{ route('user.profile_edit') }}">プロフィールを編集</a>
         </button>
+        @else
+        <p>ユーザー情報</p>
+        <a href="{{ route('user.profile_edit') }}">プロフィールを登録</a>
+        @endif
     </div>
     <div class="user-item-list">
         <div class="js-tab-panel">
@@ -24,13 +29,13 @@
             </div>
             <div class="js-panel active_content">
                 @if(!$sell_item->isEmpty())
-                @foreach($sell_item as $item)
                 <div class="sell-item-detail">
+                    @foreach($sell_item as $item)
                     <a class="sell-item-detail-link" href="{{ route('user.item_detail', ['item_id' => $item->id]) }}">
                         <img class="sell-item-img" src="{{$item->image_url}}">
                     </a>
+                    @endforeach
                 </div>
-                @endforeach
                 @else
                 <div class="sell-item-null">
                     <p class="sell-item-null-text">出品履歴はありません</p>
@@ -39,13 +44,13 @@
             </div>
             <div class="js-panel inactive_content">
                 @if(!$purchase_item->isEmpty())
-                @foreach($purchase_item as $item)
                 <div class="purchase-item-detail">
+                    @foreach($purchase_item as $item)
                     <a class="purchase-item-detail-link" href="{{ route('user.item_detail', ['item_id' => $item->id]) }}">
                         <img class="purchase-item-img" src="{{$item->image_url}}">
                     </a>
+                    @endforeach
                 </div>
-                @endforeach
                 @else
                 <div class="purchase-item-null">
                     <p class="purchase-item-null-text">購入履歴はありません</p>

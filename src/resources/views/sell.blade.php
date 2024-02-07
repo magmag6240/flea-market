@@ -14,7 +14,7 @@
             <span class="sell-group-title">商品画像</span>
             <div class="sell-group-content">
                 <div class="sell-image">
-                    <input type="file" name="item_image" id="item_image">
+                    <input class="sell-input-image" type="file" name="item_image" id="item_image">
                 </div>
                 <div class="sell-error">
                     @error('image_url')
@@ -29,9 +29,9 @@
                 <span class="sell-group-title">カテゴリー（複数選択可）</span>
                 <div class="sell-group-content">
                     @foreach($category as $category)
-                    <label class="category-group">
+                    <label class="category-label">
                         <input class="sell-checkbox" type="checkbox" name="category_id[]" value="{{ $category->id }}">
-                        <span class="">{{ $category->category }}</span>
+                        <span class="sell-checkbox-text">{{ $category->category }}</span>
                     </label>
                     @endforeach
                     <div class="sell-error">
@@ -45,9 +45,9 @@
                 <span class="sell-group-title">商品の状態</span>
                 <div class="sell-group-content">
                     @foreach($condition as $condition)
-                    <label class="condition-group">
+                    <label class="condition-label">
                         <input class="sell-radio" type="radio" name="condition_id" value="{{ $condition->id }}">
-                        <span>{{ $condition->condition }}</span>
+                        <span class="sell-radio-detail">{{ $condition->condition }}</span>
                     </label>
                     @endforeach
                     <div class="sell-error">

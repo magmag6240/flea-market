@@ -54,7 +54,7 @@ class MarketController extends Controller
     {
         $user_id = Auth::id();
         $item = Item::where('id', $item_id)->first();
-        $profile = Profile::where('user_id', $user_id)->first();
+        $profile = Profile::where('user_id', $user_id)->with('payment')->first();
         return view('purchase', compact('item', 'profile'));
     }
 

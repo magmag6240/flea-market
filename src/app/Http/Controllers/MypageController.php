@@ -16,9 +16,10 @@ class MypageController extends Controller
     public function index()
     {
         $user_id = Auth::id();
+        $user_profile = Profile::where('user_id', $user_id)->first();
         $sell_item = Item::where('seller_id', $user_id)->get();
         $purchase_item = Item::where('buyer_id', $user_id)->get();
-        return view('mypage', compact('sell_item', 'purchase_item'));
+        return view('mypage', compact('user_profile', 'sell_item', 'purchase_item'));
     }
 
     public function mylist()
