@@ -9,6 +9,13 @@
     color: #000;
 }
 
+@media (min-width:320px) {
+    .profile-edit-title {
+        font-size: 5vw;
+        margin: 22vw 0 6vw 0;
+    }
+}
+
 @media (min-width:375px) {
     .profile-edit-title {
         font-size: 4.5vw;
@@ -55,9 +62,15 @@
     flex-direction: column;
 }
 
-@media (min-width:375px) {
+@media (min-width:320px) {
     .edit-group {
         margin: 2vw 0 4vw 0;
+        width: 70vw;
+    }
+}
+
+@media (min-width:375px) {
+    .edit-group {
         width: 65vw;
     }
 }
@@ -94,6 +107,12 @@
     color: #000;
     font-weight: bold;
     align-self: flex-start;
+}
+
+@media (min-width:320px) {
+    .edit-group-title {
+        font-size: 4vw;
+    }
 }
 
 @media (min-width:375px) {
@@ -142,6 +161,13 @@
     border-radius: 5px;
 }
 
+@media (min-width:320px) {
+    .input-image-label {
+        padding: 1.2vw 3vw;
+        font-size: 4.2vw;
+    }
+}
+
 @media (min-width:375px) {
     .input-image-label {
         padding: 1vw 3vw;
@@ -180,6 +206,13 @@
 .profile-edit-error {
     width: fit-content;
     color: #f00;
+}
+
+@media (min-width:320px) {
+    .profile-create-error {
+        font-size: 1.6vw;
+        margin-left: 8vw;
+    }
 }
 
 @media (min-width:375px) {
@@ -223,6 +256,14 @@
     border: none;
     border-radius: 3px;
     cursor: pointer;
+}
+
+@media (min-width:320px) {
+    .update-button {
+        font-size: 3.8vw;
+        padding: 2.3vw 0;
+        margin: 12vw 0 3vw 0;
+    }
 }
 
 @media (min-width:375px) {

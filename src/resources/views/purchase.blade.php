@@ -30,19 +30,19 @@
         <div class="purchase-form-confirm">
             <div class="confirm-content">
                 <div class="confirm-item-price">
-                    <p class="confirm-item-price-title">商品代金</p>
-                    <p class="confirm-item-price-preview">{{ $item->price }}</p>
+                    <p class="confirm-title">商品代金</p>
+                    <p class="confirm-preview">{{ $item->price }}</p>
                 </div>
                 <div class="confirm-payment-amount">
-                    <p class="confirm-payment-amount-title">支払い金額</p>
-                    <p class="confirm-payment-amount-preview">{{ $item->price }}</p>
+                    <p class="confirm-title">支払い金額</p>
+                    <p class="confirm-preview">{{ $item->price }}</p>
                 </div>
                 <div class="confirm-payment-method">
-                    <p class="confirm-payment-method-title">支払い方法</p>
-                    <p class="confirm-payment-method-preview"></p>
+                    <p class="confirm-title">支払い方法</p>
+                    <p class="confirm-preview"></p>
                 </div>
             </div>
-            <button type="submit">購入する</button>
+            <button class="purchase-button" type="submit">購入する</button>
             <form class="stripe-form" action="{{route('stripe.store', ['item_id' => $item->id] )}}" method="post">
                 @csrf
                 <script src="https://checkout.stripe.com/checkout.js"
