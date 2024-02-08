@@ -4,6 +4,119 @@
     flex-direction: column;
 }
 
+@media (min-width:320px) {
+    .user-name {
+        font-weight: bold;
+        font-size: 5vw;
+        margin: 6vw 0 3.6vw 0;
+    }
+}
+
+@media (min-width:375px) {
+    .user-profile-button {
+        font-size: 3.2vw;
+        margin: 5.5vw 0 3vw 0;
+    }
+}
+
+@media (min-width:425px) {
+    .user-profile-button {
+        font-size: 3vw;
+        margin: 5vw 0 2.5vw 0;
+    }
+}
+
+@media (min-width:768px) {
+    .user-profile-button {
+        font-size: 1.8vw;
+        margin: 4.5vw 0 1.5vw 0;
+    }
+}
+
+@media (min-width:1024px) {
+    .user-profile-button {
+        font-size: 1.4vw;
+        margin: 4vw 0 1.3vw 0;
+    }
+}
+
+@media (min-width:1440px) {
+    .user-profile-button {
+        font-size: 1.2vw;
+        margin: 3vw 0 1vw 0;
+    }
+}
+
+@media (min-width:320px) {
+    .user-detail-content {
+        display: flex;
+    }
+}
+
+@media (min-width:768px) {
+    .user-detail, .user-detail-content {
+        display: flex;
+    }
+}
+
+.user-profile-link {
+    text-decoration: none;
+    color: #CD5C5C;
+    font-weight: bold;
+}
+
+.user-profile-button {
+    border-radius: 5px;
+    border: 2px solid #CD5C5C;
+    cursor: pointer;
+    background-color: #fff;
+}
+
+@media (min-width:320px) {
+    .user-profile-button {
+        font-size: 3.8vw;
+        padding: 1.5vw 5vw;
+        margin: 6vw 0 3.6vw 0;
+    }
+}
+
+@media (min-width:375px) {
+    .user-profile-button {
+        font-size: 3.2vw;
+        margin: 5.5vw 0 3vw 0;
+    }
+}
+
+@media (min-width:425px) {
+    .user-profile-button {
+        font-size: 3vw;
+        padding: 1.2vw 4.5vw;
+        margin: 5vw 0 2.5vw 0;
+    }
+}
+
+@media (min-width:768px) {
+    .user-profile-button {
+        font-size: 1.8vw;
+        padding: 0.8vw 3vw;
+        margin: 4.5vw 0 1.5vw 0;
+    }
+}
+
+@media (min-width:1024px) {
+    .user-profile-button {
+        font-size: 1.4vw;
+        margin: 4vw 0 1.3vw 0;
+    }
+}
+
+@media (min-width:1440px) {
+    .user-profile-button {
+        font-size: 1.2vw;
+        margin: 3vw 0 1vw 0;
+    }
+}
+
 .js-tab-panel {
     width: 100%;
 }

@@ -10,15 +10,15 @@
     <div class="user-detail">
         @if(!empty($user_profile))
         <div class="user-detail-content">
-            <div class="user-image">{{ $user_profile->image_url }}</div>
+            <img class="user-image" src="/storage/users/{{$user_profile->image_url}}">
             <p class="user-name">{{ $user_profile->user_name }}</p>
         </div>
         <button class="user-profile-button">
             <a class="user-profile-link" href="{{ route('user.profile_edit') }}">プロフィールを編集</a>
         </button>
         @else
-        <p>ユーザー情報</p>
-        <a href="{{ route('user.profile_edit') }}">プロフィールを登録</a>
+        <p class="user-detail-text">ユーザー情報</p>
+        <a class="profile-create-link" href="{{ route('user.profile_edit') }}">プロフィールを登録</a>
         @endif
     </div>
     <div class="user-item-list">
