@@ -8,7 +8,7 @@
 
 <div class="item-detail-content">
     <div class="item-detail-image">
-        <img class="item-detail-img" src="{{ $item_detail->image_url }}" alt="">
+        <img class="item-detail-img" src="/storage/items/{{ $item_detail->image_url }}" alt="">
     </div>
     <div class="item-detail-text">
         <p class="item-name">{{ $item_detail->name }}</p>

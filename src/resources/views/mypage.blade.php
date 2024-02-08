@@ -32,7 +32,7 @@
                 <div class="sell-item-detail">
                     @foreach($sell_item as $item)
                     <a class="sell-item-detail-link" href="{{ route('user.item_detail', ['item_id' => $item->id]) }}">
-                        <img class="sell-item-img" src="{{$item->image_url}}">
+                        <img class="sell-item-img" src="/storage/items/{{$item->image_url}}">
                     </a>
                     @endforeach
                 </div>
@@ -47,7 +47,7 @@
                 <div class="purchase-item-detail">
                     @foreach($purchase_item as $item)
                     <a class="purchase-item-detail-link" href="{{ route('user.item_detail', ['item_id' => $item->id]) }}">
-                        <img class="purchase-item-img" src="{{$item->image_url}}">
+                        <img class="purchase-item-img" src="/storage/items/{{$item->image_url}}">
                     </a>
                     @endforeach
                 </div>
