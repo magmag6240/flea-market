@@ -217,6 +217,55 @@
     }
 }
 
+.input-image-label {
+    color: #CD5C5C;
+    font-weight: bold;
+    border: 2px solid #CD5C5C;
+    border-radius: 5px;
+}
+
+@media (min-width:320px) {
+    .input-image-label {
+        padding: 1.2vw 3vw;
+        font-size: 4.2vw;
+    }
+}
+
+@media (min-width:375px) {
+    .input-image-label {
+        padding: 1vw 3vw;
+        font-size: 3.8vw;
+    }
+}
+
+@media (min-width:425px) {
+    .input-image-label {
+        padding: 0.8vw 2.8vw;
+        font-size: 3.5vw;
+    }
+}
+
+@media (min-width:768px) {
+    .input-image-label {
+        padding: 0.5vw 2.3vw;
+        font-size: 2vw;
+    }
+}
+
+@media (min-width:1024px) {
+    .input-image-label {
+        padding: 0.3vw 1.9vw;
+        font-size: 1.5vw;
+    }
+}
+
+@media (min-width:1440px) {
+    .input-image-label {
+        padding: 0.25vw 1.3vw;
+        font-size: 1.2vw;
+    }
+}
+
 .category-label, .condition-label {
     display: inline-block;
 }

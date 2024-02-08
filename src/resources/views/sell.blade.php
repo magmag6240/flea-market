@@ -14,13 +14,19 @@
             <span class="sell-group-title">商品画像</span>
             <div class="sell-group-content">
                 <div class="sell-image">
-                    <input class="sell-input-image" type="file" name="item_image" id="item_image">
+                    <label class="input-image-label" for="item-image">画像を選択する</label>
+                    <input class="sell-input-image" type="file" name="item_image" id="item-image" accept=".jpg, .jpeg, .png">
                 </div>
+                <div class="image-preview">
+                    <p>アップロードするファイルが選択されていません</p>
+                </div>
+                @if ($errors->any())
                 <div class="sell-error">
                     @error('image_url')
                     {{ $message }}
                     @enderror
                 </div>
+                @endif
             </div>
         </div>
         <div class="sell-lot">
@@ -111,5 +117,6 @@
         <button class="sell-form-button" type="submit">出品する</button>
     </form>
 </div>
+<script src="{{ mix('js/item_image.js') }}"></script>
 
 @endsection

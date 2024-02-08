@@ -8,6 +8,8 @@ use App\Models\Condition;
 use App\Models\Item;
 use App\Models\Profile;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Storage;
+use Intervention\Image\Facades\Image;
 
 class MarketController extends Controller
 {
@@ -26,11 +28,12 @@ class MarketController extends Controller
 
     public function sell_store(ItemRequest $request)
     {
-        $image = $request->file('item_image');
-        $path = '';
-        if (isset($image)) {
-            $path = $image->store('item', 'public');
-        }
+        $image_file = $request->item_image;
+        $file_name = uniqid(rand() . '_');
+        $extension = $image_file->extension();
+        $file_name_store = $file_name . '.' . $extension;
+        $resized_image = Image::make($image_file)->resize(300, 300)->encode();
+        Storage::put('public/items/' . $file_name_store, $resized_image);
 
         Item::create([
             'name' => $request->input('name'),
@@ -39,7 +42,7 @@ class MarketController extends Controller
             'brand_name' => $request->input('brand_name'),
             'price' => $request->input('price'),
             'item_detail' => $request->input('item_detail'),
-            'image_url' => $path
+            'image_url' => $file_name_store
         ]);
 
         foreach(array($request->input('category_id')) as $categories) {

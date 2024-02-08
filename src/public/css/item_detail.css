@@ -212,6 +212,12 @@
     flex-direction: column;
 }
 
+.comment-link::before {
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+    content: '\f075';
+}
+
 @media (min-width:320px) {
     .like, .comment {
         margin: 1vw 5vw 1vw 2vw;
@@ -240,12 +246,6 @@
 .like-link,
 .comment-link {
     text-decoration: none;
-}
-
-.comment-link::before {
-    font-family: 'Font Awesome 5 Free';
-    font-weight: 900;
-    content: '\f075';
 }
 
 .like-link::before,

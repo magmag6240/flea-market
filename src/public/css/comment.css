@@ -4,7 +4,7 @@
     justify-content: space-between;
 }
 
-@media (min-width:375px) {
+@media (min-width:320px) {
     .comment-content {
         padding: 10vw 8vw;
         flex-direction: column;
@@ -101,13 +101,19 @@
 
 @media (min-width:320px) {
     .item-name {
-        font-size: 6vw;
+        font-size: 7.8vw;
+    }
+}
+
+@media (min-width:375px) {
+    .item-name {
+        font-size: 6.8vw;
     }
 }
 
 @media (min-width:425px) {
     .item-name {
-        font-size: 5.5vw;
+        font-size: 6.3vw;
     }
 }
 
@@ -130,52 +136,89 @@
 }
 
 @media (min-width:320px) {
-    .item-bland-name {}
+    .item-bland-name {
+        margin: 0;
+        font-size: 4.3vw;
+    }
+}
+
+@media (min-width:375px) {
+    .item-brand-name {
+        font-size: 3.8vw;
+    }
 }
 
 @media (min-width:425px) {
-    .item-bland-name {}
+    .item-bland-name {
+        font-size: 3.3vw;
+    }
 }
 
 @media (min-width:768px) {
-    .item-bland-name {}
+    .item-bland-name {
+        font-size: 2vw;
+    }
 }
 
 @media (min-width:1024px) {
-    .item-bland-name {}
+    .item-bland-name {
+        font-size: 1.5vw;
+    }
 }
 
 @media (min-width:1440px) {
-    .item-bland-name {}
+    .item-bland-name {
+        font-size: 1.2vw;
+    }
 }
 
 @media (min-width:320px) {
-    .item-price {}
+    .item-price {
+        margin-bottom: 0;
+        margin-top: 3vw;
+        font-size: 6vw;
+    }
+}
+
+@media (min-width:375px) {
+    .item-price {
+        font-size: 5.5vw;
+    }
 }
 
 @media (min-width:425px) {
-    .item-price {}
+    .item-price {
+        font-size: 4.8vw;
+    }
 }
 
 @media (min-width:768px) {
-    .item-price {}
+    .item-price {
+        font-size: 3vw;
+    }
 }
 
 @media (min-width:1024px) {
-    .item-price {}
+    .item-price {
+        margin-top: 2vw;
+        font-size: 2vw;
+    }
 }
 
 @media (min-width:1440px) {
-    .item-price {}
+    .item-price {
+        font-size: 1.7vw;
+    }
 }
 
 .item-reaction {
     display: flex;
 }
 
-.like, .comment {
+.like,
+.comment {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
 }
 
 .comment-link::before {
@@ -184,27 +227,34 @@
     content: '\f075';
 }
 
+@media (min-width:320px) {
+    .like, .comment {
+        margin: 1vw 5vw 1vw 2vw;
+    }
+}
+
 @media (min-width:768px) {
-    .comment-link::before {
-        font-size: 3vw;
+    .like, .comment {
+        margin: 1vw 3vw 1vw 1vw;
     }
 }
 
 @media (min-width:1024px) {
-    .comment-link::before {
-        font-size: 2.5vw;
+    .like, .comment {
+        margin: 1vw 2.5vw 1vw 0.7vw;
     }
 }
 
 @media (min-width:1440px) {
-    .comment-link::before {
-        font-size: 2vw;
+    .like, .comment {
+        margin: 1vw 2vw 1vw 0.5vw;
     }
 }
 
+.unlike-link,
+.like-link,
 .comment-link {
     text-decoration: none;
-    margin-right: 1.5vw;
 }
 
 .like-link::before,
@@ -214,40 +264,78 @@
     content: '\f005';
 }
 
+.unlike-link::before {
+    color: #F8B400;
+}
+
+.like-link::before,
+.comment-link::before {
+    color: #A9A9A9;
+}
+
+@media (min-width:320px) {
+    .like-link::before, .unlike-link::before, .comment-link::before {
+        font-size: 7vw;
+    }
+}
+
+@media (min-width:375px) {
+    .like-link::before, .unlike-link::before, .comment-link::before {
+        font-size: 6.5vw;
+    }
+}
+
+@media (min-width:425px) {
+    .like-link::before, .unlike-link::before, .comment-link::before {
+        font-size: 6vw;
+    }
+}
+
 @media (min-width:768px) {
-    .like-link::before,
-    .unlike-link::before {
-        font-size: 3vw;
+    .like-link::before, .unlike-link::before, .comment-link::before {
+        font-size: 3.5vw;
     }
 }
 
 @media (min-width:1024px) {
-    .like-link::before,
-    .unlike-link::before {
+    .like-link::before, .unlike-link::before, .comment-link::before {
         font-size: 2.5vw;
     }
 }
 
 @media (min-width:1440px) {
-    .like-link::before,
-    .unlike-link::before {
+    .like-link::before, .unlike-link::before, .comment-link::before {
         font-size: 2vw;
     }
 }
 
-.unlike-link,
-.like-link {
-    text-decoration: none;
-    margin-right: 1.5vw;
+.like-count,
+.comment-count {
+    text-align: center;
 }
 
-.unlike-link::before,
-.comment-link::before {
-    color: #F8B400;
+@media (min-width:320px) {
+    .like-count, .comment-count {
+        font-size: 3.4vw;
+    }
 }
 
-.like-link::before {
-    color: #696969;
+@media (min-width:768px) {
+    .like-count, .comment-count {
+        font-size: 1.7vw;
+    }
+}
+
+@media (min-width:1024px) {
+    .like-count, .comment-count {
+        font-size: 1.3vw;
+    }
+}
+
+@media (min-width:1440px) {
+    .like-count, .comment-count {
+        font-size: 1vw;
+    }
 }
 
 .comment-history {

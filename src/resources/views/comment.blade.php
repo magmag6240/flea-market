@@ -12,21 +12,21 @@
     </div>
     <div class="item-detail-text">
         <p class="item-name">{{ $item_detail->name }}</p>
-        <span class="item-bland-name">{{ $item_detail->bland_name }}</span>
-        <p class="item-price">￥{{ $item_detail->price }}</p>
+        <span class="item-brand-name">{{ $item_detail->brand_name }}</span>
+        <p class="item-price">{{ $item_detail->price }}</p>
         <div class="item-reaction">
             <div class="like">
                 @if($item_detail->is_liked())
                 <a class="unlike-link" href="{{ route('unlike', ['item_id' => $item_detail->id]) }}"></a>
-                <p>{{$item_detail->likes->count()}}</p>
+                <span class="like-count">{{$item_detail->likes->count()}}</span>
                 @else
                 <a class="like-link" href="{{ route('like', ['item_id' => $item_detail->id]) }}"></a>
-                <p>{{$item_detail->likes->count()}}</p>
+                <span class="like-count">{{$item_detail->likes->count()}}</span>
                 @endif
             </div>
             <div class="comment">
                 <span class="comment-link"></span>
-                <p>{{$item_detail->comments->count()}}</p>
+                <span class="comment-count">{{$item_detail->comments->count()}}</span>
             </div>
         </div>
         <div class="comment-history">

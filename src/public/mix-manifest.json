@@ -2,5 +2,6 @@
     "/js/app.js": "/js/app.js",
     "/js/tab.js": "/js/tab.js",
     "/js/menu.js": "/js/menu.js",
-    "/js/user_image.js": "/js/user_image.js"
+    "/js/user_image.js": "/js/user_image.js",
+    "/js/item_image.js": "/js/item_image.js"
 }

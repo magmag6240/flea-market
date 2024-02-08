@@ -5,10 +5,122 @@
 }
 
 @media (min-width:320px) {
+    .mypage-content {
+        padding-top: 15vw;
+    }
+}
+
+@media (min-width:425px) {
+    .mypage-content {
+        padding-top: 13vw;
+    }
+}
+
+@media (min-width:768px) {
+    .mypage-content {
+        padding-top: 9vw;
+    }
+}
+
+@media (min-width:1024px) {
+    .mypage-content {
+        padding-top: 5vw;
+    }
+}
+
+@media (min-width:320px) {
+    .user-detail {
+        margin: 0 17vw 6vw 17vw;
+    }
+}
+
+@media (min-width:768px) {
+    .user-detail {
+        display: flex;
+        justify-content: space-between;
+        margin: 0 10vw 3vw 17vw;
+    }
+}
+
+@media (min-width:1024px) {
+    .user-detail {
+        margin: 0 10vw 2vw 15vw;
+    }
+}
+
+@media (min-width:320px) {
+    .user-detail-content {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 3vw;
+    }
+}
+
+@media (min-width:320px) {
     .user-name {
+        align-self: center;
         font-weight: bold;
-        font-size: 5vw;
-        margin: 6vw 0 3.6vw 0;
+        font-size: 7vw;
+    }
+}
+
+@media (min-width:375px) {
+    .user-name {
+        font-size: 6.5vw;
+    }
+}
+
+@media (min-width:425px) {
+    .user-name {
+        font-size: 6vw;
+    }
+}
+
+@media (min-width:768px) {
+    .user-name {
+        font-size: 3.5vw;
+    }
+}
+
+@media (min-width:1024px) {
+    .user-name {
+        font-size: 2.7vw;
+    }
+}
+
+@media (min-width:1440px) {
+    .user-name {
+        font-size: 2.3vw;
+    }
+}
+
+@media (min-width:320px) {
+    .user-image {
+        border-radius: 50%;
+        width: 25vw;
+        height: 25vw;
+    }
+}
+
+@media (min-width:425px) {
+    .user-image {
+        width: 23vw;
+        height: 23vw;
+    }
+}
+
+@media (min-width:768px) {
+    .user-image {
+        width: 15vw;
+        height: 15vw;
+        margin-right: 5vw;
+    }
+}
+
+@media (min-width:1024px) {
+    .user-image {
+        width: 12.5vw;
+        height: 12.5vw;
     }
 }
 
@@ -29,35 +141,28 @@
 @media (min-width:768px) {
     .user-profile-button {
         font-size: 1.8vw;
-        margin: 4.5vw 0 1.5vw 0;
+        height: 5vw;
+        position: relative;
+        top: 1.5vw;
     }
 }
 
 @media (min-width:1024px) {
     .user-profile-button {
         font-size: 1.4vw;
-        margin: 4vw 0 1.3vw 0;
+        height: 4vw;
+        top: 1vw;
     }
 }
 
 @media (min-width:1440px) {
     .user-profile-button {
         font-size: 1.2vw;
-        margin: 3vw 0 1vw 0;
+        height: 3.5vw;
     }
 }
 
-@media (min-width:320px) {
-    .user-detail-content {
-        display: flex;
-    }
-}
 
-@media (min-width:768px) {
-    .user-detail, .user-detail-content {
-        display: flex;
-    }
-}
 
 .user-profile-link {
     text-decoration: none;
