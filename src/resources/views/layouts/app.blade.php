@@ -15,18 +15,16 @@
 <body>
     <header class="header">
         <div class="header-content">
-            @if(!Route::is('user.sell') && !Route::is('user.address_edit'))
             <div class="header-logo">
                 <a class="top-link" href="{{ route('user.top') }}">
                     <img class="header-logo-img" src="logo_img.svg" alt="">
                     <img class="header-logo-coachtech-img" src="coachtech_img.png" alt="">
                 </a>
             </div>
-            @endif
-            @if(!Route::is('login') && !Route::is('register'))
+            @if(Route::is('user.top') || Route::is('user.mylist') || Route::is('user.mypage') || Route::is('user.comment') || Route::is('user.profile_edit') || Route::is('user.item_detail') || Route::is('user.purchase'))
             <nav class="header-nav nav" id="js-nav">
                 <ul class="header-nav-ul nav-items">
-                    <form class="header-nav-form" action="{{ route('user.top') }}" method="get">
+                    <form class="header-nav-form" action="{{ route('user.search') }}" method="get">
                         <input class="search-input" type="search" name="keyword" placeholder="なにをお探しですか？">
                     </form>
                     @if(Auth::check())
@@ -36,21 +34,19 @@
                             <button class="logout-button" type="submit">ログアウト</button>
                         </li>
                     </form>
-                        @can('general')
-                        <li class="header-nav-list"><a class="list-link-mypage" href="/mypage">マイページ</a></li>
-                        @endcan
-                        @can('admin')
-                        <li class="header-nav-list"><a class="list-link-admin" href="/admin">管理者ページ</a></li>
-                        @endcan
+                    @can('general')
+                    <li class="header-nav-list"><a class="list-link-mypage" href="/mypage">マイページ</a></li>
+                    <li class="header-nav-list"><a class="list-link-sell" href="/sell">出品</a></li>
+                    @endcan
+                    @can('admin')
+                    <li class="header-nav-list"><a class="list-link-admin" href="/admin">管理者ページ</a></li>
+                    <li class="header-nav-list"><a class="list-link-sell" href="/sell">出品</a></li>
+                    @endcan
                     @else
                     <li class="header-nav-list"><a class="list-link-login" href="/login">ログイン</a></li>
                     <li class="header-nav-list"><a class="list-link-register" href="/register">会員登録</a></li>
+                    <li class="header-nav-list"><a class="list-link-sell" href="/sell">出品</a></li>
                     @endif
-                    @can('general')
-                        @if(!Route::is('user.sell') && !Route::is('user.address_edit'))
-                        <li class="header-nav-list"><a class="list-link-sell" href="/sell">出品</a></li>
-                        @endif
-                    @endcan
                 </ul>
             </nav>
             <button class="header-button button" id="js-button">

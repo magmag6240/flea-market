@@ -12,11 +12,15 @@
         <p class="top-title-mylist">マイリスト</p>
     </div>
     <div class="like-item-list">
-        @foreach($like_items as $item)
-        <a class="like-item-detail-link" href="{{ route('user.item_detail', ['item_id' => $item->item_id]) }}">
-            <img class="like-item-img" src="/storage/items/{{$item->item->image_url}}">
-        </a>
-        @endforeach
+        @if(!$like_items->isEmpty())
+            @foreach($like_items as $item)
+            <a class="like-item-detail-link" href="{{ route('user.item_detail', ['item_id' => $item->item_id]) }}">
+                <img class="like-item-img" src="/storage/items/{{$item->item->image_url}}">
+            </a>
+            @endforeach
+        @else
+        <p class="like-item-null-text">お気に入り商品はありません</p>
+        @endif
     </div>
 </div>
 

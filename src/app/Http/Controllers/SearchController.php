@@ -11,11 +11,15 @@ class SearchController extends Controller
     {
         $keyword = $request->input('keyword');
         if (!empty($keyword)) {
-            $items = Item::where('name', 'LIKE', "%{$keyword}%")
-                ->orWhere('brand_name', 'LIKE', "%{$keyword}%")
-                ->orWhere('item_detail', 'LIKE', "%{$keyword}%")
+            $items = Item::where('name', 'like', '%' . $keyword . '%')
+                ->orWhere('brand_name', 'like', '%' . $keyword . '%')
+                ->orWhere('price', 'like', '%' . $keyword . '%')
+                ->orWhere('item_detail', 'like', '%' . $keyword . '%')
+                ->orWhereHas('condition', function ($query) use ($keyword) {
+                    $query->where('condition', 'like', '%' . $keyword . '%');
+                })
                 ->orWhereHas('categories', function ($query) use ($keyword) {
-                    $query->where('category', 'LIKE', "%{$keyword}%");
+                    $query->where('category', 'like', '%' . $keyword . '%');
                 })
                 ->get();
         } else {

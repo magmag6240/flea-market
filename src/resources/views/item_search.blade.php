@@ -9,9 +9,9 @@
 <div class="search-content">
     <h1 class="search-title">「{{$keyword}}」の検索結果</h1>
     <div class="search-result-list">
-        @foreach($recommend_items as $item)
+        @foreach($items as $item)
         <a class="search-item-detail-link" href="{{ route('user.item_detail', ['item_id' => $item->id]) }}">
-            <img class="search-item-img" src="{{$item->image_url}}">
+            <img class="search-item-img" src="/storage/items/{{$item->image_url}}">
         </a>
         @endforeach
     </div>
