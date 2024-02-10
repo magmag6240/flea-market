@@ -13,13 +13,17 @@
     </div>
     <div class="like-item-list">
         @if(!$like_items->isEmpty())
+        <div class="like-item-detail">
             @foreach($like_items as $item)
             <a class="like-item-detail-link" href="{{ route('user.item_detail', ['item_id' => $item->item_id]) }}">
                 <img class="like-item-img" src="/storage/items/{{$item->item->image_url}}">
             </a>
             @endforeach
+        </div>
         @else
-        <p class="like-item-null-text">お気に入り商品はありません</p>
+        <div class="like-item-detail-null">
+            <p class="like-item-null-text">お気に入り商品はありません</p>
+        </div>
         @endif
     </div>
 </div>

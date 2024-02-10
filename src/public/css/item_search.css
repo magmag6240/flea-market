@@ -10,38 +10,41 @@
     border-bottom: 0.15vw solid #696969;
 }
 
+@media (min-width:320px) {
+    .search-title {
+        padding: 2vw 0 0.3vw 6vw;
+        font-size: 5vw;
+    }
+}
+
 @media (min-width:375px) {
     .search-title {
-        padding: 2vw 0 0.1vw 10vw;
-        font-size: 3.2vw;
+        font-size: 4.5vw;
     }
 }
 
 @media (min-width:425px) {
     .search-title {
-        padding: 2vw 0 0.1vw 10vw;
-        font-size: 2.8vw;
+        font-size: 4vw;
     }
 }
 
 @media (min-width:768px) {
     .search-title {
-        padding: 2vw 0 0.1vw 10vw;
-        font-size: 2vw;
+        font-size: 2.6vw;
     }
 }
 
 @media (min-width:1024px) {
     .search-title {
-        padding: 1.5vw 0 0.2vw 9vw;
-        font-size: 1.6vw;
+        padding: 1.5vw 0 0.2vw 5vw;
+        font-size: 1.8vw;
     }
 }
 
 @media (min-width:1440px) {
     .search-title {
-        padding: 2vw 0 0.3vw 8vw;
-        font-size: 1.3vw;
+        font-size: 1.5vw;
     }
 }
 
@@ -50,7 +53,7 @@
     flex-wrap: wrap;
 }
 
-@media (min-width:375px) {
+@media (min-width:320px) {
     .search-result-list {
         padding: 4vw 5vw;
     }
@@ -80,39 +83,15 @@
     }
 }
 
-@media (min-width:375px) {
+@media (min-width:320px) {
     .search-item-detail-link {
         margin: 2vw;
     }
 }
 
-@media (min-width:425px) {
-    .search-item-detail-link {
-        margin: 2vw;
-    }
-}
-
-@media (min-width:768px) {
-    .search-item-detail-link {
-        margin: 2vw;
-    }
-}
-
-@media (min-width:1024px) {
-    .search-item-detail-link {
-        margin: 2vw;
-    }
-}
-
-@media (min-width:1440px) {
-    .search-item-detail-link {
-        margin: 2vw;
-    }
-}
-
-@media (min-width:375px) {
+@media (min-width:320px) {
     .search-item-img {
-        width: 26vw;
+        width: 41vw;
     }
 }
 

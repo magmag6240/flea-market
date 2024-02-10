@@ -57,7 +57,7 @@
 }
 
 @media (min-width:320px) {
-    .user-name {
+    .user-name, .user-detail-text {
         align-self: center;
         font-weight: bold;
         font-size: 7vw;
@@ -65,31 +65,31 @@
 }
 
 @media (min-width:375px) {
-    .user-name {
+    .user-name, .user-detail-text {
         font-size: 6.5vw;
     }
 }
 
 @media (min-width:425px) {
-    .user-name {
+    .user-name, .user-detail-text {
         font-size: 6vw;
     }
 }
 
 @media (min-width:768px) {
-    .user-name {
+    .user-name, .user-detail-text {
         font-size: 3.5vw;
     }
 }
 
 @media (min-width:1024px) {
-    .user-name {
+    .user-name, .user-detail-text {
         font-size: 2.7vw;
     }
 }
 
 @media (min-width:1440px) {
-    .user-name {
+    .user-name, .user-detail-text {
         font-size: 2.3vw;
     }
 }
@@ -99,6 +99,7 @@
         border-radius: 50%;
         width: 25vw;
         height: 25vw;
+        border: 0.7vw solid #F08080;
     }
 }
 
@@ -106,6 +107,7 @@
     .user-image {
         width: 23vw;
         height: 23vw;
+        border: 0.5vw solid #F08080;
     }
 }
 
@@ -114,6 +116,7 @@
         width: 15vw;
         height: 15vw;
         margin-right: 5vw;
+        border: 0.3vw solid #F08080;
     }
 }
 
@@ -121,6 +124,7 @@
     .user-image {
         width: 12.5vw;
         height: 12.5vw;
+        border: 0.2vw solid #F08080;
     }
 }
 
@@ -398,30 +402,35 @@
 
 @media (min-width:320px) {
     .sell-item-null-text, .purchase-item-null-text {
+        margin-top: 10vw;
         font-size: 4.5vw;
     }
 }
 
 @media (min-width:375px) {
     .sell-item-null-text, .purchase-item-null-text {
+        margin-top: 9vw;
         font-size: 4vw;
     }
 }
 
 @media (min-width:425px) {
     .sell-item-null-text, .purchase-item-null-text {
+        margin-top: 8vw;
         font-size: 3.5vw;
     }
 }
 
 @media (min-width:768px) {
     .sell-item-null-text, .purchase-item-null-text {
+        margin-top: 5vw;
         font-size: 2.3vw;
     }
 }
 
 @media (min-width:1024px) {
     .sell-item-null-text, .purchase-item-null-text {
+        margin-top: 4vw;
         font-size: 1.7vw;
     }
 }

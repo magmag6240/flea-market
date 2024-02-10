@@ -14,11 +14,11 @@
             <span class="sell-group-title">商品画像</span>
             <div class="sell-group-content">
                 <div class="sell-image">
+                    <div class="image-preview">
+                        <p class="image-preview-text">ファイルが選択されていません</p>
+                    </div>
                     <label class="input-image-label" for="item-image">画像を選択する</label>
                     <input class="sell-input-image" type="file" name="item_image" id="item-image" accept=".jpg, .jpeg, .png">
-                </div>
-                <div class="image-preview">
-                    <p>アップロードするファイルが選択されていません</p>
                 </div>
                 @if ($errors->any())
                 <div class="sell-error">

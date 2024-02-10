@@ -12,35 +12,34 @@
 @media (min-width:320px) {
     .sell-title {
         font-size: 5vw;
-        margin: 22vw 0 8vw 0;
+        margin: 15vw 0 6vw 0;
     }
 }
 
 @media (min-width:375px) {
     .sell-title {
         font-size: 4.5vw;
-        margin: 18vw 0 5vw 0;
+        margin: 13vw 0 5vw 0;
     }
 }
 
 @media (min-width:425px) {
     .sell-title {
         font-size: 4.3vw;
-        margin: 17vw 0 5vw 0;
     }
 }
 
 @media (min-width:768px) {
     .sell-title {
         font-size: 3.2vw;
-        margin: 10vw 0 3vw 0;
+        margin: 9vw 0 3vw 0;
     }
 }
 
 @media (min-width:1024px) {
     .sell-title {
         font-size: 2.5vw;
-        margin: 7vw 0 2vw 0;
+        margin: 6vw 0 2vw 0;
     }
 }
 
@@ -136,20 +135,19 @@
 @media (min-width:320px) {
     .sell-group {
         margin: 2vw 0 4vw 0;
-        width: 80vw;
+        width: 85vw;
     }
 }
 
 @media (min-width:375px) {
     .sell-group {
-        width: 70vw;
+        width: 75vw;
     }
 }
 
 @media (min-width:425px) {
     .sell-group {
         margin: 2vw 0 3.7vw 0;
-        width: 62vw;
     }
 }
 
@@ -189,6 +187,8 @@
 }
 
 .sell-image {
+    display: flex;
+    flex-direction: column;
     width: 100%;
     border: 0.1vw dashed #696969;
 }
@@ -201,67 +201,109 @@
 
 @media (min-width:375px) {
     .sell-image {
-        padding: 9vw 0;
+        padding: 6vw 0;
     }
 }
 
 @media (min-width:425px) {
     .sell-image {
-        padding: 8vw 0;
+        padding: 4vw 0;
     }
 }
 
 @media (min-width:1024px) {
     .sell-image {
-        padding: 5vw 0;
+        padding: 1.5vw 0;
     }
 }
 
 .input-image-label {
     color: #CD5C5C;
     font-weight: bold;
+    align-self: center;
     border: 2px solid #CD5C5C;
     border-radius: 5px;
 }
 
 @media (min-width:320px) {
     .input-image-label {
-        padding: 1.2vw 3vw;
+        width: 40vw;
+        padding: 1.2vw 0;
         font-size: 4.2vw;
     }
 }
 
 @media (min-width:375px) {
     .input-image-label {
-        padding: 1vw 3vw;
+        padding: 1vw 0;
         font-size: 3.8vw;
     }
 }
 
 @media (min-width:425px) {
     .input-image-label {
-        padding: 0.8vw 2.8vw;
-        font-size: 3.5vw;
+        width: 35vw;
+        padding: 0.8vw 0;
+        font-size: 3.4vw;
     }
 }
 
 @media (min-width:768px) {
     .input-image-label {
-        padding: 0.5vw 2.3vw;
+        width: 20vw;
+        padding: 0.5vw 0;
         font-size: 2vw;
     }
 }
 
 @media (min-width:1024px) {
     .input-image-label {
-        padding: 0.3vw 1.9vw;
+        width: 15vw;
+        padding: 0.3vw 0;
         font-size: 1.5vw;
     }
 }
 
 @media (min-width:1440px) {
     .input-image-label {
-        padding: 0.25vw 1.3vw;
+        width: 13vw;
+        padding: 0.25vw 0;
+        font-size: 1.2vw;
+    }
+}
+
+@media (min-width:320px) {
+    .image-preview-text {
+        font-size: 4vw;
+    }
+}
+
+@media (min-width:375px) {
+    .image-preview-text {
+        font-size: 3.8vw;
+    }
+}
+
+@media (min-width:425px) {
+    .image-preview-text {
+        font-size: 3.3vw;
+    }
+}
+
+@media (min-width:768px) {
+    .image-preview-text {
+        font-size: 2.2vw;
+    }
+}
+
+@media (min-width:1024px) {
+    .image-preview-text {
+        font-size: 1.6vw;
+    }
+}
+
+@media (min-width:1440px) {
+    .image-preview-text {
         font-size: 1.2vw;
     }
 }
@@ -373,7 +415,6 @@
     .sell-form-button {
         font-size: 3.2vw;
         padding: 2vw 0;
-        margin: 10vw 0 5vw 0;
     }
 }
 
@@ -397,7 +438,7 @@
     .sell-form-button {
         font-size: 1.4vw;
         padding: 0.8vw 0;
-        margin: 5.5vw 0 4vw 0;
+        margin: 5.5vw 0 5vw 0;
     }
 }
 
@@ -405,6 +446,6 @@
     .sell-form-button {
         font-size: 1.2vw;
         padding: 0.6vw 0;
-        margin: 3.2vw 0 3vw 0;
+        margin: 3.2vw 0 5vw 0;
     }
 }

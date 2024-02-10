@@ -11,13 +11,13 @@
     <form class="profile-edit-form" action="{{ route('user.profile_update') }}" enctype="multipart/form-data" method="post">
         @csrf
         @method('patch')
-        <div class="edit-group">
-            <div class="image-edit">
+        <div class="image-edit-group">
+            <div class="edit-image">
+                <div class="image-preview">
+                    <p class="image-preview-text">ファイルが選択されていません</p>
+                </div>
                 <label class="input-image-label" for="user-image">画像を選択する</label>
                 <input class="user-image" type="file" name="user_image" id="user-image" accept=".jpg, .jpeg, .png">
-            </div>
-            <div class="image-preview">
-                <p>アップロードするファイルが選択されていません</p>
             </div>
             @if ($errors->any())
             <div class="profile-edit-error">

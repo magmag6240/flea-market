@@ -90,7 +90,7 @@
     color: #696969;
 }
 
-.like-item-list {
+.like-item-detail {
     display: flex;
     flex-wrap: wrap;
 }

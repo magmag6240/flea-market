@@ -11,12 +11,12 @@
     <form class="profile-create-form" action="{{ route('user.profile_store') }}" enctype="multipart/form-data" method="post">
         @csrf
         <div class="create-group">
-            <div class="image-create">
+            <div class="create-image">
+                <div class="image-preview">
+                    <p class="image-preview-text">ファイルが選択されていません</p>
+                </div>
                 <label class="input-image-label" for="user-image">画像を選択する</label>
                 <input class="user-image" type="file" name="user_image" id="user-image" accept=".jpg, .jpeg, .png">
-            </div>
-            <div class="image-preview">
-                <p>アップロードするファイルが選択されていません</p>
             </div>
             @if ($errors->any())
             <div class="profile-create-error">

@@ -18,7 +18,9 @@
         </button>
         @else
         <p class="user-detail-text">ユーザー情報</p>
-        <a class="profile-create-link" href="{{ route('user.profile_edit') }}">プロフィールを登録</a>
+        <button class="user-profile-button">
+            <a class="user-profile-link" href="{{ route('user.profile_edit') }}">プロフィールを作成</a>
+        </button>
         @endif
     </div>
     <div class="user-item-list">

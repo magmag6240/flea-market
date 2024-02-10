@@ -21,7 +21,7 @@
                     <img class="header-logo-coachtech-img" src="coachtech_img.png" alt="">
                 </a>
             </div>
-            @if(Route::is('user.top') || Route::is('user.mylist') || Route::is('user.mypage') || Route::is('user.comment') || Route::is('user.profile_edit') || Route::is('user.item_detail') || Route::is('user.purchase'))
+            @if(Route::is('user.top') || Route::is('user.mylist') || Route::is('user.mypage') || Route::is('user.comment') || Route::is('user.profile_edit') || Route::is('user.item_detail') || Route::is('user.purchase') || Route::is('user.search'))
             <nav class="header-nav nav" id="js-nav">
                 <ul class="header-nav-ul nav-items">
                     <form class="header-nav-form" action="{{ route('user.search') }}" method="get">

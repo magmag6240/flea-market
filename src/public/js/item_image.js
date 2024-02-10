@@ -17,29 +17,30 @@ function updateImageDisplay() {
   var curFiles = input_image.files;
   if (curFiles.length === 0) {
     var para = document.createElement("p");
-    para.textContent = "アップロードするファイルが選択されていません";
+    para.textContent = "ファイルが選択されていません";
     item_image_preview.appendChild(para);
   } else {
-    var list = document.createElement("ol");
-    item_image_preview.appendChild(list);
     var _iterator = _createForOfIteratorHelper(curFiles),
       _step;
     try {
       for (_iterator.s(); !(_step = _iterator.n()).done;) {
         var file = _step.value;
-        var listItem = document.createElement("li");
+        var div = document.createElement("div");
+        item_image_preview.appendChild(div);
         var _para = document.createElement("p");
         if (validFileType(file)) {
-          _para.textContent = "\u30D5\u30A1\u30A4\u30EB\u540D: ".concat(file.name, ", \u30D5\u30A1\u30A4\u30EB\u30B5\u30A4\u30BA: ").concat(returnFileSize(file.size), ".");
+          _para.textContent = "\u30D5\u30A1\u30A4\u30EB\u540D: ".concat(file.name);
           var image = document.createElement("img");
+          image.width = 200;
+          image.height = 200;
           image.src = URL.createObjectURL(file);
-          listItem.appendChild(image);
-          listItem.appendChild(_para);
+          div.appendChild(image);
+          div.appendChild(_para);
         } else {
-          _para.textContent = "\u30D5\u30A1\u30A4\u30EB\u540D: ".concat(file.name, ": \u30D5\u30A1\u30A4\u30EB\u5F62\u5F0F\u304C\u6709\u52B9\u3067\u306F\u3042\u308A\u307E\u305B\u3093\u3002\u9078\u629E\u3057\u306A\u304A\u3057\u3066\u304F\u3060\u3055\u3044\u3002");
-          listItem.appendChild(_para);
+          _para.textContent = "\u30D5\u30A1\u30A4\u30EB\u540D: ".concat(file.name, ": \u30D5\u30A1\u30A4\u30EB\u5F62\u5F0F\u306Fjpg\u3001jpeg\u3001png\u306E\u307F\u6709\u52B9\u3067\u3059\u3002");
+          div.appendChild(_para);
         }
-        list.appendChild(listItem);
+        div.appendChild(div);
       }
     } catch (err) {
       _iterator.e(err);
@@ -50,18 +51,9 @@ function updateImageDisplay() {
 }
 
 // https://developer.mozilla.org/ja/docs/Web/Media/Formats/Image_types
-var fileTypes = ["image/apng", "image/bmp", "image/gif", "image/jpeg", "image/pjpeg", "image/png", "image/svg+xml", "image/tiff", "image/webp", "image/x-icon"];
+var fileTypes = ["image/jpeg", "image/jpg", "image/png"];
 function validFileType(file) {
   return fileTypes.includes(file.type);
-}
-function returnFileSize(number) {
-  if (number < 1024) {
-    return "".concat(number, " \u30D0\u30A4\u30C8");
-  } else if (number >= 1024 && number < 1048576) {
-    return "".concat((number / 1024).toFixed(1), " KB");
-  } else if (number >= 1048576) {
-    return "".concat((number / 1048576).toFixed(1), " MB");
-  }
 }
 /******/ })()
 ;

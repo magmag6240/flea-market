@@ -14,58 +14,38 @@ function updateImageDisplay() {
     const curFiles = input_image.files;
     if (curFiles.length === 0) {
         const para = document.createElement("p");
-        para.textContent = "アップロードするファイルが選択されていません";
+        para.textContent = "ファイルが選択されていません";
         user_image_preview.appendChild(para);
     } else {
-        const list = document.createElement("ol");
-        user_image_preview.appendChild(list);
-
         for (const file of curFiles) {
-            const listItem = document.createElement("li");
+            const div = document.createElement("div");
+            user_image_preview.appendChild(div);
             const para = document.createElement("p");
             if (validFileType(file)) {
-                para.textContent = `ファイル名: ${
-                    file.name
-                }, ファイルサイズ: ${returnFileSize(file.size)}.`;
-            const image = document.createElement("img");
-            image.src = URL.createObjectURL(file);
+                para.textContent = `ファイル名: ${file.name}`;
+                const image = document.createElement("img");
+                image.width = 200;
+                image.height = 200;
+                image.src = URL.createObjectURL(file);
 
-            listItem.appendChild(image);
-            listItem.appendChild(para);
+            div.appendChild(image);
+            div.appendChild(para);
         } else {
-            para.textContent = `ファイル名: ${file.name}: ファイル形式が有効ではありません。選択しなおしてください。`;
-            listItem.appendChild(para);
+            para.textContent = `ファイル名: ${file.name}: ファイル形式はjpg、jpeg、pngのみ有効です。`;
+            div.appendChild(para);
         }
-
-        list.appendChild(listItem);
+            div.appendChild(div);
         }
     }
 }
 
 // https://developer.mozilla.org/ja/docs/Web/Media/Formats/Image_types
 const fileTypes = [
-    "image/apng",
-    "image/bmp",
-    "image/gif",
     "image/jpeg",
-    "image/pjpeg",
+    "image/jpg",
     "image/png",
-    "image/svg+xml",
-    "image/tiff",
-    "image/webp",
-    "image/x-icon",
 ];
 
 function validFileType(file) {
     return fileTypes.includes(file.type);
-}
-
-function returnFileSize(number) {
-    if (number < 1024) {
-        return `${number} バイト`;
-    } else if (number >= 1024 && number < 1048576) {
-        return `${(number / 1024).toFixed(1)} KB`;
-    } else if (number >= 1048576) {
-        return `${(number / 1048576).toFixed(1)} MB`;
-    }
 }
