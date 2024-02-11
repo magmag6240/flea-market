@@ -25,7 +25,7 @@ class AdminController extends Controller
 
     public function user_comment_list(Request $request, $user_id)
     {
-        $comments = Comment::where('user_id', $user_id)->with('item')->get();
+        $comments = Comment::where('user_id', $user_id)->with('item')->paginate(10);
         return view('admin_user_comment_list', compact('comments'));
     }
 

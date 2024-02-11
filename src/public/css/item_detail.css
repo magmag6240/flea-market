@@ -576,13 +576,13 @@
 
 @media (min-width:1024px) {
     .item-detail-td {
-        width: 15vw;
+        width: 22vw;
     }
 }
 
 @media (min-width:1440px) {
     .item-detail-td {
-        width: 18vw;
+        width: 21vw;
     }
 }
 

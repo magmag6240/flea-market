@@ -1,291 +1,281 @@
 
-.user-list-content {
+.user-comment-list-content {
     display: flex;
     flex-direction: column;
 }
 
-.user-list-title {
+.user-comment-list-title {
     font-weight: bold;
 }
 
 @media (min-width:320px) {
-    .user-list-title {
+    .user-comment-list-title {
         font-size: 5vw;
         margin: 18vw 0 8vw 0;
     }
 }
 
 @media (min-width:375px) {
-    .user-list-title {
+    .user-comment-list-title {
         font-size: 4.5vw;
     }
 }
 
 @media (min-width:425px) {
-    .user-list-title {
+    .user-comment-list-title {
         font-size: 4.3vw;
         margin: 15vw 0 5vw 0;
     }
 }
 
 @media (min-width:768px) {
-    .user-list-title {
+    .user-comment-list-title {
         font-size: 3vw;
         margin: 13vw 0 3vw 0;
     }
 }
 
 @media (min-width:1024px) {
-    .user-list-title {
+    .user-comment-list-title {
         font-size: 2.5vw;
         margin: 10vw 0 2vw 0;
     }
 }
 
 @media (min-width:1440px) {
-    .user-list-title {
+    .user-comment-list-title {
         font-size: 2vw;
         margin: 8vw 0 2vw 0;
     }
 }
-.user-list-table, .user-link-table {
+
+.comment-list-table {
     align-self: center;
 }
 
-.user-list-table,
-.user-list-th,
-.user-list-tr,
-.user-list-td,
-.user-link-table,
-.user-link-td,
-.user-link-tr {
+.comment-list-table,
+.comment-list-th,
+.comment-list-tr,
+.comment-list-td {
     border-right-style: hidden;
     border-left-style: hidden;
 }
 
 @media (min-width:320px) {
-    .user-list-table {
+    .comment-list-table {
         width: 90vw;
     }
 }
 
 @media (min-width:768px) {
-    .user-list-table {
+    .comment-list-table {
         width: 80vw;
     }
 }
 
 @media (min-width:1024px) {
-    .user-list-table {
+    .comment-list-table {
         width: 70vw;
     }
 }
 
 @media (min-width:1440px) {
-    .user-list-table {
+    .comment-list-table {
         width: 65vw;
     }
 }
 
 @media (min-width:320px) {
-    .user-link-table {
+    .comment-link-table {
         width: 35vw;
     }
 }
 
 @media (min-width:768px) {
-    .user-link-table {
+    .comment-link-table {
         width: 25vw;
     }
 }
 
 @media (min-width:320px) {
-    .user-list-th {
+    .comment-list-th {
         padding: 4vw 0;
         font-size: 4.2vw;
     }
 }
 
 @media (min-width:375px) {
-    .user-list-th {
+    .comment-list-th {
         font-size: 3.9vw;
     }
 }
 
 @media (min-width:425px) {
-    .user-list-th {
+    .comment-list-th {
         font-size: 3.5vw;
     }
 }
 
 @media (min-width:768px) {
-    .user-list-th {
+    .comment-list-th {
         padding: 2.5vw 0;
         font-size: 2vw;
     }
 }
 
 @media (min-width:1024px) {
-    .user-list-th {
+    .comment-list-th {
         padding: 2vw 0;
         font-size: 1.5vw;
     }
 }
 
 @media (min-width:1440px) {
-    .user-list-th {
+    .comment-list-th {
         padding: 1.5vw 0;
         font-size: 1.2vw;
     }
 }
 
 @media (min-width:320px) {
-    .user-list-tr {
+    .comment-list-tr {
         border: 0.25vw solid #c0c0c0;
     }
 }
 
 @media (min-width:1024px) {
-    .user-list-tr {
+    .comment-list-tr {
         border: 0.15vw solid #c0c0c0;
     }
 }
 
 @media (min-width:1440px) {
-    .user-list-tr {
+    .comment-list-tr {
         border: 0.1vw solid #c0c0c0;
     }
 }
 
-.user-list-link-mail, .user-list-link-active, .user-list-link-inactive {
-    text-decoration: none;
-    font-weight: bold;
-}
-
-.user-list-link-mail, .user-list-link-active, .user-delete-button {
-    cursor: pointer;
-}
-
-.user-list-link-mail {
-    color: #359c63;
-}
-
-.user-list-link-active {
-    color: #007bff;
-}
-
-.user-list-link-inactive {
-    color: #A9A9A9;
-}
-
-.user-delete-button {
+.comment-delete-button {
     border: none;
+    cursor: pointer;
     background-color: #CD5C5C;
     border-radius: 3px;
     color: #fff;
 }
 
 @media (min-width:320px) {
-    .user-list-link-active, .user-list-link-inactive, .user-list-link-mail, .user-delete-button {
+    .comment-delete-button {
         font-size: 3.9vw;
     }
 }
 
 @media (min-width:375px) {
-    .user-list-link-active, .user-list-link-inactive, .user-list-link-mail, .user-delete-button {
+    .comment-delete-button {
         font-size: 3.3vw;
     }
 }
 
 @media (min-width:425px) {
-    .user-list-link-active, .user-list-link-inactive, .user-list-link-mail, .user-delete-button {
+    .comment-delete-button {
         font-size: 3vw;
     }
 }
 
 @media (min-width:768px) {
-    .user-list-link-active, .user-list-link-inactive, .user-list-link-mail, .user-delete-button {
+    .comment-delete-button {
         font-size: 1.9vw;
     }
 }
 
 @media (min-width:1024px) {
-    .user-list-link-active, .user-list-link-inactive, .user-list-link-mail, .user-delete-button {
+    .comment-delete-button {
         font-size: 1.5vw;
     }
 }
 
 @media (min-width:1440px) {
-    .user-list-link-active, .user-list-link-inactive, .user-list-link-mail, .user-delete-button {
+    .comment-delete-button {
         font-size: 1.1vw;
     }
 }
 
 @media (min-width:320px) {
-    .user-list-id {
+    .comment-list-id {
         font-size: 3.7vw;
         width: 15vw;
     }
 
-    .user-list-email {
+    .comment-list-comments {
         font-size: 3.7vw;
-        width: 35vw;
-    }
-}
-
-@media (min-width:375px) {
-    .user-list-id {
-        font-size: 3.5vw;
+        width: 30vw;
     }
 
-    .user-list-email {
-        font-size: 3.4vw;
-    }
-}
-
-@media (min-width:425px) {
-    .user-list-id {
-        font-size: 3.3vw;
-    }
-
-    .user-list-email {
-        font-size: 3.3vw;
-    }
-}
-
-@media (min-width:768px) {
-    .user-list-id {
-        font-size: 2vw;
-        width: 15vw;
-    }
-
-    .user-list-email {
-        font-size: 2vw;
-        width: 35vw;
-    }
-}
-
-@media (min-width:1024px) {
-    .user-list-id {
-        font-size: 1.5vw;
-        width: 13vw;
-    }
-
-    .user-list-email {
-        font-size: 1.4vw;
+    .comment-list-date {
+        font-size: 3.7vw;
         width: 30vw;
     }
 }
 
-@media (min-width:1440px) {
-    .user-list-id {
-        font-size: 1.1vw;
+@media (min-width:375px) {
+    .comment-list-id, .comment-list-comments, .comment-list-date {
+        font-size: 3.5vw;
+    }
+}
+
+@media (min-width:425px) {
+    .comment-list-id, .comment-list-comments, .comment-list-date {
+        font-size: 3.2vw;
+    }
+}
+
+@media (min-width:768px) {
+    .comment-list-id {
+        font-size: 2vw;
+        width: 12vw;
+    }
+
+    .comment-list-comments {
+        font-size: 1.9vw;
+        width: 30vw;
+    }
+
+    .comment-list-date {
+        font-size: 1.9vw;
+        width: 30vw;
+    }
+}
+
+@media (min-width:1024px) {
+    .comment-list-id {
+        font-size: 1.5vw;
         width: 10vw;
     }
 
-    .user-list-email {
-        font-size: 1.1vw;
+    .comment-list-comments {
+        font-size: 1.4vw;
         width: 27vw;
+    }
+
+    .comment-list-date {
+        font-size: 1.4vw;
+        width: 27vw;
+    }
+}
+
+@media (min-width:1440px) {
+    .comment-list-id {
+        font-size: 1.1vw;
+        width: 9vw;
+    }
+
+    .comment-list-comments {
+        font-size: 1.1vw;
+        width: 26vw;
+    }
+
+    .comment-list-date {
+        font-size: 1.1vw;
+        width: 26vw;
     }
 }
 
@@ -296,32 +286,32 @@
 @media (min-width:320px) {
     .pagination {
         padding: 2vw 0;
-        margin: 10vw 0 20vw 0;
+        margin: 10vw 0;
     }
 }
 
 @media (min-width:425px) {
     .pagination {
-        margin: 8vw 0 15vw 0;
+        margin: 8vw 0;
     }
 }
 
 @media (min-width:768px) {
     .pagination {
         padding: 1vw 0;
-        margin: 6vw 0 10vw 0;
+        margin: 6vw 0;
     }
 }
 
 @media (min-width:1024px) {
     .pagination {
-        margin: 4vw 0 8vw 0;
+        margin: 4vw 0;
     }
 }
 
 @media (min-width:1440px) {
     .pagination {
-        margin: 3vw 0 6vw 0;
+        margin: 3vw 0;
     }
 }
 
@@ -410,4 +400,67 @@
     color: #fff;
     background-color: #FF0000;
     border: 0.5px solid #FF0000;
+}
+
+.user-list-button {
+    background-color: #CD5C5C;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+@media (min-width:320px) {
+    .user-list-button {
+        font-size: 3.8vw;
+        padding: 2.3vw 0;
+        width: 20%;
+        margin-bottom: 7vw;
+        align-self: center;
+    }
+}
+
+@media (min-width:375px) {
+    .user-list-button {
+        font-size: 3.2vw;
+        padding: 2vw 0;
+        width: 18%;
+    }
+}
+
+@media (min-width:425px) {
+    .user-list-button {
+        font-size: 3vw;
+        padding: 1.7vw 0;
+        width: 16%;
+    }
+}
+
+@media (min-width:768px) {
+    .user-list-button {
+        font-size: 1.8vw;
+        padding: 1.2vw 0;
+        width: 10%;
+    }
+}
+
+@media (min-width:1024px) {
+    .user-list-button {
+        font-size: 1.4vw;
+        padding: 0.8vw 0;
+        width: 7%;
+    }
+}
+
+@media (min-width:1440px) {
+    .user-list-button {
+        font-size: 1.2vw;
+        padding: 0.6vw 0;
+        width: 6%;
+    }
+}
+
+.user-list-link {
+    text-decoration: none;
+    color: #fff;
 }

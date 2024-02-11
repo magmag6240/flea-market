@@ -36,8 +36,8 @@
         </button>
         @endif
         @else
-        <div>
-            <p>売約済み</p>
+        <div class="item-sold-out">
+            <p class="item-sold-out-text">売約済み</p>
         </div>
         @endif
         <div class="item-detail-explanation">
