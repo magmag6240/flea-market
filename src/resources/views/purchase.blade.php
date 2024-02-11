@@ -12,7 +12,7 @@
         @method('patch')
         <div class="purchase-form-edit">
             <div class="item-detail">
-                <img class="item-img" src="{{ $item->image_url }}" alt="">
+                <img class="item-img" src="/storage/items/{{ $item->image_url }}" alt="">
                 <div class="item-detail-text">
                     <p class="item-name">{{ $item->name }}</p>
                     <p class="item-price">{{ $item->price }}</p>

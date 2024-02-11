@@ -9,38 +9,44 @@
     color: #000;
 }
 
+@media (min-width:320px) {
+    .address-edit-title {
+        font-size: 5vw;
+        margin: 18vw 0 5vw 0;
+    }
+}
+
 @media (min-width:375px) {
     .address-edit-title {
         font-size: 4.5vw;
-        margin: 18vw 0 5vw 0;
     }
 }
 
 @media (min-width:425px) {
     .address-edit-title {
         font-size: 4.3vw;
-        margin: 17vw 0 5vw 0;
+        margin: 15vw 0 5vw 0;
     }
 }
 
 @media (min-width:768px) {
     .address-edit-title {
         font-size: 3.2vw;
-        margin: 10vw 0 3vw 0;
+        margin: 13vw 0 3vw 0;
     }
 }
 
 @media (min-width:1024px) {
     .address-edit-title {
         font-size: 2.5vw;
-        margin: 7vw 0 2vw 0;
+        margin: 10vw 0 2vw 0;
     }
 }
 
 @media (min-width:1440px) {
     .address-edit-title {
         font-size: 2vw;
-        margin: 4vw 0 2vw 0;
+        margin: 8vw 0 2vw 0;
     }
 }
 
@@ -55,17 +61,22 @@
     flex-direction: column;
 }
 
-@media (min-width:375px) {
+@media (min-width:320px) {
     .edit-group {
         margin: 2vw 0 4vw 0;
-        width: 65vw;
+        width: 85vw;
+    }
+}
+
+@media (min-width:375px) {
+    .edit-group {
+        width: 75vw;
     }
 }
 
 @media (min-width:425px) {
     .edit-group {
         margin: 2vw 0 3.7vw 0;
-        width: 62vw;
     }
 }
 
@@ -94,6 +105,12 @@
     color: #000;
     font-weight: bold;
     align-self: flex-start;
+}
+
+@media (min-width:320px) {
+    .edit-group-title {
+        font-size: 4vw;
+    }
 }
 
 @media (min-width:375px) {
@@ -182,11 +199,19 @@
     cursor: pointer;
 }
 
+@media (min-width:320px) {
+    .update-button {
+        font-size: 3.8vw;
+        padding: 2.3vw 0;
+        margin-top: 12vw;
+    }
+}
+
 @media (min-width:375px) {
     .update-button {
         font-size: 3.2vw;
         padding: 2vw 0;
-        margin: 10vw 0 3vw 0;
+        margin-top: 10vw;
     }
 }
 
@@ -194,7 +219,7 @@
     .update-button {
         font-size: 3vw;
         padding: 1.7vw 0;
-        margin: 9vw 0 2.5vw 0;
+        margin-top: 9vw;
     }
 }
 
@@ -202,7 +227,7 @@
     .update-button {
         font-size: 1.8vw;
         padding: 1.2vw 0;
-        margin: 6vw 0 1.5vw 0;
+        margin-top: 6vw;
     }
 }
 

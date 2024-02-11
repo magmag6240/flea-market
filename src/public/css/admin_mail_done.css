@@ -1,0 +1,149 @@
+
+.done {
+    display: inline-flex;
+    flex-direction: column;
+}
+
+@media (min-width:320px) {
+    .done {
+        width: 80vw;
+        height: 50vw;
+        margin-top: 18vw;
+    }
+}
+
+@media (min-width:425px) {
+    .done {
+        width: 65vw;
+        height: 45vw;
+        margin-top: 15vw;
+    }
+}
+
+@media (min-width:768px) {
+    .done {
+        width: 60vw;
+        height: 40vw;
+        margin-top: 8vw;
+    }
+}
+
+@media (min-width:1024px) {
+    .done {
+        width: 50vw;
+        height: 30vw;
+        margin-top: 5vw;
+    }
+}
+
+@media (min-width:1440px) {
+    .done {
+        width: 40vw;
+        height: 22vw;
+        margin-top: 3vw;
+    }
+}
+
+.done-text {
+    font-weight: bold;
+    background-color: #fff;
+}
+
+@media (min-width:320px) {
+    .done-text {
+        font-size: 6vw;
+        margin-top: 20vw;
+    }
+}
+
+@media (min-width:375px) {
+    .done-text {
+        font-size: 5.5vw;
+        margin-top: 18vw;
+    }
+}
+
+@media (min-width:425px) {
+    .done-text {
+        font-size: 5vw;
+        margin-top: 17vw;
+    }
+}
+
+@media (min-width:768px) {
+    .done-text {
+        font-size: 3vw;
+        margin-top: 14vw;
+    }
+}
+
+@media (min-width:1024px) {
+    .done-text {
+        font-size: 2.5vw;
+        margin-top: 10vw;
+    }
+}
+
+@media (min-width:1440px) {
+    .done-text {
+        font-size: 2vw;
+        margin-top: 7vw;
+    }
+}
+
+.user-list-button {
+    align-self: center;
+    border: none;
+    border-radius: 5px;
+    background-color: #CD5C5C;
+}
+
+@media (min-width:320px) {
+    .user-list-button {
+        padding: 2vw 0;
+        width: 30vw;
+        margin-top: 7vw;
+    }
+}
+
+@media (min-width:375px) {
+    .user-list-button {
+        padding: 1.7vw 0;
+        width: 27vw;
+        margin-top: 6vw;
+    }
+}
+
+@media (min-width:425px) {
+    .user-list-button {
+        padding: 1.5vw 0;
+        width: 25vw;
+        margin-top: 5vw;
+    }
+}
+
+@media (min-width:768px) {
+    .user-list-button {
+        padding: 1vw 0;
+        width: 16vw;
+    }
+}
+
+@media (min-width:1024px) {
+    .user-list-button {
+        padding: 0.8vw 0;
+        width: 13vw;
+    }
+}
+
+@media (min-width:1440px) {
+    .user-list-button {
+        padding: 0.5vw 0;
+        width: 10vw;
+    }
+}
+
+.user-list-link {
+    text-decoration: none;
+    color: #fff;
+}
