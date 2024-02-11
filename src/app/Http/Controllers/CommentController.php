@@ -13,15 +13,12 @@ class CommentController extends Controller
     public function index($item_id)
     {
         $item_detail = Item::where('id', $item_id)->first();
-        $comment_history = Comment::where('item_id', $item_id)->get();
+        $comment_history = Comment::where('item_id', $item_id)->with(['user.profile'])->get();
         if( $comment_history->isEmpty() ) {
             return view('comment', compact('item_detail', 'comment_history'));
         } else {
             $user_id = Auth::id();
-            foreach($comment_history as $comment_user) {
-                $user_profile = Profile::where('user_id', $comment_user->user_id)->first();
-                return view('comment', compact('user_id', 'item_detail', 'comment_history', 'user_profile'));
-            }
+            return view('comment', compact('user_id', 'item_detail', 'comment_history'));
         }
     }
 

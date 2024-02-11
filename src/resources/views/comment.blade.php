@@ -12,7 +12,7 @@
     </div>
     <div class="item-detail-text">
         <p class="item-name">{{ $item_detail->name }}</p>
-        <span class="item-brand-name">{{ $item_detail->brand_name }}</span>
+        <p class="item-brand-name">{{ $item_detail->brand_name }}</p>
         <p class="item-price">{{ $item_detail->price }}</p>
         <div class="item-reaction">
             <div class="like">
@@ -36,16 +36,25 @@
             <div class="comment-list">
                 @foreach($comment_history as $comment)
                 <div class="comment-list-group">
-                    <div class="comment-user-detail">
-                        <img class="comment-user-img" src="{{ $user_profile->image_url }}" alt="">
-                        <p class="comment-user-name">{{ $user_profile->user_name }}</p>
+                    @if($comment->user_id == $user_id)
+                    <div class="self-comment-detail">
+                        <img class="self-comment-img" src="/storage/users/{{ $comment->user->profile->image_url }}" alt="">
+                        <p class="self-comment-name">{{ $comment->user->profile->user_name }}</p>
                     </div>
+                    @else
+                    <div class="other-comment-detail">
+                        <img class="other-comment-img" src="/storage/users/{{ $comment->user->profile->image_url }}" alt="">
+                        <p class="other-comment-name">{{ $comment->user->profile->user_name }}</p>
+                    </div>
+                    @endif
                     <form class="comment-delete-form" action="{{ route('user.comment_delete', ['comment_id' => $comment->id]) }}" method="post">
                         @csrf
                         @method('delete')
-                        <p class="comment-text-detail">{{ $comment->comments }}</p>
                         @if($comment->user_id == $user_id)
-                        <button type="submit">削除</button>
+                        <button class="comment-delete-button" type="submit">削除</button>
+                        <p class="self-comment-text-detail">{{ $comment->comments }}</p>
+                        @else
+                        <p class="other-comment-text-detail">{{ $comment->comments }}</p>
                         @endif
                     </form>
                 </div>
@@ -56,7 +65,7 @@
         <form class="comment-form" action="{{ route('user.comment_store', ['item_id' => $item_detail->id]) }}" method="post">
             @csrf
             <p class="comment-form-title">商品へのコメント</p>
-            <input type="text" name="comments">
+            <textarea class="comment-textarea" type="text" name="comments"></textarea>
             <button class="comment-form-button" type="submit">コメントを送信する</button>
         </form>
     </div>
