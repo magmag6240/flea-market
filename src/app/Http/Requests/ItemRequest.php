@@ -29,7 +29,7 @@ class ItemRequest extends FormRequest
             'condition_id' => ['required', 'numeric', 'max:6'],
             'category_id' => ['required', 'numeric', 'max:14'],
             'brand_name' => ['nullable', 'string', 'max:191'],
-            'price' => ['required', 'numeric', 'max:191'],
+            'price' => ['required', 'numeric'],
             'item_detail' => ['required', 'string', 'max:255']
         ];
     }
@@ -51,7 +51,6 @@ class ItemRequest extends FormRequest
             'brand_name.max' => 'ブランド名は191文字以内で入力してください',
             'price.required' => '販売価格は必須項目です',
             'price.numeric' => '販売価格は数字で入力してください',
-            'price.max' => '販売価格は191文字以内で入力してください',
             'item_detail.required' => '商品の説明は必須項目です',
             'item_detail.string' => '商品の説明は文字列で入力してください',
             'item_detail.max' => '商品の説明は255文字以内で入力してください'
