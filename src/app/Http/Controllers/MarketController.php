@@ -28,7 +28,7 @@ class MarketController extends Controller
 
     public function sell_store(ItemRequest $request)
     {
-        $image_file = $request->item_image;
+        $image_file = $request->image_url;
         $file_name = uniqid(rand() . '_');
         $extension = $image_file->extension();
         $file_name_store = $file_name . '.' . $extension;

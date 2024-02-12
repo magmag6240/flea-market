@@ -20,6 +20,13 @@
             </label>
             @endforeach
         </div>
+        @if ($errors->any())
+        <div class="payment-edit-error">
+            @error('payment_id')
+            {{ $message }}
+            @enderror
+        </div>
+        @endif
         <button class="update-button" type="submit">更新する</button>
     </form>
 </div>

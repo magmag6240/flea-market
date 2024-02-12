@@ -18,7 +18,7 @@
                         <p class="image-preview-text">ファイルが選択されていません</p>
                     </div>
                     <label class="input-image-label" for="item-image">画像を選択する</label>
-                    <input class="sell-input-image" type="file" name="item_image" id="item-image" accept=".jpg, .jpeg, .png">
+                    <input class="sell-input-image" type="file" name="image_url" id="item-image" accept=".jpg, .jpeg, .png">
                 </div>
                 @if ($errors->any())
                 <div class="sell-error">

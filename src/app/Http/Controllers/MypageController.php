@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\AddressRequest;
+use App\Http\Requests\PaymentRequest;
 use App\Http\Requests\ProfileRequest;
 use App\Models\Like;
 use App\Models\Item;
@@ -50,7 +51,7 @@ class MypageController extends Controller
     public function profile_store(ProfileRequest $request)
     {
         $user_id = Auth::id();
-        $image_file = $request->user_image;
+        $image_file = $request->image_url;
         $file_name = uniqid(rand() . '_');
         $extension = $image_file->extension();
         $file_name_store = $file_name . '.' . $extension;
@@ -60,7 +61,7 @@ class MypageController extends Controller
         Profile::create([
             'user_id' => $user_id,
             'image_url' => $file_name_store,
-            'user_name' => $request->input('name'),
+            'user_name' => $request->input('user_name'),
             'postcode' => $request->input('postcode'),
             'address' => $request->input('address'),
             'building' => $request->input('building')
@@ -71,7 +72,7 @@ class MypageController extends Controller
     public function profile_update(ProfileRequest $request)
     {
         $user_id = Auth::id();
-        $image_file = $request->user_image;
+        $image_file = $request->image_url;
         $file_name = uniqid(rand() . '_');
         $extension = $image_file->extension();
         $file_name_store = $file_name . '.' . $extension;
@@ -81,7 +82,7 @@ class MypageController extends Controller
         $update_profile = Profile::where('user_id', $user_id)->first();
         $update_profile->update([
             'image_url' => $file_name_store,
-            'user_name' => $request->input('name'),
+            'user_name' => $request->input('user_name'),
             'postcode' => $request->input('postcode'),
             'address' => $request->input('address'),
             'building' => $request->input('building')
@@ -102,7 +103,7 @@ class MypageController extends Controller
         }
     }
 
-    public function payment_update(Request $request, $item_id)
+    public function payment_update(PaymentRequest $request, $item_id)
     {
         $user_id = Auth::id();
         $user_profile = Profile::where('user_id', $user_id)->first();

@@ -355,21 +355,21 @@
 
 @media (min-width:320px) {
     .sell-error {
-        font-size: 1.6vw;
-        margin-left: 8vw;
+        font-size: 4vw;
+        margin-left: 10vw;
     }
 }
 
 @media (min-width:375px) {
     .sell-error {
-        font-size: 1.6vw;
+        font-size: 3.5vw;
         margin-left: 8vw;
     }
 }
 
 @media (min-width:425px) {
     .sell-error {
-        font-size: 1.6vw;
+        font-size: 3.2vw;
         margin-left: 8vw;
     }
 }

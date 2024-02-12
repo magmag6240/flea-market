@@ -281,43 +281,40 @@
 
 @media (min-width:320px) {
     .profile-create-error {
-        font-size: 1.6vw;
-        margin-left: 8vw;
+        font-size: 4vw;
+        margin-left: 14vw;
     }
 }
 
 @media (min-width:375px) {
     .profile-create-error {
-        font-size: 1.6vw;
-        margin-left: 8vw;
+        font-size: 3.5vw;
+        margin-left: 12vw;
     }
 }
 
 @media (min-width:425px) {
     .profile-create-error {
-        font-size: 1.6vw;
-        margin-left: 8vw;
+        font-size: 3.2vw;
     }
 }
 
 @media (min-width:768px) {
     .profile-create-error {
         font-size: 1.6vw;
-        margin-left: 8vw;
+        margin-left: 14vw;
     }
 }
 
 @media (min-width:1024px) {
     .profile-create-error {
         font-size: 1.3vw;
-        margin-left: 6vw;
     }
 }
 
 @media (min-width:1440px) {
     .profile-create-error {
         font-size: 1vw;
-        margin-left: 4vw;
     }
 }
 

@@ -216,6 +216,50 @@
     padding: 1vw;
 }
 
+.payment-edit-error {
+    width: fit-content;
+    color: #f00;
+}
+
+@media (min-width:320px) {
+    .payment-edit-error {
+        font-size: 4vw;
+        margin-left: 14vw;
+    }
+}
+
+@media (min-width:375px) {
+    .payment-edit-error {
+        font-size: 3.5vw;
+        margin-left: 12vw;
+    }
+}
+
+@media (min-width:425px) {
+    .payment-edit-error {
+        font-size: 3.2vw;
+    }
+}
+
+@media (min-width:768px) {
+    .payment-edit-error {
+        font-size: 1.6vw;
+        margin-left: 14vw;
+    }
+}
+
+@media (min-width:1024px) {
+    .payment-edit-error {
+        font-size: 1.3vw;
+    }
+}
+
+@media (min-width:1440px) {
+    .payment-edit-error {
+        font-size: 1vw;
+    }
+}
+
 .update-button {
     background-color: #CD5C5C;
     color: #fff;

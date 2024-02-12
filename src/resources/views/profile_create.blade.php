@@ -16,22 +16,22 @@
                     <p class="image-preview-text">ファイルが選択されていません</p>
                 </div>
                 <label class="input-image-label" for="user-image">画像を選択する</label>
-                <input class="user-image" type="file" name="user_image" id="user-image" accept=".jpg, .jpeg, .png">
+                <input class="user-image" type="file" name="image_url" id="user-image" accept=".jpg, .jpeg, .png">
+                @if ($errors->any())
+                <div class="profile-create-error">
+                    @error('image_url')
+                    {{ $message }}
+                    @enderror
+                </div>
+                @endif
             </div>
-            @if ($errors->any())
-            <div class="profile-create-error">
-                @error('name')
-                {{ $message }}
-                @enderror
-            </div>
-            @endif
         </div>
         <div class="create-group">
             <span class="create-group-title">ユーザー名</span>
-            <input class="input-name" name="name" type="name" value="{{ old('name') }}">
+            <input class="input-name" name="user_name" type="name" value="{{ old('user_name') }}">
             @if ($errors->any())
             <div class="profile-create-error">
-                @error('name')
+                @error('user_name')
                 {{ $message }}
                 @enderror
             </div>
