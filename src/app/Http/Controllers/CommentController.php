@@ -15,7 +15,8 @@ class CommentController extends Controller
         $item_detail = Item::where('id', $item_id)->first();
         $comment_history = Comment::where('item_id', $item_id)->with(['user.profile'])->get();
         if( $comment_history->isEmpty() ) {
-            return view('comment', compact('item_detail', 'comment_history'));
+            $profile = Profile::where('user_id', Auth::id())->first();
+            return view('comment', compact('item_detail', 'comment_history', 'profile'));
         } else {
             $user_id = Auth::id();
             return view('comment', compact('user_id', 'item_detail', 'comment_history'));

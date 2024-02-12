@@ -64,12 +64,16 @@
             </div>
             @endif
         </div>
+        @if(empty($profile))
+        <p class="comment-form-title">コメントを書き込むにはプロフィール情報を入力してください</p>
+        @else
         <form class="comment-form" action="{{ route('user.comment_store', ['item_id' => $item_detail->id]) }}" method="post">
             @csrf
             <p class="comment-form-title">商品へのコメント</p>
             <textarea class="comment-textarea" type="text" name="comments"></textarea>
             <button class="comment-form-button" type="submit">コメントを送信する</button>
         </form>
+        @endif
     </div>
 </div>
 

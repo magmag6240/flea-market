@@ -17,6 +17,6 @@ class StripePaymentsController extends Controller
             'currency' => 'jpy',
             'source' => request()->stripeToken,
         ));
-        return view('done');
+        return view('mypage');
     }
 }
