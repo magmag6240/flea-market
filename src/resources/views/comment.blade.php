@@ -15,6 +15,7 @@
         <p class="item-brand-name">{{ $item_detail->brand_name }}</p>
         <p class="item-price">{{ $item_detail->price }}</p>
         <div class="item-reaction">
+            @cannot('admin')
             <div class="like">
                 @if($item_detail->is_liked())
                 <a class="unlike-link" href="{{ route('unlike', ['item_id' => $item_detail->id]) }}"></a>
@@ -28,6 +29,7 @@
                 <span class="comment-link"></span>
                 <span class="comment-count">{{$item_detail->comments->count()}}</span>
             </div>
+            @endcannot
         </div>
         <div class="comment-history">
             @if($comment_history->isEmpty())

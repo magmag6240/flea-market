@@ -15,6 +15,7 @@
         <p class="item-brand-name">{{ $item_detail->brand_name }}</p>
         <p class="item-price">{{ $item_detail->price }}</p>
         <div class="item-reaction">
+            @cannot('admin')
             <div class="like">
                 @if($item_detail->is_liked())
                 <a class="unlike-link" href="{{ route('unlike', ['item_id' => $item_detail->id]) }}"></a>
@@ -28,13 +29,16 @@
                 <a class="comment-link" href="{{ route('user.comment', ['item_id' => $item_detail->id]) }}"></a>
                 <span class="comment-count">{{$item_detail->comments->count()}}</span>
             </div>
+            @endcannot
         </div>
         @if(empty($item_buyer_id))
-        @if(Auth::id() !== $item_seller_id)
-        <button class="item-purchase-button">
-            <a class="item-purchase-link" href="{{ route('user.purchase', ['item_id' => $item_detail->id]) }}">購入する</a>
-        </button>
-        @endif
+            @cannot('admin')
+                @if(Auth::id() !== $item_seller_id)
+                <button class="item-purchase-button">
+                    <a class="item-purchase-link" href="{{ route('user.purchase', ['item_id' => $item_detail->id]) }}">購入する</a>
+                </button>
+                @endif
+            @endcannot
         @else
         <div class="item-sold-out">
             <p class="item-sold-out-text">売約済み</p>

@@ -21,7 +21,6 @@
                     <img class="header-logo-coachtech-img" src="coachtech_img.png" alt="">
                 </a>
             </div>
-            @if(Route::is('user.top') || Route::is('user.mylist') || Route::is('user.mypage') || Route::is('user.comment') || Route::is('user.profile_edit') || Route::is('user.item_detail') || Route::is('user.purchase') || Route::is('user.search') || Route::is('admin.user_list'))
             <nav class="header-nav nav" id="js-nav">
                 <ul class="header-nav-ul nav-items">
                     <form class="header-nav-form" action="{{ route('user.search') }}" method="get">
@@ -40,7 +39,6 @@
                     @endcan
                     @can('admin')
                     <li class="header-nav-list"><a class="list-link-admin" href="/admin">管理者ページ</a></li>
-                    <li class="header-nav-list"><a class="list-link-sell" href="/sell">出品</a></li>
                     @endcan
                     @else
                     <li class="header-nav-list"><a class="list-link-login" href="/login">ログイン</a></li>
@@ -54,7 +52,6 @@
                 <span></span>
                 <span></span>
             </button>
-            @endif
         </div>
     </header>
 

@@ -16,7 +16,8 @@ class MarketController extends Controller
     public function top()
     {
         $items = Item::whereNull('buyer_id')->with('categories')->get();
-        return view('recommend', compact('items'));
+        $all_items = Item::all();
+        return view('recommend', compact('items', 'all_items'));
     }
 
     public function sell()
